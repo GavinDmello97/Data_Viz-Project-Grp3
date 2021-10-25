@@ -1,0 +1,161 @@
+@import "mobiscroll.javascript.min";
+
+body {
+    background-color: #eeebf8;
+}
+#headerContainer {
+    margin: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    box-sizing: border-box;
+    background-color: black;
+   
+}
+
+.containerPadder {
+    margin-bottom: 5px;
+}
+
+#header-h1-text {
+    margin: 20px;
+    color: white;
+    box-sizing: border-box;
+    width: fit-content;
+}
+
+.noMargin 
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+.tooltipData {
+    font-size: small;
+  }
+  #tooltip {
+    opacity: 0;
+    background-color: antiquewhite;
+    position: absolute;
+    width: 150px;
+    height: 60px;
+  }
+
+  #caption {
+    margin: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 4%;
+    font-family: serif;
+    font-size: 20pt;
+  }
+  #container {
+    width: 100vw;
+    height: 100vh;
+    background: blueviolet;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  #canvas {
+    width: 90%;
+    height: 90%;
+    background-color: azure;
+  }
+  path.path_geo {
+    stroke-width: 0.5px;
+    stroke: black;
+  }
+  .containers {
+    flex: 1;
+    display: flex;
+  }
+
+  .containerPadder {
+    padding: 20px;
+    margin: 10px
+  }
+  body {
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+  }
+  .worldContainer {
+    background-color: white;
+    flex: 1;
+  }
+
+  .mbsc-padding.md-header {
+    font-size: 1.25em;
+    font-weight: 400;
+    padding: .8em .8em .4em .8em;
+}
+
+.md-dateslider .mbsc-padding {
+    text-align: center;
+}
+
+.md-check-cont {
+    padding: 8px 0 16px 0;
+}
+
+.md-check {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    font-size: 26px;
+   ;
+    line-height: 23px;
+    border-radius: 33px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.demo-theme-mobiscroll .md-check {
+    background: #4ECCC4;
+    color: #f7f7f7;
+}
+
+.demo-theme-mobiscroll-dark .md-check {
+    background: #4ECCC4;
+    color: #263238;
+}
+
+.demo-theme-material .md-check {
+    background: #009688;
+    color: #eee;
+}
+
+.demo-theme-material-dark .md-check {
+    background: #81ccc4;
+    color: #f7f7f7;
+}
+
+.demo-theme-ios .md-check {
+    background: #1272dc;
+    color: #f5f5f5;
+}
+
+.demo-theme-ios-dark .md-check {
+    background: #ff8400;
+    color: #1a1a1a;
+}
+
+.demo-theme-android-holo .md-check {
+    background: #31c6e7;
+    color: #000;
+}
+
+.demo-theme-android-holo-light .md-check {
+    background: #31c6e7;
+    color: #f5f5f5;
+}
+
+.demo-theme-wp .md-check {
+    background: #1a9fe0;
+    color: #000;
+}
+
+.demo-theme-wp-light .md-check {
+    background: #1a9fe0;
+    color: #fff;
+}

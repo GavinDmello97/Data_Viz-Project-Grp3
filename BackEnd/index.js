@@ -36,15 +36,12 @@ app.get("/list_movies", (req, res) => {
                 abc.push( filteredYears[i].Year)
             }
         }
-
-
-
-
+        console.log(abc)
         abc.map(elementDate => {
             var filteredEvents = mainDataSet.filter(function(event){
                 return event.Year == elementDate;
             });
-            console.log("DATASET OF "+ elementDate, filteredEvents)
+            // console.log("DATASET OF "+ elementDate, filteredEvents)
             customArray.push({date: elementDate, countryList:filteredEvents})
 
             
