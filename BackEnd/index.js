@@ -6,6 +6,7 @@
 const express=require('express');  // importing express using require
 const app = express(); //Creating an instance of express
 const fs = require('fs')
+const lodash = require('lodash')
 //const d3 = require("d3");
 
 app.get('/',(req,res)=>{
@@ -56,8 +57,12 @@ app.get("/list_movies", (req, res) => {
 
 });
 
-
-
+/*
+var myJson = {'key' : 'value'}
+for(var myKey in myJson){
+    console.log("key: " + myKey + ", value: " + myJson[myKey]);
+}
+*/
 
 var data = fs.readFileSync("C02_EmissionCleaned.csv", "utf8")
 //z= function (data) {return {xyz :data}}
@@ -77,3 +82,11 @@ app.listen(port,()=>{
 })//Second we are going to listen to that port 
 
 //Route the user to the page that user wants to visit
+
+//Attempt to load and filter JSON file/object
+const jsonData = JSON.parse(fs.readFileSync('CO2_EmissionClean.json','utf-8'))
+function where(){
+    lodash.where;
+} 
+var filtered = where(jsonData,{"Year" : "1995"});
+console.log(filtered);
