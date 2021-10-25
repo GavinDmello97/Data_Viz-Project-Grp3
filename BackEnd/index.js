@@ -20,7 +20,7 @@ app.get('/data',(req,res)=>{
     res.send(data);
 })
 
-app.get("/list_movies", (req, res) => {
+app.get("/co2-emission", (req, res) => {
     let customArray = []
 
     fs.readFile(__dirname + '/' + 'CO2_EmissionClean.json',"utf8",  (err, data) => {
