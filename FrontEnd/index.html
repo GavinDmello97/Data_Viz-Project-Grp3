@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link href="styles.css" rel="stylesheet" />
+    <script src="./libs/d3.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <title>CO2 Emission</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://d3js.org/topojson.v2.min.js"></script>
+    <script src="https://unpkg.com/topojson-client@2"></script>
+    <style>
+      .tooltipData {
+        font-size: small;
+      }
+      #tooltip {
+        opacity: 0;
+        background-color: antiquewhite;
+        position: absolute;
+        width: 150px;
+        height: 60px;
+      }
+
+      #caption {
+        margin: auto;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        padding-left: 4%;
+        font-family: serif;
+        font-size: 20pt;
+      }
+      #container {
+        width: 100vw;
+        height: 100vh;
+        background: blueviolet;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      #canvas {
+        width: 90%;
+        height: 90%;
+        background-color: azure;
+      }
+      path.path_geo {
+        stroke-width: 0.5px;
+        stroke: black;
+      }
+      .containers {
+        margin: 10px;
+        flex: 1;
+        display: flex;
+      }
+
+      .containerPadder {
+        padding: 20px;
+      }
+      body {
+        margin: 0px;
+        width: 100vw;
+        height: 100vh;
+      }
+      .worldContainer {
+        background-color: white;
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="headerContainer">
+        <!-- <h1 id="header-h1-text">CO2 emission</h1> -->
+      </div>
+      <!-- <div class="containers">
+        <div class="worldContainer containerPadder">
+          <svg id="canvas"></svg>
+        </div>
+        <div class="worldContainer containerPadder">
+          <svg id="canvas"></svg>
+        </div>
+      </div> -->
+    </div>
+    <!-- <div id="tooltip"></div> -->
+    <script>
+      let svg = d3.select("svg");
+      // load the data sources:
+      // Source 1: NY times COVID-19 Data (live)
+      let covid19 =
+        "https://raw.githubusercontent.com/nytimes/covid-19-data/master/live/us-counties.csv";
+      // source 2: US Census Counties geojson
+      let topoJson = "data/countries.topojson";
+      let projection = d3.geoEqualEarth().scale(300).translate([500, 450]);
+      Promise.all([d3.json(topoJson), d3.csv(covid19)], d3.autoType()).then(
+        (data) => main(data)
+      );
+
+      main = (data) => {
+        console.log(topojson, data);
+        //converting topojson to geosjon
+        let geoJsonData = topojson.feature(
+          data[0],
+          data[0].objects.countries
+        ).features;
+        let geoGenerator = d3.geoPath().projection(projection);
+        let covid_data = d3.group(data[1], (d) => d.fips);
+        let cases_extent = d3.extent(data[1], (d) => {
+          return +d.cases;
+        });
+        cases_extent[0] = 1;
+
+        // let colorScale = d3
+        //   .scaleLog()
+        //   .domain(cases_extent)
+        //   .range(["white", "steelblue"])
+        //   .interpolate(d3.interpolateCubehelix.gamma(1));
+
+        let mapCanvas = svg.append("g");
+        mapCanvas
+          .selectAll("path")
+          .data(geoJsonData)
+          .enter()
+          .append("path")
+          .attr("class", "path_geo")
+          .attr("d", geoGenerator)
+          .attr("fill", "white")
+          .on("mousemove", (mouseData, d) => {
+            d3.select("#tooltip")
+              .style("opacity", 0.8)
+              .style("left", (mouseData.clientX + 10).toString() + "px")
+              .style("top", (mouseData.clientY + 10).toString() + "px")
+              .html(
+                "<div class='tooltipData'>County: " +
+                  covid_data.get(d.properties.GEOID)[0].county +
+                  "</div>" +
+                  "<div class='tooltipData'>State: " +
+                  covid_data.get(d.properties.GEOID)[0].state +
+                  "</div>" +
+                  "<div class='tooltipData' style='color:blue'>Cases: " +
+                  covid_data.get(d.properties.GEOID)[0].cases.toString() +
+                  "</div>" +
+                  "<div class='tooltipData' style='color:red'>Deaths: " +
+                  covid_data.get(d.properties.GEOID)[0].deaths.toString() +
+                  "</div>" +
+                  "<div class='tooltipData'></div>"
+              );
+          })
+          .transition()
+          .delay((d, i) => {
+            return i * 2;
+          })
+          .duration(300)
+          .style("fill", (d) => {
+            try {
+              console.log(covid_data.get(d.properties.GEOID)[0].cases);
+              return colorScale(
+                parseInt(covid_data.get(d.properties.GEOID)[0].cases)
+              );
+            } catch (error) {
+              return "white";
+            }
+          });
+
+        // svg.call(
+        //   d3
+        //     .zoom()
+        //     .extent([
+        //       [0, 0],
+        //       [1000, 1000],
+        //     ])
+        //     .scaleExtent([1, 8])
+        //     .on("zoom", zoomed)
+        // );
+        //why did arrow function not work here
+        function zoomed({ transform }) {
+          mapCanvas.attr("transform", transform);
+        }
+      };
+    </script>
+  </body>
+</html>

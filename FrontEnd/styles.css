@@ -1,0 +1,28 @@
+body {
+    background-color: #eeebf8;
+}
+#headerContainer {
+    height: 50px;
+    margin: 10px;
+    display: flex;
+    box-sizing: border-box;
+    background-color: black;
+   
+}
+
+.containerPadder {
+    margin-bottom: 15px;
+}
+
+#header-h1-text {
+    padding: 20px;
+    color: white;
+    box-sizing: border-box;
+    width: fit-content;
+}
+
+.noMargin 
+{
+    margin: 0px;
+    padding: 0px;
+}
