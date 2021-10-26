@@ -73,13 +73,13 @@ var data = fs.readFileSync("C02_EmissionCleaned.csv", "utf8")
 // })
 
 const port = process.env.PORT || 3000 //First inititalizing the port
-
+/*
 app.listen(port,()=>{
     console.log(`Express is listening on port:${port}`)
     fs.readFile(__dirname + '/' + 'CO2_EmissionClean.json',  (err, data) => {
         // console.log(data)
     });
-})//Second we are going to listen to that port 
+})//Second we are going to listen to that port */
 
 //Route the user to the page that user wants to visit
 
@@ -89,4 +89,12 @@ function where(){
     lodash.where;
 } 
 var filtered = where(jsonData,{"Year" : "1995"});
-console.log(filtered);
+//const filtered = where(jsonData,{"Year" : "1995"});
+//console.log(filtered);
+
+app.listen(port,()=>{
+    console.log(`Express is listening on port:${port}`)
+    fs.readFile(__dirname + '/' + 'CO2_EmissionClean.json',  (err, filtered) => {
+        // console.log(data)
+    });
+})
