@@ -16,7 +16,7 @@
     http://localhost:3000/{{API_ENDPOINT_NAME}}
     
    
-### For Backend:
+### For Frontend:
   1. Run the following command in terminal -
   
     a)  cd FrontEnd && npm install &$ code .
@@ -34,4 +34,4 @@
 3) Once the entire feature is complete and tested(free of bugs), **raise a PR** to merge your working branch into the Develop branch of the respective Ends(frontend pr backend)
 4) Someone will approve your code and merge it into develop. 
 
-## Once we have a complete project of Phase 1 completed, we will merge the develop branch into ***master*** branch
+## Once we have Phase 1 completed, we will merge the develop branch into ***master*** branch
