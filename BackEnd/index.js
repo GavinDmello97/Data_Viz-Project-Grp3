@@ -88,7 +88,7 @@ const jsonData = JSON.parse(fs.readFileSync('CO2_EmissionClean.json','utf-8'))
 function where(){
     lodash.where;
 } 
-var filtered = where(jsonData,{"Year" : "1995"});
+var filtered = where(jsonData,{"Year" : "2015"});
 //const filtered = where(jsonData,{"Year" : "1995"});
 //console.log(filtered);
 
