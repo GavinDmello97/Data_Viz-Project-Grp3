@@ -95,6 +95,6 @@ var filtered = where(jsonData,{"Year" : "1995"});
 app.listen(port,()=>{
     console.log(`Express is listening on port:${port}`)
     fs.readFile(__dirname + '/' + 'CO2_EmissionClean.json',  (err, filtered) => {
-        // console.log(data)
+         console.log(filtered)
     });
 })
