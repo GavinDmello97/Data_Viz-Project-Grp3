@@ -6,6 +6,8 @@
 const express=require('express');  // importing express using require
 const app = express(); //Creating an instance of express
 const fs = require('fs')
+const cors = require('cors');
+
 //const d3 = require("d3");
 
 app.get('/',(req,res)=>{
@@ -20,7 +22,7 @@ app.get('/data',(req,res)=>{
     res.send(data);
 })
 
-app.get("/list_movies", (req, res) => {
+app.get("/list_movies", cors(), (req, res) => {
     let customArray = []
 
     fs.readFile(__dirname + '/' + 'CO2_EmissionClean.json',"utf8",  (err, data) => {
@@ -36,7 +38,6 @@ app.get("/list_movies", (req, res) => {
                 abc.push( filteredYears[i].Year)
             }
         }
-        console.log(abc)
         abc.map(elementDate => {
             var filteredEvents = mainDataSet.filter(function(event){
                 return event.Year == elementDate;
@@ -46,6 +47,8 @@ app.get("/list_movies", (req, res) => {
 
             
         })
+        console.log(customArray)
+
         res.send(customArray);
 
 })
@@ -56,21 +59,11 @@ app.get("/list_movies", (req, res) => {
 
 
 
-var data = fs.readFileSync("C02_EmissionCleaned.csv", "utf8")
-//z= function (data) {return {xyz :data}}
-// console.log(data)
-
-// d3.csv('C02_EmissionCleaned.csv').then(data=>{
-//     console.log("hello")
-// })
-
 const port = process.env.PORT || 3000 //First inititalizing the port
 
 app.listen(port,()=>{
     console.log(`Express is listening on port:${port}`)
-    fs.readFile(__dirname + '/' + 'CO2_EmissionClean.json',  (err, data) => {
-        // console.log(data)
-    });
+    
 })//Second we are going to listen to that port 
 
 //Route the user to the page that user wants to visit
