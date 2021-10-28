@@ -21,7 +21,7 @@ app.get('/data',(req,res)=>{
     res.send(data);
 })
 
-app.get("/list_movies", (req, res) => {
+app.get("/co2-emission", (req, res) => {
     let customArray = []
 
     fs.readFile(__dirname + '/' + 'CO2_EmissionClean.json',"utf8",  (err, data) => {
@@ -37,15 +37,12 @@ app.get("/list_movies", (req, res) => {
                 abc.push( filteredYears[i].Year)
             }
         }
-
-
-
-
+        console.log(abc)
         abc.map(elementDate => {
             var filteredEvents = mainDataSet.filter(function(event){
                 return event.Year == elementDate;
             });
-            console.log("DATASET OF "+ elementDate, filteredEvents)
+            // console.log("DATASET OF "+ elementDate, filteredEvents)
             customArray.push({date: elementDate, countryList:filteredEvents})
 
             
