@@ -1,4 +1,3 @@
-
 # Data_Viz-Project-Grp3
 
 
@@ -17,7 +16,7 @@
     http://localhost:3000/{{API_ENDPOINT_NAME}}
     
    
-### For Frontend:
+### For Backend:
   1. Run the following command in terminal -
   
     a)  cd FrontEnd && npm install &$ code .
