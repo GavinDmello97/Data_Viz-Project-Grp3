@@ -61,7 +61,7 @@
               <text id='minRange'></text>
               <text id='maxRange'></text>
             </div>
-            <button type="button" onclick="update(dataCollection[getRandomInt(3).toString()], dataCollection[getRandomInt(3).toString()], dataCollection[getRandomInt(3).toString()])">HEllo</button>
+            <button type="button" onclick="">HEllo</button>
 
            </div>
           </div>
@@ -95,9 +95,97 @@
     <div id="tooltip"></div>
     <script>
 
-      let isTrue = false;
+      var dataCollection;
+      var margin = { top: 30, right: 30, bottom: 30, left: 50 },
+            width = 460 - margin.left - margin.right,
+            height = 220 - margin.top - margin.bottom;
 
-    
+          
+            
+          //SVG 1 Initializer set - Start
+          // append the svg object to the body of the page
+          var svg1 = d3
+            .select("#graphContainer1")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr(
+              "transform",
+              "translate(" + margin.left + "," + margin.top + ")"
+            );
+
+          // Initialise a X axis:
+          var x1 = d3.scaleTime().range([0, width]);
+          var xAxis1 = d3.axisBottom().scale(x1);
+          svg1
+            .append("g")
+            .attr("transform", "translate(0," + height + ")")
+            .attr("class", "myXaxis1");
+
+          // Initialize an Y axis
+          var y1 = d3.scaleLinear().range([height, 0]);
+          var yAxis1 = d3.axisLeft().scale(y1);
+          svg1.append("g").attr("class", "myYaxis1");
+
+          //SVG 1 Initializer set - End
+
+
+
+          //SVG 2 Initializer set - Start
+
+          var svg2 = d3
+            .select("#graphContainer2")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr(
+              "transform",
+              "translate(" + margin.left + "," + margin.top + ")"
+            );
+
+          // Initialise a X axis:
+          var x2 = d3.scaleTime().range([0, width]);
+          var xAxis2 = d3.axisBottom().scale(x2);
+          svg2
+            .append("g")
+            .attr("transform", "translate(0," + height + ")")
+            .attr("class", "myXaxis2");
+
+          // Initialize an Y axis
+          var y2 = d3.scaleLinear().range([height, 0]);
+          var yAxis2 = d3.axisLeft().scale(y2);
+          svg2.append("g").attr("class", "myYaxis2");
+
+          //SVG 2 Initializer set - End
+
+
+
+           //SVG 3 Initializer set - Start
+           var svg3 = d3
+            .select("#graphContainer3")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr(
+              "transform",
+              "translate(" + margin.left + "," + margin.top + ")"
+            );
+
+          // Initialise a X axis:
+          var x3 = d3.scaleTime().range([0, width]);
+          var xAxis3 = d3.axisBottom().scale(x3);
+          svg3
+            .append("g")
+            .attr("transform", "translate(0," + height + ")")
+            .attr("class", "myXaxis3");
+
+          // Initialize an Y axis
+          var y3 = d3.scaleLinear().range([height, 0]);
+          var yAxis3 = d3.axisLeft().scale(y3);
+          svg3.append("g").attr("class", "myYaxis3");      
       let svg0 = d3.select("#canvas");
       // load the data sources:
       // Source 1: NY times COVID-19 Data (live)
@@ -105,19 +193,23 @@
 
 
 
-        axios.get('http://localhost:3000/co2-emission')
-        .then(response => {
+         Promise.all([axios.get('http://localhost:3000/co2-emission'), axios.get("https://raw.githubusercontent.com/owid/co2-data/master/owid-co2-data.json")])
+        .then(async response => {
 
-          countryList = response.data[7].countryList
+          countryList = response[0].data[7].countryList
         
           // let covid19 = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/live/us-counties.csv";
           let topoJson = "data/countries-110m.json";
-          Promise.all([d3.json(topoJson), ], d3.autoType()).then(
-            (data) => {
-
+          await Promise.all([d3.json(topoJson)], d3.autoType()).then(
+            async(data) => {
+              dataCollection = response[1].data
               data.push(countryList)
-              main(data)}
-          ).catch(error => {console.log(error, topoJson)});
+              await main(data)
+
+              await update(response[1].data["Africa"].data,response[1].data["Africa"].data,response[1].data["Africa"].data)
+              // update(dataCollection["Africa"].data, dataCollection["Afghanistan"].data, dataCollection["Afghanistan"].data);
+
+            }).catch(error => {console.log(error, topoJson)});
         })
         .catch(error => console.error(error));
       
@@ -133,11 +225,9 @@
 
         let geoGenerator = d3.geoPath().projection(projection);
         let co2Emission = d3.group(data[1], (d) => d.CountryName);
-        console.log(co2Emission)
         let emissionExtent = d3.extent(data[1], (d) => {
           return parseInt(+d.Value);
         });
-        console.log(emissionExtent)
 
         emissionExtent[0] = 1;
 
@@ -162,7 +252,7 @@
           
           .attr("fill", "white")
           .on("mousemove", (mouseData, d) => {
-            console.log("data", d)
+            // console.log("dataCollection",dataCollection, d.properties.name.toString(), dataCollection[d.properties.name.toString()])
             d3.select("#tooltip")
               .style("opacity", 0.8)
               .style("left", (mouseData.clientX + 10).toString() + "px")
@@ -175,6 +265,10 @@
                     parseInt(co2Emission.get(d.properties.name)[0].Value) +
                   "</div>" 
               );
+            update(dataCollection[d.properties.name.toString()].data, dataCollection[d.properties.name.toString()].data, dataCollection[d.properties.name.toString()].data)
+          })
+          .on("click",(d) => {
+            console.log("Datra",d)
           })
           .on("mouseout", () => d3.select("#tooltip").style("opacity", 0))
 
@@ -186,7 +280,6 @@
           .style("fill", (d) => {
 
             try {
-              console.log("MYDASD",d.properties.name, (parseInt(co2Emission.get(d.properties.name)[0].Value)))
               return colorScale(
                 parseInt(co2Emission.get(d.properties.name)[0].Value)
               );
@@ -264,125 +357,12 @@
        
       };
       
-
-      let dataCollection = {"0": [], "1":[], "2":[]};
-
-      d3.csv("./data/data_sample.csv")
-        .then((d) => {
-          d.map((element) => {
-            let item1 = {
-              date: new Date(element.Date),
-              value: Number(element.EstimatedCost),
-            };
-
-            let item2 = {
-              date: new Date(element.Date),
-              value: Number(element.RawMaterial),
-            };
-            let item3 = {
-              date: new Date(element.Date),
-              value: Number(element.Workmanship),
-            };
-            dataCollection["0"].push(item1);
-            dataCollection["1"].push(item2);
-            dataCollection["2"].push(item3);
-          });
-
-          console.log(dataCollection);
-
-          var margin = { top: 30, right: 30, bottom: 30, left: 50 },
-            width = 460 - margin.left - margin.right,
-            height = 220 - margin.top - margin.bottom;
-
-          
-            
-          //SVG 1 Initializer set - Start
-          // append the svg object to the body of the page
-          var svg1 = d3
-            .select("#graphContainer1")
-            .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-            .attr(
-              "transform",
-              "translate(" + margin.left + "," + margin.top + ")"
-            );
-
-          // Initialise a X axis:
-          var x1 = d3.scaleTime().range([0, width]);
-          var xAxis1 = d3.axisBottom().scale(x1);
-          svg1
-            .append("g")
-            .attr("transform", "translate(0," + height + ")")
-            .attr("class", "myXaxis1");
-
-          // Initialize an Y axis
-          var y1 = d3.scaleLinear().range([height, 0]);
-          var yAxis1 = d3.axisLeft().scale(y1);
-          svg1.append("g").attr("class", "myYaxis1");
-
-          //SVG 1 Initializer set - End
-
-
-
-          //SVG 2 Initializer set - Start
-
-          var svg2 = d3
-            .select("#graphContainer2")
-            .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-            .attr(
-              "transform",
-              "translate(" + margin.left + "," + margin.top + ")"
-            );
-
-          // Initialise a X axis:
-          var x2 = d3.scaleTime().range([0, width]);
-          var xAxis2 = d3.axisBottom().scale(x2);
-          svg2
-            .append("g")
-            .attr("transform", "translate(0," + height + ")")
-            .attr("class", "myXaxis2");
-
-          // Initialize an Y axis
-          var y2 = d3.scaleLinear().range([height, 0]);
-          var yAxis2 = d3.axisLeft().scale(y2);
-          svg2.append("g").attr("class", "myYaxis2");
-
-          //SVG 2 Initializer set - End
-
-           //SVG 3 Initializer set - Start
-
-           var svg3 = d3
-            .select("#graphContainer3")
-            .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-            .attr(
-              "transform",
-              "translate(" + margin.left + "," + margin.top + ")"
-            );
-
-          // Initialise a X axis:
-          var x3 = d3.scaleTime().range([0, width]);
-          var xAxis3 = d3.axisBottom().scale(x3);
-          svg3
-            .append("g")
-            .attr("transform", "translate(0," + height + ")")
-            .attr("class", "myXaxis3");
-
-          // Initialize an Y axis
-          var y3 = d3.scaleLinear().range([height, 0]);
-          var yAxis3 = d3.axisLeft().scale(y3);
-          svg3.append("g").attr("class", "myYaxis3");
-         
+      
           //SVG 3 Initializer set - End
 
-          update = (data1, data2, data3) =>{
+
+
+      update = (data1, data2, data3) =>{
             updateContributer1(data1)
             updateContributer2(data2)
             updateContributer3(data3)
@@ -390,11 +370,13 @@
           }
 
           // Create a function that takes a dataset as input and update the plot:
-          updateContributer1 = (data) => {
+      updateContributer1 = (data ) => {
+
+        console.log("hello from 1")
             // Create the X axis:
             x1.domain(
               d3.extent(data, function (d) {
-                return d.date;
+                return new Date(d.year);
               })
             );
             svg1.selectAll(".myXaxis1").transition().duration(3000).call(xAxis1);
@@ -402,7 +384,7 @@
             // create the Y axis
             y1.domain(
               [0, d3.extent(data, function (d) {
-                return d.value;
+                return Number(d.population)/1000000;
               })[1]]
               
             );
@@ -410,7 +392,7 @@
 
             // Create a update selection: bind to the new data
             var u = svg1.selectAll(".lineTest1").data([data], function (d) {
-              return d.date;
+              return new Date(d.year);
             });
 
             // Updata the line
@@ -425,29 +407,29 @@
                 d3
                   .line()
                   .x(function (d) {
-                    return x1(d.date);
+                    return x1(new Date(d.year));
                   })
                   .y(function (d) {
-                    return y1(d.value);
+                    return y1(d.population/1000000);
                   })
               )
               .attr("fill", "none")
               .attr("stroke", "steelblue")
               .attr("stroke-width", 2.5);
           };
-          updateContributer2 = (data) => {
+      updateContributer2 = (data) => {
             // Create the X axis:
             x2.domain(
               d3.extent(data, function (d) {
-                return d.date;
+                return new Date(d.year);
               })
             );
-            svg2.selectAll(".myXaxis2").transition().duration(3000).call(xAxis1);
+            svg2.selectAll(".myXaxis2").transition().duration(3000).call(xAxis2);
 
             // create the Y axis
             y2.domain(
               [0, d3.extent(data, function (d) {
-                return d.value;
+                return Number(d.co2_per_capita);
               })[1]]
               
             );
@@ -455,7 +437,7 @@
 
             // Create a update selection: bind to the new data
             var u = svg2.selectAll(".lineTest2").data([data], function (d) {
-              return d.date;
+              return new Date(d.year);
             });
 
             // Updata the line
@@ -470,21 +452,21 @@
                 d3
                   .line()
                   .x(function (d) {
-                    return x2(d.date);
+                    return x2(new Date(d.year));
                   })
                   .y(function (d) {
-                    return y2(d.value);
+                    return y2(d.co2_per_capita);
                   })
               )
               .attr("fill", "none")
               .attr("stroke", "steelblue")
               .attr("stroke-width", 2.5);
           };
-          updateContributer3 = (data) => {
+      updateContributer3 = (data) => {
             // Create the X axis:
             x3.domain(
               d3.extent(data, function (d) {
-                return d.date;
+                return new Date(d.year);
               })
             );
             svg3.selectAll(".myXaxis3").transition().duration(3000).call(xAxis3);
@@ -492,7 +474,7 @@
             // create the Y axis
             y3.domain(
               [0, d3.extent(data, function (d) {
-                return d.value;
+                return d.coal_co2;
               })[1]]
               
             );
@@ -500,7 +482,7 @@
 
             // Create a update selection: bind to the new data
             var u = svg3.selectAll(".lineTest3").data([data], function (d) {
-              return d.date;
+              return new Date(d.year);
             });
 
             // Updata the line
@@ -515,10 +497,10 @@
                 d3
                   .line()
                   .x(function (d) {
-                    return x3(d.date);
+                    return x3(new Date(d.year));
                   })
                   .y(function (d) {
-                    return y3(d.value);
+                    return y3(d.coal_co2);
                   })
               )
               .attr("fill", "none")
@@ -529,13 +511,7 @@
           
           
           // At the beginning, I run the update function on the first dataset:
-          update(dataCollection[getRandomInt(3).toString()], dataCollection[getRandomInt(3).toString()], dataCollection[getRandomInt(3).toString()]);
-        })
-        .catch((error) => {
-          let p = d3.select("body").append("p");
-          p.text("No data found or " + error);
-        });
-
+      
         function getRandomInt(max) {
           return Math.floor(Math.random() * max);
         }
