@@ -53,8 +53,17 @@
       </div>
       <div class="containers">
         <div class="worldContainer containerPadder">
-          <svg id="canvas"  style=" width: 100%; height: 90%" viewBox="0 0 1000 600"></svg>
-           
+          <div style="background-color: azure; width: 100%; height: 100%">
+          <svg id="canvas"  style=" width: 100%; height: 90%" viewBox="0 0 1000 500"></svg>
+           <div class="colorScaleContainer">
+            <div class="colorScale"></div>
+            <div class="colorScaleRangeContainer">
+              <text id='minRange'></text>
+              <text id='maxRange'></text>
+            </div>
+
+           </div>
+          </div>
             <!-- <div class=slider-container>
                   <input
                   mbsc-slider
@@ -72,9 +81,17 @@
         
 
         </div>
-        <div class="worldContainer containerPadder">
+        <div style="display: flex; flex-direction: column; justify-content: space-between;  flex: 2; margin-right: 10px" class = ''>
+        <div id= "graphContainer1" class="graphContainer ">
           <!-- <svg id="canvas"></svg> -->
         </div>
+        <div id= "graphContainer2" class="graphContainer ">
+          <!-- <svg id="canvas"></svg> -->
+        </div>
+        <div id= "graphContainer3" class="graphContainer ">
+          <!-- <svg id="canvas"></svg> -->
+        </div>
+      </div>
       </div>
     </div>
     <div id="tooltip"></div>
@@ -82,7 +99,7 @@
 
    
       
-      let svg = d3.select("svg");
+      let svg1 = d3.select("#canvas");
       // load the data sources:
       // Source 1: NY times COVID-19 Data (live)
       // let emissionData = "data/CO2_EmissionClean.json";
@@ -92,7 +109,7 @@
         axios.get('http://localhost:3000/list_movies')
         .then(response => {
 
-          countryList = response.data[2].countryList
+          countryList = response.data[7].countryList
         
           // let covid19 = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/live/us-counties.csv";
           let topoJson = "data/countries-110m.json";
@@ -107,7 +124,7 @@
       
 
       main = (data) => {
-        let projection = d3.geoEquirectangular().scale(150).translate([500, 150]);
+        let projection = d3.geoEquirectangular().scale(150).translate([500,250]);
 
         //converting topojson to geosjon
         let geoJsonData = topojson.feature(
@@ -125,15 +142,18 @@
 
         emissionExtent[0] = 1;
 
+        d3.select("#minRange").html("Min: " + emissionExtent[0])
+        d3.select("#maxRange").html("Max: " + emissionExtent[1])
+
+
         let colorScale = d3
           .scaleLog()
           .domain(emissionExtent)
-          .range(["red", "steelblue"])
+          .range(["aqua", "steelblue"])
           .interpolate(d3.interpolateCubehelix.gamma(1));
 
-        let mapCanvas = svg.append("g");
+        let mapCanvas = svg1.append("g");
         mapCanvas
-          .attr("transform", "scale(1, 2)")
           .selectAll("path")
           .data(geoJsonData)
           .enter()
@@ -141,26 +161,29 @@
           .attr("class", "path_geo")
           .attr("d", geoGenerator)
           
-          .attr("fill", "blue")
+          .attr("fill", "white")
           .on("mousemove", (mouseData, d) => {
+            console.log("data", d)
             d3.select("#tooltip")
               .style("opacity", 0.8)
               .style("left", (mouseData.clientX + 10).toString() + "px")
               .style("top", (mouseData.clientY + 10).toString() + "px")
               .html(
-                "<div class='tooltipData'>County: " +
-                  co2Emission.get(d.properties.name)[0].CountryName +
+                "<div class='tooltipData'>Country: " +
+                  d.properties.name +
                   "</div>" +
                   "<div class='tooltipData'>Emission: " +
                     parseInt(co2Emission.get(d.properties.name)[0].Value) +
                   "</div>" 
               );
           })
+          .on("mouseout", () => d3.select("#tooltip").style("opacity", 0))
+
           .transition()
           .delay((d, i) => {
-            return i * 2;
+            return i * 5;
           })
-          .duration(300)
+          .duration(700)
           .style("fill", (d) => {
 
             try {
@@ -175,16 +198,22 @@
             }
           });
 
-        svg.call(
+        svg1.call(
           d3
             .zoom()
             .extent([
               [0, 0],
               [1000, 1000],
             ])
-            .scaleExtent([1, 4])
+            .scaleExtent([1, 8])
             .on("zoom", zoomed)
         );
+
+         
+        function zoomed({ transform }) {
+          mapCanvas
+          .attr("transform", transform)          
+        }
 
           mobiscroll.settings = {
         theme: 'ios',
@@ -233,11 +262,198 @@
 //         }, 
         
 //     });
-        
-        function zoomed({ transform }) {
-          mapCanvas.attr("transform", transform);
-        }
+       
       };
-    </script>
+   
+      d3.csv("./data/data_sample.csv")
+        .then((d) => {
+          let dataset = d.map((element) => {
+            let item = {
+              date: new Date(element.Date),
+              estimatedCost: Number(element.EstimatedCost),
+              rawMaterial: Number(element.RawMaterial),
+              workmanship: Number(element.Workmanship),
+              yearlyStorage: Number(element.YearlyStorage),
+            };
+            return item;
+          });
+
+          let svg1 = d3
+            .selectAll("#graphContainer1")
+            .append("svg")
+            .attr("width", "100%")
+            .attr("height", "100%")
+            .attr("viewBox", "0 0 650 300")
+            .style("background-color", "#f5f3f3");
+
+            let svg2 = d3
+            .selectAll("#graphContainer2")
+            .append("svg")
+            .attr("width", "100%")
+            .attr("height", "100%")
+            .attr("viewBox", "0 0 650 300")
+            .style("background-color", "#f5f3f3");
+
+            let svg3 = d3
+            .selectAll("#graphContainer3")
+            .append("svg")
+            .attr("width", "100%")
+            .attr("height", "100%")
+            .attr("viewBox", "0 0 650 300")
+            .style("background-color", "#f5f3f3");
+          let marginVertical = 10;
+          let margins = 60;
+          let width = 700 - 2 * margins;
+          let height = 300 - 2 * marginVertical;
+
+          //x axis label value setting using dates
+          let x = d3
+            .scaleTime()
+            .domain(
+              d3.extent(dataset, function (d) {
+                return d.date;
+              })
+            )
+            .range([margins, width]);
+
+          //y axis label value setting by finding the max value in the dataset for y-axis plotting
+          let y = d3
+            .scaleLinear()
+            .domain([
+              0,
+              d3.max(dataset, function (d) {
+                let maxValArr = [];
+                dataset.map((item) => {
+                  maxValArr.push(
+                    item.estimatedCost,
+                    item.rawMaterial,
+                    item.workmanship,
+                    item.yearlyStorage
+                  );
+                });
+                return Math.max(...maxValArr);
+              }),
+            ])
+            .range([height, marginVertical]);
+
+          //line for estimated cost
+          let line1 = d3
+            .line()
+            .x(function (d) {
+              return x(d.date);
+            })
+            .y(function (d) {
+              return y(d.estimatedCost);
+            });
+
+          //line for raw material
+          let line2 = d3
+            .line()
+            .x(function (d) {
+              return x(d.date);
+            })
+            .y(function (d) {
+              return y(d.rawMaterial);
+            });
+
+          //line for workmanship
+          let line3 = d3
+            .line()
+            .x(function (d) {
+              return x(d.date);
+            })
+            .y(function (d) {
+              return y(d.workmanship);
+            });
+
+          
+
+          svg1
+            .enter()
+            .data([dataset])
+            .append("circle")
+            .attr("cx", function (d, i) {
+              return i * 5;
+            })
+            .attr("cy", function (d) {
+              return +d.Value / 10e5;
+            })
+            .attr("r", function (r) {
+              return 1;
+            });
+
+          svg1
+            .append("path")
+            .data([dataset])
+            .attr("class", "line")
+            .attr("d", line1)
+            .attr("stroke-linejoin", "round")
+            .attr("stroke-linecap", "round")
+            .attr("fill", "none")
+            .attr("stroke", "#c905fa")
+            .attr("stroke-width", "2px");
+          svg2
+            .append("path")
+            .data([dataset])
+            .attr("class", "line")
+            .attr("d", line2)
+            .attr("stroke-linejoin", "round")
+            .attr("stroke-linecap", "round")
+            .attr("fill", "none")
+            .attr("stroke", "#077ff7")
+            .attr("stroke-width", "2px");
+
+          svg3
+            .append("path")
+            .data([dataset])
+            .attr("class", "line")
+            .attr("d", line3)
+            .attr("stroke-linejoin", "round")
+            .attr("stroke-linecap", "round")
+            .attr("fill", "none")
+            .attr("stroke", "#07f733")
+            .attr("stroke-width", "2px");
+
+          
+          svg1
+            .append("g")
+            .attr("transform", "translate(" + "0" + "," + height + ")")
+            .call(d3.axisBottom(x))
+            .attr("stroke", "#d15249");
+          svg1
+            .append("g")
+            .attr("transform", "translate(" + margins + "," + "0" + ")")
+            .call(d3.axisLeft(y))
+            .attr("stroke", "#bd111a");
+
+            svg2
+            .append("g")
+            .attr("transform", "translate(" + "0" + "," + height + ")")
+            .call(d3.axisBottom(x))
+            .attr("stroke", "#d15249");
+          svg2
+            .append("g")
+            .attr("transform", "translate(" + margins + "," + "0" + ")")
+            .call(d3.axisLeft(y))
+            .attr("stroke", "#bd111a");
+
+            svg3
+            .append("g")
+            .attr("transform", "translate(" + "0" + "," + height + ")")
+            .call(d3.axisBottom(x))
+            .attr("stroke", "#d15249");
+          svg3
+            .append("g")
+            .attr("transform", "translate(" + margins + "," + "0" + ")")
+            .call(d3.axisLeft(y))
+            .attr("stroke", "#bd111a");
+        })
+        .catch((error) => {
+          let p = d3.select("body").append("p");
+          p.text("No data found or " + error);
+        });
+   
+   
+   </script>
   </body>
 </html>
