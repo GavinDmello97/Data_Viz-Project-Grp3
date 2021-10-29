@@ -20,6 +20,8 @@
     <link href="css/styles.css" rel="stylesheet" />
     <script src="js/mobiscroll.javascript.min.js"></script>
 <link href="css/mobiscroll.javascript.min.css" rel="stylesheet" type="text/css">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <script src="./libs/d3.js"></script>
     <script src="https://d3js.org/topojson.v1.min.js"></script>
     <title>CO2 Emission</title>
@@ -51,9 +53,18 @@
       </div>
       <div class="containers">
         <div class="worldContainer containerPadder">
-          <svg id="canvas"  style=" width: 100%; height: 90%" viewBox="0 0 1000 600"></svg>
-           
-            <div class=slider-container>
+          <div style="background-color: azure; width: 100%; height: 100%">
+          <svg id="canvas"  style=" width: 100%; height: 90%" viewBox="0 0 1000 500"></svg>
+           <div class="colorScaleContainer">
+            <div class="colorScale"></div>
+            <div class="colorScaleRangeContainer">
+              <text id='minRange'></text>
+              <text id='maxRange'></text>
+            </div>
+
+           </div>
+          </div>
+            <!-- <div class=slider-container>
                   <input
                   mbsc-slider
                   id="slider"
@@ -66,107 +77,143 @@
                   data-highlight="false"
                 />                
                
-            </div>
+            </div> -->
         
 
         </div>
-        <div class="worldContainer containerPadder">
+        <div style="display: flex; flex-direction: column; justify-content: space-between;  flex: 2; margin-right: 10px" class = ''>
+        <div id= "graphContainer1" class="graphContainer ">
+          <!-- <svg id="canvas"></svg> -->
+        </div>
+        <div id= "graphContainer2" class="graphContainer ">
+          <!-- <svg id="canvas"></svg> -->
+        </div>
+        <div id= "graphContainer3" class="graphContainer ">
           <!-- <svg id="canvas"></svg> -->
         </div>
       </div>
+      </div>
     </div>
-    <!-- <div id="tooltip"></div> -->
+    <div id="tooltip"></div>
     <script>
 
    
       
-      let svg = d3.select("svg");
+      let svg1 = d3.select("#canvas");
       // load the data sources:
       // Source 1: NY times COVID-19 Data (live)
-      let covid19 =
-        "https://raw.githubusercontent.com/nytimes/covid-19-data/master/live/us-counties.csv";
-      // source 2: US Census Counties geojson
-      let topoJson = "data/countries-110m.json";
-      let projection = d3.geoEquirectangular().scale(150).translate([500, 150]);
-      Promise.all([d3.json(topoJson), d3.csv(covid19)], d3.autoType()).then(
-        (data) => main(data)
-      );
+      // let emissionData = "data/CO2_EmissionClean.json";
+
+
+
+        axios.get('http://localhost:3000/list_movies')
+        .then(response => {
+
+          countryList = response.data[7].countryList
+        
+          // let covid19 = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/live/us-counties.csv";
+          let topoJson = "data/countries-110m.json";
+          Promise.all([d3.json(topoJson), ], d3.autoType()).then(
+            (data) => {
+
+              data.push(countryList)
+              main(data)}
+          ).catch(error => {console.log(error, topoJson)});
+        })
+        .catch(error => console.error(error));
+      
 
       main = (data) => {
+        let projection = d3.geoEquirectangular().scale(150).translate([500,250]);
+
         //converting topojson to geosjon
         let geoJsonData = topojson.feature(
           data[0],
           data[0].objects.countries
         ).features;
+
         let geoGenerator = d3.geoPath().projection(projection);
-        let covid_data = d3.group(data[1], (d) => d.fips);
-        let cases_extent = d3.extent(data[1], (d) => {
-          return +d.cases;
+        let co2Emission = d3.group(data[1], (d) => d.CountryName);
+        console.log(co2Emission)
+        let emissionExtent = d3.extent(data[1], (d) => {
+          return parseInt(+d.Value);
         });
-        cases_extent[0] = 1;
+        console.log(emissionExtent)
 
-        // let colorScale = d3
-        //   .scaleLog()
-        //   .domain(cases_extent)
-        //   .range(["white", "steelblue"])
-        //   .interpolate(d3.interpolateCubehelix.gamma(1));
+        emissionExtent[0] = 1;
 
-        let mapCanvas = svg.append("g");
+        d3.select("#minRange").html("Min: " + emissionExtent[0])
+        d3.select("#maxRange").html("Max: " + emissionExtent[1])
+
+
+        let colorScale = d3
+          .scaleLog()
+          .domain(emissionExtent)
+          .range(["aqua", "steelblue"])
+          .interpolate(d3.interpolateCubehelix.gamma(1));
+
+        let mapCanvas = svg1.append("g");
         mapCanvas
-          .attr("transform", "scale(1, 1.9)")
           .selectAll("path")
           .data(geoJsonData)
           .enter()
           .append("path")
           .attr("class", "path_geo")
           .attr("d", geoGenerator)
-          .attr("fill", "blue")
+          
+          .attr("fill", "white")
           .on("mousemove", (mouseData, d) => {
+            console.log("data", d)
             d3.select("#tooltip")
               .style("opacity", 0.8)
               .style("left", (mouseData.clientX + 10).toString() + "px")
               .style("top", (mouseData.clientY + 10).toString() + "px")
               .html(
-                "<div class='tooltipData'>County: " +
-                  covid_data.get(d.properties.GEOID)[0].county +
+                "<div class='tooltipData'>Country: " +
+                  d.properties.name +
                   "</div>" +
-                  "<div class='tooltipData'>State: " +
-                  covid_data.get(d.properties.GEOID)[0].state +
-                  "</div>" +
-                  "<div class='tooltipData' style='color:blue'>Cases: " +
-                  covid_data.get(d.properties.GEOID)[0].cases.toString() +
-                  "</div>" +
-                  "<div class='tooltipData' style='color:red'>Deaths: " +
-                  covid_data.get(d.properties.GEOID)[0].deaths.toString() +
-                  "</div>" +
-                  "<div class='tooltipData'></div>"
+                  "<div class='tooltipData'>Emission: " +
+                    parseInt(co2Emission.get(d.properties.name)[0].Value) +
+                  "</div>" 
               );
           })
+          .on("mouseout", () => d3.select("#tooltip").style("opacity", 0))
+
           .transition()
           .delay((d, i) => {
-            return i * 2;
+            return i * 5;
           })
-          .duration(300)
+          .duration(700)
           .style("fill", (d) => {
+
             try {
+              console.log("MYDASD",d.properties.name, (parseInt(co2Emission.get(d.properties.name)[0].Value)))
               return colorScale(
-                parseInt(covid_data.get(d.properties.GEOID)[0].cases)
+                parseInt(co2Emission.get(d.properties.name)[0].Value)
               );
+              
             } catch (error) {
+
               return "white";
             }
           });
 
-        svg.call(
+        svg1.call(
           d3
             .zoom()
             .extent([
               [0, 0],
               [1000, 1000],
             ])
-            .scaleExtent([1, 4])
+            .scaleExtent([1, 8])
             .on("zoom", zoomed)
         );
+
+         
+        function zoomed({ transform }) {
+          mapCanvas
+          .attr("transform", transform)          
+        }
 
           mobiscroll.settings = {
         theme: 'ios',
@@ -174,52 +221,239 @@
         lang: 'en'
     };
 
-    var dayNames =[
-  '1975', '1985',
-  '1995', '2005',
-  '2010', '2015',
-  '2016', '2017'
-]
+//     var dayNames =[
+//   '1975', '1985',
+//   '1995', '2005',
+//   '2010', '2015',
+//   '2016', '2017'
+// ]
         
-        slider = document.getElementById('slider'),
+//         slider = document.getElementById('slider'),
     
-    function setText(d) {
-        document.querySelector('.md-date').innerHTML = monthNames[d.getMonth()] + " " + d.getDate();
-    }
+//     function setText(d) {
+//         document.querySelector('.md-date').innerHTML = monthNames[d.getMonth()] + " " + d.getDate();
+//     }
 
-    slider.step = 1
+//     slider.step = 1
     
-    slider
-        .addEventListener('change', function (ev) {
-            setText(nextWeek[Math.round(this.value)]);
-        });
+//     slider
+//         .addEventListener('change', function (ev) {
+//             setText(nextWeek[Math.round(this.value)]);
+//         });
         
 
-    mobiscroll.form('#demo', {
-        lang: 'en',                       // Specify language like: lang: 'pl' or omit setting to use default
-        theme: 'ios',                     // Specify theme like: theme: 'ios' or omit setting to use default
-        themeVariant: 'light'             // More info about themeVariant: https://docs.mobiscroll.com/4-10-9/javascript/forms#opt-themeVariant
-    });
+//     mobiscroll.form('#demo', {
+//         lang: 'en',                       // Specify language like: lang: 'pl' or omit setting to use default
+//         theme: 'ios',                     // Specify theme like: theme: 'ios' or omit setting to use default
+//         themeVariant: 'light'             // More info about themeVariant: https://docs.mobiscroll.com/4-10-9/javascript/forms#opt-themeVariant
+//     });
     
-    mobiscroll.slider('#slider', {
-        theme: 'ios',                     // Specify theme like: theme: 'ios' or omit setting to use default
-        themeVariant: 'light',            // More info about themeVariant: https://docs.mobiscroll.com/4-10-9/javascript/forms#opt-themeVariant
-        lang: 'en',                       // Specify language like: lang: 'pl' or omit setting to use default
-        onInit: function (event, inst) {  // More info about onInit: https://docs.mobiscroll.com/4-10-9/javascript/forms#event-onInit
-            var labels = slider.parentNode.querySelectorAll('.mbsc-progress-step-label');
-            for (var i = 0; i < dayNames.length; ++i) {
-                labels[i].innerHTML = dayNames[i];
-            }
-            console.log(slider.parentNode.querySelectorAll('data-step-labels'))
+//     mobiscroll.slider('#slider', {
+//         theme: 'ios',                     // Specify theme like: theme: 'ios' or omit setting to use default
+//         themeVariant: 'light',            // More info about themeVariant: https://docs.mobiscroll.com/4-10-9/javascript/forms#opt-themeVariant
+//         lang: 'en',                       // Specify language like: lang: 'pl' or omit setting to use default
+//         onInit: function (event, inst) {  // More info about onInit: https://docs.mobiscroll.com/4-10-9/javascript/forms#event-onInit
+//             var labels = slider.parentNode.querySelectorAll('.mbsc-progress-step-label');
+//             for (var i = 0; i < dayNames.length; ++i) {
+//                 labels[i].innerHTML = dayNames[i];
+//             }
+//             console.log(slider.parentNode.querySelectorAll('data-step-labels'))
 
-        }, 
+//         }, 
         
-    });
-        
-        function zoomed({ transform }) {
-          mapCanvas.attr("transform", transform);
-        }
+//     });
+       
       };
-    </script>
+   
+      d3.csv("./data/data_sample.csv")
+        .then((d) => {
+          let dataset = d.map((element) => {
+            let item = {
+              date: new Date(element.Date),
+              estimatedCost: Number(element.EstimatedCost),
+              rawMaterial: Number(element.RawMaterial),
+              workmanship: Number(element.Workmanship),
+              yearlyStorage: Number(element.YearlyStorage),
+            };
+            return item;
+          });
+
+          let svg1 = d3
+            .selectAll("#graphContainer1")
+            .append("svg")
+            .attr("width", "100%")
+            .attr("height", "100%")
+            .attr("viewBox", "0 0 650 300")
+            .style("background-color", "#f5f3f3");
+
+            let svg2 = d3
+            .selectAll("#graphContainer2")
+            .append("svg")
+            .attr("width", "100%")
+            .attr("height", "100%")
+            .attr("viewBox", "0 0 650 300")
+            .style("background-color", "#f5f3f3");
+
+            let svg3 = d3
+            .selectAll("#graphContainer3")
+            .append("svg")
+            .attr("width", "100%")
+            .attr("height", "100%")
+            .attr("viewBox", "0 0 650 300")
+            .style("background-color", "#f5f3f3");
+          let marginVertical = 10;
+          let margins = 60;
+          let width = 700 - 2 * margins;
+          let height = 300 - 2 * marginVertical;
+
+          //x axis label value setting using dates
+          let x = d3
+            .scaleTime()
+            .domain(
+              d3.extent(dataset, function (d) {
+                return d.date;
+              })
+            )
+            .range([margins, width]);
+
+          //y axis label value setting by finding the max value in the dataset for y-axis plotting
+          let y = d3
+            .scaleLinear()
+            .domain([
+              0,
+              d3.max(dataset, function (d) {
+                let maxValArr = [];
+                dataset.map((item) => {
+                  maxValArr.push(
+                    item.estimatedCost,
+                    item.rawMaterial,
+                    item.workmanship,
+                    item.yearlyStorage
+                  );
+                });
+                return Math.max(...maxValArr);
+              }),
+            ])
+            .range([height, marginVertical]);
+
+          //line for estimated cost
+          let line1 = d3
+            .line()
+            .x(function (d) {
+              return x(d.date);
+            })
+            .y(function (d) {
+              return y(d.estimatedCost);
+            });
+
+          //line for raw material
+          let line2 = d3
+            .line()
+            .x(function (d) {
+              return x(d.date);
+            })
+            .y(function (d) {
+              return y(d.rawMaterial);
+            });
+
+          //line for workmanship
+          let line3 = d3
+            .line()
+            .x(function (d) {
+              return x(d.date);
+            })
+            .y(function (d) {
+              return y(d.workmanship);
+            });
+
+          
+
+          svg1
+            .enter()
+            .data([dataset])
+            .append("circle")
+            .attr("cx", function (d, i) {
+              return i * 5;
+            })
+            .attr("cy", function (d) {
+              return +d.Value / 10e5;
+            })
+            .attr("r", function (r) {
+              return 1;
+            });
+
+          svg1
+            .append("path")
+            .data([dataset])
+            .attr("class", "line")
+            .attr("d", line1)
+            .attr("stroke-linejoin", "round")
+            .attr("stroke-linecap", "round")
+            .attr("fill", "none")
+            .attr("stroke", "#c905fa")
+            .attr("stroke-width", "2px");
+          svg2
+            .append("path")
+            .data([dataset])
+            .attr("class", "line")
+            .attr("d", line2)
+            .attr("stroke-linejoin", "round")
+            .attr("stroke-linecap", "round")
+            .attr("fill", "none")
+            .attr("stroke", "#077ff7")
+            .attr("stroke-width", "2px");
+
+          svg3
+            .append("path")
+            .data([dataset])
+            .attr("class", "line")
+            .attr("d", line3)
+            .attr("stroke-linejoin", "round")
+            .attr("stroke-linecap", "round")
+            .attr("fill", "none")
+            .attr("stroke", "#07f733")
+            .attr("stroke-width", "2px");
+
+          
+          svg1
+            .append("g")
+            .attr("transform", "translate(" + "0" + "," + height + ")")
+            .call(d3.axisBottom(x))
+            .attr("stroke", "#d15249");
+          svg1
+            .append("g")
+            .attr("transform", "translate(" + margins + "," + "0" + ")")
+            .call(d3.axisLeft(y))
+            .attr("stroke", "#bd111a");
+
+            svg2
+            .append("g")
+            .attr("transform", "translate(" + "0" + "," + height + ")")
+            .call(d3.axisBottom(x))
+            .attr("stroke", "#d15249");
+          svg2
+            .append("g")
+            .attr("transform", "translate(" + margins + "," + "0" + ")")
+            .call(d3.axisLeft(y))
+            .attr("stroke", "#bd111a");
+
+            svg3
+            .append("g")
+            .attr("transform", "translate(" + "0" + "," + height + ")")
+            .call(d3.axisBottom(x))
+            .attr("stroke", "#d15249");
+          svg3
+            .append("g")
+            .attr("transform", "translate(" + margins + "," + "0" + ")")
+            .call(d3.axisLeft(y))
+            .attr("stroke", "#bd111a");
+        })
+        .catch((error) => {
+          let p = d3.select("body").append("p");
+          p.text("No data found or " + error);
+        });
+   
+   
+   </script>
   </body>
 </html>
