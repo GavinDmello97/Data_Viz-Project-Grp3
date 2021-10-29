@@ -3,9 +3,22 @@
  
 // import * as d3 from 'd3'
 
+const { default: axios } = require('axios');
 const express=require('express');  // importing express using require
 const app = express(); //Creating an instance of express
 const fs = require('fs')
+
+
+url = "https://raw.githubusercontent.com/owid/co2-data/master/owid-co2-data.json"
+let file = axios.get(url).then((response)=>{
+
+    console.log(response.data)
+})
+
+//console.log(file.data)
+.catch(error=>{console.log( )})
+
+
 //const d3 = require("d3");
 
 app.get('/',(req,res)=>{
