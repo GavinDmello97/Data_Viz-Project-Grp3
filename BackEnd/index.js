@@ -61,6 +61,7 @@ for(var myKey in myJson){
 }
 */
 
+/*
 var data = fs.readFileSync("C02_EmissionCleaned.csv", "utf8")
 //z= function (data) {return {xyz :data}}
 // console.log(data)
@@ -79,7 +80,7 @@ app.listen(port,()=>{
 })//Second we are going to listen to that port 
 
 //Route the user to the page that user wants to visit
-
+/*
 //Attempt to load and filter JSON file/object
 const jsonData = JSON.parse(fs.readFileSync('CO2_EmissionClean.json','utf-8'))
 function where(){
@@ -87,3 +88,37 @@ function where(){
 } 
 var filtered = where(jsonData,{"Year" : "1995"});
 console.log(filtered);
+*/
+
+let svg = d3.select('svg');
+let co2JSON = "https://raw.githubusercontent.com/owid/co2-data/master/owid-co2-data.json";
+
+Promise.all(
+    [
+        d3.json(co2JSON)
+    ]
+    <script>
+    let X = d3.range(0,1000,100)
+
+
+    function plot(X,Y,container=svg,c='black',lw='1px')
+    {
+        let dataSet = d3.map(X,function (d,i){
+            return {x:d,y:Y[i]}
+        })
+        let line = d3.line()
+            .x(function(d) { return d.x; })
+            .y(function(d) { return d.y; });
+
+        container.append("path")
+            .data([dataSet])
+            .attr("d",line)
+            .attr("fill",'none')
+            .style("stroke",c)
+            .style("stroke-width",lw.toString()+"px")
+    }
+    plot(X,X,svg,c='red',lw=2) 
+    </script>   
+)
+
+    
