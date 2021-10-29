@@ -69,13 +69,3 @@ app.listen(port,()=>{
     console.log(`Express is listening on port:${port}`)
     
 })//Second we are going to listen to that port 
-
-//Route the user to the page that user wants to visit
-
-//Attempt to load and filter JSON file/object
-const jsonData = JSON.parse(fs.readFileSync('CO2_EmissionClean.json','utf-8'))
-function where(){
-    lodash.where;
-} 
-var filtered = where(jsonData,{"Year" : "1995"});
-console.log(filtered);

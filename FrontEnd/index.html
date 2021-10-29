@@ -61,6 +61,7 @@
               <text id='minRange'></text>
               <text id='maxRange'></text>
             </div>
+            <button type="button" onclick="update(dataCollection[getRandomInt(3).toString()], dataCollection[getRandomInt(3).toString()], dataCollection[getRandomInt(3).toString()])">HEllo</button>
 
            </div>
           </div>
@@ -83,13 +84,10 @@
         </div>
         <div style="display: flex; flex-direction: column; justify-content: space-between;  flex: 2; margin-right: 10px" class = ''>
         <div id= "graphContainer1" class="graphContainer ">
-          <!-- <svg id="canvas"></svg> -->
         </div>
         <div id= "graphContainer2" class="graphContainer ">
-          <!-- <svg id="canvas"></svg> -->
         </div>
         <div id= "graphContainer3" class="graphContainer ">
-          <!-- <svg id="canvas"></svg> -->
         </div>
       </div>
       </div>
@@ -97,16 +95,17 @@
     <div id="tooltip"></div>
     <script>
 
-   
-      
-      let svg1 = d3.select("#canvas");
+      let isTrue = false;
+
+    
+      let svg0 = d3.select("#canvas");
       // load the data sources:
       // Source 1: NY times COVID-19 Data (live)
       // let emissionData = "data/CO2_EmissionClean.json";
 
 
 
-        axios.get('http://localhost:3000/list_movies')
+        axios.get('http://localhost:3000/co2-emission')
         .then(response => {
 
           countryList = response.data[7].countryList
@@ -152,7 +151,7 @@
           .range(["aqua", "steelblue"])
           .interpolate(d3.interpolateCubehelix.gamma(1));
 
-        let mapCanvas = svg1.append("g");
+        let mapCanvas = svg0.append("g");
         mapCanvas
           .selectAll("path")
           .data(geoJsonData)
@@ -198,7 +197,7 @@
             }
           });
 
-        svg1.call(
+        svg0.call(
           d3
             .zoom()
             .extent([
@@ -264,194 +263,282 @@
 //     });
        
       };
-   
+      
+
+      let dataCollection = {"0": [], "1":[], "2":[]};
+
       d3.csv("./data/data_sample.csv")
         .then((d) => {
-          let dataset = d.map((element) => {
-            let item = {
+          d.map((element) => {
+            let item1 = {
               date: new Date(element.Date),
-              estimatedCost: Number(element.EstimatedCost),
-              rawMaterial: Number(element.RawMaterial),
-              workmanship: Number(element.Workmanship),
-              yearlyStorage: Number(element.YearlyStorage),
+              value: Number(element.EstimatedCost),
             };
-            return item;
+
+            let item2 = {
+              date: new Date(element.Date),
+              value: Number(element.RawMaterial),
+            };
+            let item3 = {
+              date: new Date(element.Date),
+              value: Number(element.Workmanship),
+            };
+            dataCollection["0"].push(item1);
+            dataCollection["1"].push(item2);
+            dataCollection["2"].push(item3);
           });
 
-          let svg1 = d3
-            .selectAll("#graphContainer1")
-            .append("svg")
-            .attr("width", "100%")
-            .attr("height", "100%")
-            .attr("viewBox", "0 0 650 300")
-            .style("background-color", "#f5f3f3");
+          console.log(dataCollection);
 
-            let svg2 = d3
-            .selectAll("#graphContainer2")
-            .append("svg")
-            .attr("width", "100%")
-            .attr("height", "100%")
-            .attr("viewBox", "0 0 650 300")
-            .style("background-color", "#f5f3f3");
+          var margin = { top: 30, right: 30, bottom: 30, left: 50 },
+            width = 460 - margin.left - margin.right,
+            height = 220 - margin.top - margin.bottom;
 
-            let svg3 = d3
-            .selectAll("#graphContainer3")
+          
+            
+          //SVG 1 Initializer set - Start
+          // append the svg object to the body of the page
+          var svg1 = d3
+            .select("#graphContainer1")
             .append("svg")
-            .attr("width", "100%")
-            .attr("height", "100%")
-            .attr("viewBox", "0 0 650 300")
-            .style("background-color", "#f5f3f3");
-          let marginVertical = 10;
-          let margins = 60;
-          let width = 700 - 2 * margins;
-          let height = 300 - 2 * marginVertical;
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr(
+              "transform",
+              "translate(" + margin.left + "," + margin.top + ")"
+            );
 
-          //x axis label value setting using dates
-          let x = d3
-            .scaleTime()
-            .domain(
-              d3.extent(dataset, function (d) {
+          // Initialise a X axis:
+          var x1 = d3.scaleTime().range([0, width]);
+          var xAxis1 = d3.axisBottom().scale(x1);
+          svg1
+            .append("g")
+            .attr("transform", "translate(0," + height + ")")
+            .attr("class", "myXaxis1");
+
+          // Initialize an Y axis
+          var y1 = d3.scaleLinear().range([height, 0]);
+          var yAxis1 = d3.axisLeft().scale(y1);
+          svg1.append("g").attr("class", "myYaxis1");
+
+          //SVG 1 Initializer set - End
+
+
+
+          //SVG 2 Initializer set - Start
+
+          var svg2 = d3
+            .select("#graphContainer2")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr(
+              "transform",
+              "translate(" + margin.left + "," + margin.top + ")"
+            );
+
+          // Initialise a X axis:
+          var x2 = d3.scaleTime().range([0, width]);
+          var xAxis2 = d3.axisBottom().scale(x2);
+          svg2
+            .append("g")
+            .attr("transform", "translate(0," + height + ")")
+            .attr("class", "myXaxis2");
+
+          // Initialize an Y axis
+          var y2 = d3.scaleLinear().range([height, 0]);
+          var yAxis2 = d3.axisLeft().scale(y2);
+          svg2.append("g").attr("class", "myYaxis2");
+
+          //SVG 2 Initializer set - End
+
+           //SVG 3 Initializer set - Start
+
+           var svg3 = d3
+            .select("#graphContainer3")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr(
+              "transform",
+              "translate(" + margin.left + "," + margin.top + ")"
+            );
+
+          // Initialise a X axis:
+          var x3 = d3.scaleTime().range([0, width]);
+          var xAxis3 = d3.axisBottom().scale(x3);
+          svg3
+            .append("g")
+            .attr("transform", "translate(0," + height + ")")
+            .attr("class", "myXaxis3");
+
+          // Initialize an Y axis
+          var y3 = d3.scaleLinear().range([height, 0]);
+          var yAxis3 = d3.axisLeft().scale(y3);
+          svg3.append("g").attr("class", "myYaxis3");
+         
+          //SVG 3 Initializer set - End
+
+          update = (data1, data2, data3) =>{
+            updateContributer1(data1)
+            updateContributer2(data2)
+            updateContributer3(data3)
+
+          }
+
+          // Create a function that takes a dataset as input and update the plot:
+          updateContributer1 = (data) => {
+            // Create the X axis:
+            x1.domain(
+              d3.extent(data, function (d) {
                 return d.date;
               })
-            )
-            .range([margins, width]);
+            );
+            svg1.selectAll(".myXaxis1").transition().duration(3000).call(xAxis1);
 
-          //y axis label value setting by finding the max value in the dataset for y-axis plotting
-          let y = d3
-            .scaleLinear()
-            .domain([
-              0,
-              d3.max(dataset, function (d) {
-                let maxValArr = [];
-                dataset.map((item) => {
-                  maxValArr.push(
-                    item.estimatedCost,
-                    item.rawMaterial,
-                    item.workmanship,
-                    item.yearlyStorage
-                  );
-                });
-                return Math.max(...maxValArr);
-              }),
-            ])
-            .range([height, marginVertical]);
+            // create the Y axis
+            y1.domain(
+              [0, d3.extent(data, function (d) {
+                return d.value;
+              })[1]]
+              
+            );
+            svg1.selectAll(".myYaxis1").transition().duration(3000).call(yAxis1);
 
-          //line for estimated cost
-          let line1 = d3
-            .line()
-            .x(function (d) {
-              return x(d.date);
-            })
-            .y(function (d) {
-              return y(d.estimatedCost);
+            // Create a update selection: bind to the new data
+            var u = svg1.selectAll(".lineTest1").data([data], function (d) {
+              return d.date;
             });
 
-          //line for raw material
-          let line2 = d3
-            .line()
-            .x(function (d) {
-              return x(d.date);
-            })
-            .y(function (d) {
-              return y(d.rawMaterial);
+            // Updata the line
+            u.enter()
+              .append("path")
+              .attr("class", "lineTest1")
+              .merge(u)
+              .transition()
+              .duration(3000)
+              .attr(
+                "d",
+                d3
+                  .line()
+                  .x(function (d) {
+                    return x1(d.date);
+                  })
+                  .y(function (d) {
+                    return y1(d.value);
+                  })
+              )
+              .attr("fill", "none")
+              .attr("stroke", "steelblue")
+              .attr("stroke-width", 2.5);
+          };
+          updateContributer2 = (data) => {
+            // Create the X axis:
+            x2.domain(
+              d3.extent(data, function (d) {
+                return d.date;
+              })
+            );
+            svg2.selectAll(".myXaxis2").transition().duration(3000).call(xAxis1);
+
+            // create the Y axis
+            y2.domain(
+              [0, d3.extent(data, function (d) {
+                return d.value;
+              })[1]]
+              
+            );
+            svg2.selectAll(".myYaxis2").transition().duration(3000).call(yAxis2);
+
+            // Create a update selection: bind to the new data
+            var u = svg2.selectAll(".lineTest2").data([data], function (d) {
+              return d.date;
             });
 
-          //line for workmanship
-          let line3 = d3
-            .line()
-            .x(function (d) {
-              return x(d.date);
-            })
-            .y(function (d) {
-              return y(d.workmanship);
+            // Updata the line
+            u.enter()
+              .append("path")
+              .attr("class", "lineTest2")
+              .merge(u)
+              .transition()
+              .duration(3000)
+              .attr(
+                "d",
+                d3
+                  .line()
+                  .x(function (d) {
+                    return x2(d.date);
+                  })
+                  .y(function (d) {
+                    return y2(d.value);
+                  })
+              )
+              .attr("fill", "none")
+              .attr("stroke", "steelblue")
+              .attr("stroke-width", 2.5);
+          };
+          updateContributer3 = (data) => {
+            // Create the X axis:
+            x3.domain(
+              d3.extent(data, function (d) {
+                return d.date;
+              })
+            );
+            svg3.selectAll(".myXaxis3").transition().duration(3000).call(xAxis3);
+
+            // create the Y axis
+            y3.domain(
+              [0, d3.extent(data, function (d) {
+                return d.value;
+              })[1]]
+              
+            );
+            svg3.selectAll(".myYaxis3").transition().duration(3000).call(yAxis3);
+
+            // Create a update selection: bind to the new data
+            var u = svg3.selectAll(".lineTest3").data([data], function (d) {
+              return d.date;
             });
 
+            // Updata the line
+            u.enter()
+              .append("path")
+              .attr("class", "lineTest3")
+              .merge(u)
+              .transition()
+              .duration(3000)
+              .attr(
+                "d",
+                d3
+                  .line()
+                  .x(function (d) {
+                    return x3(d.date);
+                  })
+                  .y(function (d) {
+                    return y3(d.value);
+                  })
+              )
+              .attr("fill", "none")
+              .attr("stroke", "steelblue")
+              .attr("stroke-width", 2.5);
+          };
           
-
-          svg1
-            .enter()
-            .data([dataset])
-            .append("circle")
-            .attr("cx", function (d, i) {
-              return i * 5;
-            })
-            .attr("cy", function (d) {
-              return +d.Value / 10e5;
-            })
-            .attr("r", function (r) {
-              return 1;
-            });
-
-          svg1
-            .append("path")
-            .data([dataset])
-            .attr("class", "line")
-            .attr("d", line1)
-            .attr("stroke-linejoin", "round")
-            .attr("stroke-linecap", "round")
-            .attr("fill", "none")
-            .attr("stroke", "#c905fa")
-            .attr("stroke-width", "2px");
-          svg2
-            .append("path")
-            .data([dataset])
-            .attr("class", "line")
-            .attr("d", line2)
-            .attr("stroke-linejoin", "round")
-            .attr("stroke-linecap", "round")
-            .attr("fill", "none")
-            .attr("stroke", "#077ff7")
-            .attr("stroke-width", "2px");
-
-          svg3
-            .append("path")
-            .data([dataset])
-            .attr("class", "line")
-            .attr("d", line3)
-            .attr("stroke-linejoin", "round")
-            .attr("stroke-linecap", "round")
-            .attr("fill", "none")
-            .attr("stroke", "#07f733")
-            .attr("stroke-width", "2px");
-
           
-          svg1
-            .append("g")
-            .attr("transform", "translate(" + "0" + "," + height + ")")
-            .call(d3.axisBottom(x))
-            .attr("stroke", "#d15249");
-          svg1
-            .append("g")
-            .attr("transform", "translate(" + margins + "," + "0" + ")")
-            .call(d3.axisLeft(y))
-            .attr("stroke", "#bd111a");
-
-            svg2
-            .append("g")
-            .attr("transform", "translate(" + "0" + "," + height + ")")
-            .call(d3.axisBottom(x))
-            .attr("stroke", "#d15249");
-          svg2
-            .append("g")
-            .attr("transform", "translate(" + margins + "," + "0" + ")")
-            .call(d3.axisLeft(y))
-            .attr("stroke", "#bd111a");
-
-            svg3
-            .append("g")
-            .attr("transform", "translate(" + "0" + "," + height + ")")
-            .call(d3.axisBottom(x))
-            .attr("stroke", "#d15249");
-          svg3
-            .append("g")
-            .attr("transform", "translate(" + margins + "," + "0" + ")")
-            .call(d3.axisLeft(y))
-            .attr("stroke", "#bd111a");
+          
+          // At the beginning, I run the update function on the first dataset:
+          update(dataCollection[getRandomInt(3).toString()], dataCollection[getRandomInt(3).toString()], dataCollection[getRandomInt(3).toString()]);
         })
         .catch((error) => {
           let p = d3.select("body").append("p");
           p.text("No data found or " + error);
         });
+
+        function getRandomInt(max) {
+          return Math.floor(Math.random() * max);
+        }
    
    
    </script>
