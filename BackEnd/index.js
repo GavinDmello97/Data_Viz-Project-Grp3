@@ -97,7 +97,7 @@ Promise.all(
     [
         d3.json(co2JSON)
     ]
-    <script>
+    //<script>
     let X = d3.range(0,1000,100)
 
 
@@ -118,7 +118,7 @@ Promise.all(
             .style("stroke-width",lw.toString()+"px")
     }
     plot(X,X,svg,c='red',lw=2) 
-    </script>   
+    //</script>   
 )
 
     
