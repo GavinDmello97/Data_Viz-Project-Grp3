@@ -61,7 +61,6 @@
               <text id='minRange'></text>
               <text id='maxRange'></text>
             </div>
-            <button type="button" onclick="">HEllo</button>
 
            </div>
           </div>
@@ -265,10 +264,11 @@
                     parseInt(co2Emission.get(d.properties.name)[0].Value) +
                   "</div>" 
               );
-            update(dataCollection[d.properties.name.toString()].data, dataCollection[d.properties.name.toString()].data, dataCollection[d.properties.name.toString()].data)
           })
-          .on("click",(d) => {
-            console.log("Datra",d)
+          .on("mousedown",(mouseData, d) => {
+            console.log("Datra",d, dataCollection[d.properties.name.toString()].data)
+                        update(dataCollection[d.properties.name.toString()].data, dataCollection[d.properties.name.toString()].data, dataCollection[d.properties.name.toString()].data)
+
           })
           .on("mouseout", () => d3.select("#tooltip").style("opacity", 0))
 
@@ -372,7 +372,6 @@
           // Create a function that takes a dataset as input and update the plot:
       updateContributer1 = (data ) => {
 
-        console.log("hello from 1")
             // Create the X axis:
             x1.domain(
               d3.extent(data, function (d) {
