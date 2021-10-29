@@ -22,7 +22,7 @@ app.get('/data',(req,res)=>{
     res.send(data);
 })
 
-app.get("/list_movies", cors(), (req, res) => {
+app.get("/co2-emission", cors(),(req, res) => {
     let customArray = []
 
     fs.readFile(__dirname + '/' + 'CO2_EmissionClean.json',"utf8",  (err, data) => {
@@ -56,8 +56,12 @@ app.get("/list_movies", cors(), (req, res) => {
 
 });
 
-
-
+/*
+var myJson = {'key' : 'value'}
+for(var myKey in myJson){
+    console.log("key: " + myKey + ", value: " + myJson[myKey]);
+}
+*/
 
 const port = process.env.PORT || 3000 //First inititalizing the port
 
@@ -65,5 +69,3 @@ app.listen(port,()=>{
     console.log(`Express is listening on port:${port}`)
     
 })//Second we are going to listen to that port 
-
-//Route the user to the page that user wants to visit
