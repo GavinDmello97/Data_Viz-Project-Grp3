@@ -1,0 +1,1378 @@
+,Region,CountryName,Year,Series,Value
+0,2,Africa,2005,Population mid-year estimates (millions),916.1543
+1,2,Africa,2010,Population mid-year estimates (millions),1039.3039999999999
+2,2,Africa,2017,Population mid-year estimates (millions),1244.2223
+3,2,Africa,2017,Surface area (thousand km2),30311.0
+4,2,Africa,2019,Population mid-year estimates (millions),1308.0642
+5,15,Northern Africa,2005,Population mid-year estimates (millions),186.4213
+6,15,Northern Africa,2010,Population mid-year estimates (millions),202.9403
+7,15,Northern Africa,2017,Population mid-year estimates (millions),232.7932
+8,15,Northern Africa,2017,Surface area (thousand km2),7880.0
+9,15,Northern Africa,2019,Population mid-year estimates (millions),241.7808
+10,202,Sub-Saharan Africa,2005,Population mid-year estimates (millions),729.7330000000001
+11,202,Sub-Saharan Africa,2010,Population mid-year estimates (millions),836.3638
+12,202,Sub-Saharan Africa,2017,Population mid-year estimates (millions),1011.4291
+13,202,Sub-Saharan Africa,2017,Surface area (thousand km2),22431.0
+14,202,Sub-Saharan Africa,2019,Population mid-year estimates (millions),1066.2834
+15,14,Eastern Africa,2005,Population mid-year estimates (millions),295.1854
+16,14,Eastern Africa,2010,Population mid-year estimates (millions),339.3178
+17,14,Eastern Africa,2017,Population mid-year estimates (millions),411.3967
+18,14,Eastern Africa,2017,Surface area (thousand km2),7005.0
+19,14,Eastern Africa,2019,Population mid-year estimates (millions),433.9049
+20,17,Middle Africa,2005,Population mid-year estimates (millions),112.0083
+21,17,Middle Africa,2010,Population mid-year estimates (millions),131.6221
+22,17,Middle Africa,2017,Population mid-year estimates (millions),164.03900000000002
+23,17,Middle Africa,2017,Surface area (thousand km2),6613.0
+24,17,Middle Africa,2019,Population mid-year estimates (millions),174.3084
+25,18,Southern Africa,2005,Population mid-year estimates (millions),54.6447
+26,18,Southern Africa,2010,Population mid-year estimates (millions),58.3834
+27,18,Southern Africa,2017,Population mid-year estimates (millions),64.8338
+28,18,Southern Africa,2017,Surface area (thousand km2),2675.0
+29,18,Southern Africa,2019,Population mid-year estimates (millions),66.6299
+30,11,Western Africa,2005,Population mid-year estimates (millions),267.8946
+31,11,Western Africa,2010,Population mid-year estimates (millions),307.0404
+32,11,Western Africa,2017,Population mid-year estimates (millions),371.1595
+33,11,Western Africa,2017,Surface area (thousand km2),6138.0
+34,11,Western Africa,2019,Population mid-year estimates (millions),391.4402
+35,19,Americas,2005,Population mid-year estimates (millions),884.7882
+36,19,Americas,2010,Population mid-year estimates (millions),934.6398
+37,19,Americas,2017,Population mid-year estimates (millions),998.1754
+38,19,Americas,2017,Surface area (thousand km2),42322.0
+39,19,Americas,2019,Population mid-year estimates (millions),1014.7219
+40,21,Northern America,2005,Population mid-year estimates (millions),327.2872
+41,21,Northern America,2010,Population mid-year estimates (millions),343.2874
+42,21,Northern America,2017,Population mid-year estimates (millions),361.9423
+43,21,Northern America,2017,Surface area (thousand km2),21776.0
+44,21,Northern America,2019,Population mid-year estimates (millions),366.601
+45,419,Latin America & the Caribbean,2005,Population mid-year estimates (millions),557.501
+46,419,Latin America & the Caribbean,2010,Population mid-year estimates (millions),591.3524
+47,419,Latin America & the Caribbean,2017,Population mid-year estimates (millions),636.2331
+48,419,Latin America & the Caribbean,2017,Surface area (thousand km2),20546.0
+49,419,Latin America & the Caribbean,2019,Population mid-year estimates (millions),648.121
+50,29,Caribbean,2005,Population mid-year estimates (millions),39.7458
+51,29,Caribbean,2010,Population mid-year estimates (millions),41.2174
+52,29,Caribbean,2017,Population mid-year estimates (millions),43.0024
+53,29,Caribbean,2017,Surface area (thousand km2),234.0
+54,29,Caribbean,2019,Population mid-year estimates (millions),43.335
+55,13,Central America,2005,Population mid-year estimates (millions),145.9505
+56,13,Central America,2010,Population mid-year estimates (millions),157.5913
+57,13,Central America,2017,Population mid-year estimates (millions),173.3268
+58,13,Central America,2017,Surface area (thousand km2),2480.0
+59,13,Central America,2019,Population mid-year estimates (millions),177.5865
+60,5,South America,2005,Population mid-year estimates (millions),371.8047
+61,5,South America,2010,Population mid-year estimates (millions),392.5437
+62,5,South America,2017,Population mid-year estimates (millions),419.9039
+63,5,South America,2017,Surface area (thousand km2),17832.0
+64,5,South America,2019,Population mid-year estimates (millions),427.1994
+65,142,Asia,2005,Population mid-year estimates (millions),3977.9865
+66,142,Asia,2010,Population mid-year estimates (millions),4209.5937
+67,142,Asia,2017,Population mid-year estimates (millions),4519.04
+68,142,Asia,2017,Surface area (thousand km2),31915.0
+69,142,Asia,2019,Population mid-year estimates (millions),4601.3712
+70,143,Central Asia,2005,Population mid-year estimates (millions),58.4499
+71,143,Central Asia,2010,Population mid-year estimates (millions),62.8051
+72,143,Central Asia,2017,Population mid-year estimates (millions),70.8675
+73,143,Central Asia,2017,Surface area (thousand km2),4103.0
+74,143,Central Asia,2019,Population mid-year estimates (millions),73.2121
+75,30,Eastern Asia,2005,Population mid-year estimates (millions),1564.1923
+76,30,Eastern Asia,2010,Population mid-year estimates (millions),1604.8594
+77,30,Eastern Asia,2017,Population mid-year estimates (millions),1659.7679999999998
+78,30,Eastern Asia,2017,Surface area (thousand km2),11799.0
+79,30,Eastern Asia,2019,Population mid-year estimates (millions),1672.6111
+80,62,South-central Asia,2005,Population mid-year estimates (millions),1647.0738
+81,62,South-central Asia,2010,Population mid-year estimates (millions),1775.3605
+82,62,South-central Asia,2017,Population mid-year estimates (millions),1944.1086
+83,62,South-central Asia,2017,Surface area (thousand km2),10791.0
+84,62,South-central Asia,2019,Population mid-year estimates (millions),1991.4235
+85,35,South-eastern Asia,2005,Population mid-year estimates (millions),561.1561
+86,35,South-eastern Asia,2010,Population mid-year estimates (millions),596.9472
+87,35,South-eastern Asia,2017,Population mid-year estimates (millions),648.4597
+88,35,South-eastern Asia,2017,Surface area (thousand km2),4495.0
+89,35,South-eastern Asia,2019,Population mid-year estimates (millions),662.0118
+90,34,Southern Asia,2005,Population mid-year estimates (millions),1588.6239
+91,34,Southern Asia,2010,Population mid-year estimates (millions),1712.5555
+92,34,Southern Asia,2017,Population mid-year estimates (millions),1873.2411
+93,34,Southern Asia,2017,Surface area (thousand km2),6688.0
+94,34,Southern Asia,2019,Population mid-year estimates (millions),1918.2114
+95,145,Western Asia,2005,Population mid-year estimates (millions),205.5643
+96,145,Western Asia,2010,Population mid-year estimates (millions),232.4265
+97,145,Western Asia,2017,Population mid-year estimates (millions),266.7037
+98,145,Western Asia,2017,Surface area (thousand km2),4831.0
+99,145,Western Asia,2019,Population mid-year estimates (millions),275.3248
+100,150,Europe,2005,Population mid-year estimates (millions),729.2878
+101,150,Europe,2010,Population mid-year estimates (millions),736.413
+102,150,Europe,2017,Population mid-year estimates (millions),745.4147
+103,150,Europe,2017,Surface area (thousand km2),23049.0
+104,150,Europe,2019,Population mid-year estimates (millions),747.1828
+105,151,Eastern Europe,2005,Population mid-year estimates (millions),297.5005
+106,151,Eastern Europe,2010,Population mid-year estimates (millions),294.8729
+107,151,Eastern Europe,2017,Population mid-year estimates (millions),294.0561
+108,151,Eastern Europe,2017,Surface area (thousand km2),18814.0
+109,151,Eastern Europe,2019,Population mid-year estimates (millions),293.4449
+110,154,Northern Europe,2005,Population mid-year estimates (millions),96.3074
+111,154,Northern Europe,2010,Population mid-year estimates (millions),100.3983
+112,154,Northern Europe,2017,Population mid-year estimates (millions),104.6765
+113,154,Northern Europe,2017,Surface area (thousand km2),1810.0
+114,154,Northern Europe,2019,Population mid-year estimates (millions),105.7685
+115,39,Southern Europe,2005,Population mid-year estimates (millions),149.6761
+116,39,Southern Europe,2010,Population mid-year estimates (millions),153.0155
+117,39,Southern Europe,2017,Population mid-year estimates (millions),152.7964
+118,39,Southern Europe,2017,Surface area (thousand km2),1317.0
+119,39,Southern Europe,2019,Population mid-year estimates (millions),152.4469
+120,155,Western Europe,2005,Population mid-year estimates (millions),185.8038
+121,155,Western Europe,2010,Population mid-year estimates (millions),188.1263
+122,155,Western Europe,2017,Population mid-year estimates (millions),193.8858
+123,155,Western Europe,2017,Surface area (thousand km2),1108.0
+124,155,Western Europe,2019,Population mid-year estimates (millions),195.5224
+125,9,Oceania,2005,Population mid-year estimates (millions),33.6902
+126,9,Oceania,2010,Population mid-year estimates (millions),36.8731
+127,9,Oceania,2017,Population mid-year estimates (millions),41.0065
+128,9,Oceania,2017,Surface area (thousand km2),8564.0
+129,9,Oceania,2019,Population mid-year estimates (millions),42.128
+130,53,Australia and New Zealand,2005,Population mid-year estimates (millions),24.3139
+131,53,Australia and New Zealand,2010,Population mid-year estimates (millions),26.5247
+132,53,Australia and New Zealand,2017,Population mid-year estimates (millions),29.2867
+133,53,Australia and New Zealand,2017,Surface area (thousand km2),8012.0
+134,53,Australia and New Zealand,2019,Population mid-year estimates (millions),29.9863
+135,54,Melanesia,2005,Population mid-year estimates (millions),8.2321
+136,54,Melanesia,2010,Population mid-year estimates (millions),9.1879
+137,54,Melanesia,2017,Population mid-year estimates (millions),10.5142
+138,54,Melanesia,2017,Surface area (thousand km2),541.0
+139,54,Melanesia,2019,Population mid-year estimates (millions),10.9185
+140,57,Micronesia,2005,Population mid-year estimates (millions),0.4983
+141,57,Micronesia,2010,Population mid-year estimates (millions),0.5036
+142,57,Micronesia,2017,Population mid-year estimates (millions),0.5329
+143,57,Micronesia,2017,Surface area (thousand km2),3.0
+144,57,Micronesia,2019,Population mid-year estimates (millions),0.5435
+145,61,Polynesia,2005,Population mid-year estimates (millions),0.6459
+146,61,Polynesia,2010,Population mid-year estimates (millions),0.6568
+147,61,Polynesia,2017,Population mid-year estimates (millions),0.6728
+148,61,Polynesia,2017,Surface area (thousand km2),8.0
+149,61,Polynesia,2019,Population mid-year estimates (millions),0.6798
+150,4,Afghanistan,2005,Population mid-year estimates (millions),25.6543
+151,4,Afghanistan,2010,Population mid-year estimates (millions),29.1855
+152,4,Afghanistan,2017,Population mid-year estimates (millions),36.2961
+153,4,Afghanistan,2017,Surface area (thousand km2),652.864
+154,4,Afghanistan,2019,Population mid-year estimates (millions),38.0418
+155,8,Albania,2005,Population mid-year estimates (millions),3.0868
+156,8,Albania,2010,Population mid-year estimates (millions),2.948
+157,8,Albania,2017,Population mid-year estimates (millions),2.8842
+158,8,Albania,2017,Surface area (thousand km2),28.748
+159,8,Albania,2019,Population mid-year estimates (millions),2.8809
+160,12,Algeria,2005,Population mid-year estimates (millions),33.1497
+161,12,Algeria,2010,Population mid-year estimates (millions),35.9775
+162,12,Algeria,2017,Population mid-year estimates (millions),41.3892
+163,12,Algeria,2017,Surface area (thousand km2),2381.741
+164,12,Algeria,2019,Population mid-year estimates (millions),43.0531
+165,16,American Samoa,2000,Population mid-year estimates (millions),0.0575
+166,16,American Samoa,2005,Population mid-year estimates (millions),0.0591
+167,16,American Samoa,2010,Population mid-year estimates (millions),0.0556
+168,16,American Samoa,2016,Population mid-year estimates (millions),0.0556
+169,16,American Samoa,2017,Population mid-year estimates (millions),0.0556
+170,16,American Samoa,2017,Surface area (thousand km2),0.19899999999999998
+171,16,American Samoa,2019,Population mid-year estimates (millions),0.0553
+172,20,Andorra,2005,Population mid-year estimates (millions),0.0789
+173,20,Andorra,2010,Population mid-year estimates (millions),0.0844
+174,20,Andorra,2016,Population mid-year estimates (millions),0.0773
+175,20,Andorra,2017,Population mid-year estimates (millions),0.077
+176,20,Andorra,2017,Surface area (thousand km2),0.46799999999999997
+177,20,Andorra,2019,Population mid-year estimates (millions),0.0771
+178,24,Angola,2005,Population mid-year estimates (millions),19.4336
+179,24,Angola,2010,Population mid-year estimates (millions),23.3562
+180,24,Angola,2017,Population mid-year estimates (millions),29.8168
+181,24,Angola,2017,Surface area (thousand km2),1246.7
+182,24,Angola,2019,Population mid-year estimates (millions),31.8253
+183,660,Anguilla,2001,Population mid-year estimates (millions),0.0114
+184,660,Anguilla,2005,Population mid-year estimates (millions),0.0126
+185,660,Anguilla,2010,Population mid-year estimates (millions),0.0138
+186,660,Anguilla,2011,Population mid-year estimates (millions),0.013999999999999999
+187,660,Anguilla,2017,Population mid-year estimates (millions),0.0149
+188,660,Anguilla,2017,Surface area (thousand km2),0.091
+189,660,Anguilla,2019,Population mid-year estimates (millions),0.0149
+190,28,Antigua and Barbuda,2005,Population mid-year estimates (millions),0.0815
+191,28,Antigua and Barbuda,2010,Population mid-year estimates (millions),0.08800000000000001
+192,28,Antigua and Barbuda,2017,Population mid-year estimates (millions),0.0954
+193,28,Antigua and Barbuda,2017,Surface area (thousand km2),0.442
+194,28,Antigua and Barbuda,2019,Population mid-year estimates (millions),0.0971
+195,32,Argentina,2005,Population mid-year estimates (millions),38.8929
+196,32,Argentina,2010,Population mid-year estimates (millions),40.8958
+197,32,Argentina,2017,Population mid-year estimates (millions),43.9371
+198,32,Argentina,2017,Surface area (thousand km2),2780.4
+199,32,Argentina,2019,Population mid-year estimates (millions),44.7807
+200,51,Armenia,2005,Population mid-year estimates (millions),2.9813
+201,51,Armenia,2010,Population mid-year estimates (millions),2.8773
+202,51,Armenia,2017,Population mid-year estimates (millions),2.9448
+203,51,Armenia,2017,Surface area (thousand km2),29.743000000000002
+204,51,Armenia,2019,Population mid-year estimates (millions),2.9577
+205,533,Aruba,2005,Population mid-year estimates (millions),0.1
+206,533,Aruba,2010,Population mid-year estimates (millions),0.1017
+207,533,Aruba,2017,Population mid-year estimates (millions),0.1054
+208,533,Aruba,2017,Surface area (thousand km2),0.18
+209,533,Aruba,2019,Population mid-year estimates (millions),0.1063
+210,36,Australia,2005,Population mid-year estimates (millions),20.1785
+211,36,Australia,2010,Population mid-year estimates (millions),22.1547
+212,36,Australia,2017,Population mid-year estimates (millions),24.5846
+213,36,Australia,2017,Surface area (thousand km2),7692.06
+214,36,Australia,2019,Population mid-year estimates (millions),25.2032
+215,40,Austria,2005,Population mid-year estimates (millions),8.2537
+216,40,Austria,2010,Population mid-year estimates (millions),8.4099
+217,40,Austria,2017,Population mid-year estimates (millions),8.8199
+218,40,Austria,2017,Surface area (thousand km2),83.87100000000001
+219,40,Austria,2019,Population mid-year estimates (millions),8.9551
+220,31,Azerbaijan,2005,Population mid-year estimates (millions),8.5386
+221,31,Azerbaijan,2010,Population mid-year estimates (millions),9.0325
+222,31,Azerbaijan,2017,Population mid-year estimates (millions),9.8453
+223,31,Azerbaijan,2017,Surface area (thousand km2),86.6
+224,31,Azerbaijan,2019,Population mid-year estimates (millions),10.0477
+225,44,Bahamas,2005,Population mid-year estimates (millions),0.3249
+226,44,Bahamas,2010,Population mid-year estimates (millions),0.3549
+227,44,Bahamas,2017,Population mid-year estimates (millions),0.3818
+228,44,Bahamas,2017,Surface area (thousand km2),13.94
+229,44,Bahamas,2019,Population mid-year estimates (millions),0.3895
+230,48,Bahrain,2005,Population mid-year estimates (millions),0.8892
+231,48,Bahrain,2010,Population mid-year estimates (millions),1.2409
+232,48,Bahrain,2017,Population mid-year estimates (millions),1.4941
+233,48,Bahrain,2017,Surface area (thousand km2),0.7709999999999999
+234,48,Bahrain,2019,Population mid-year estimates (millions),1.6412
+235,50,Bangladesh,2005,Population mid-year estimates (millions),139.0355
+236,50,Bangladesh,2010,Population mid-year estimates (millions),147.5754
+237,50,Bangladesh,2017,Population mid-year estimates (millions),159.6854
+238,50,Bangladesh,2017,Surface area (thousand km2),147.57
+239,50,Bangladesh,2019,Population mid-year estimates (millions),163.0462
+240,52,Barbados,2005,Population mid-year estimates (millions),0.2763
+241,52,Barbados,2010,Population mid-year estimates (millions),0.2821
+242,52,Barbados,2017,Population mid-year estimates (millions),0.2862
+243,52,Barbados,2017,Surface area (thousand km2),0.431
+244,52,Barbados,2019,Population mid-year estimates (millions),0.287
+245,112,Belarus,2005,Population mid-year estimates (millions),9.5621
+246,112,Belarus,2010,Population mid-year estimates (millions),9.4206
+247,112,Belarus,2017,Population mid-year estimates (millions),9.4502
+248,112,Belarus,2017,Surface area (thousand km2),207.6
+249,112,Belarus,2019,Population mid-year estimates (millions),9.4524
+250,56,Belgium,2005,Population mid-year estimates (millions),10.5469
+251,56,Belgium,2010,Population mid-year estimates (millions),10.9387
+252,56,Belgium,2017,Population mid-year estimates (millions),11.4197
+253,56,Belgium,2017,Surface area (thousand km2),30.528000000000002
+254,56,Belgium,2019,Population mid-year estimates (millions),11.5393
+255,84,Belize,2005,Population mid-year estimates (millions),0.2838
+256,84,Belize,2010,Population mid-year estimates (millions),0.3225
+257,84,Belize,2017,Population mid-year estimates (millions),0.3758
+258,84,Belize,2017,Surface area (thousand km2),22.965999999999998
+259,84,Belize,2019,Population mid-year estimates (millions),0.3904
+260,204,Benin,2005,Population mid-year estimates (millions),7.9822
+261,204,Benin,2010,Population mid-year estimates (millions),9.1993
+262,204,Benin,2017,Population mid-year estimates (millions),11.1752
+263,204,Benin,2017,Surface area (thousand km2),114.76299999999999
+264,204,Benin,2019,Population mid-year estimates (millions),11.8012
+265,60,Bermuda,2005,Population mid-year estimates (millions),0.0651
+266,60,Bermuda,2010,Population mid-year estimates (millions),0.064
+267,60,Bermuda,2017,Population mid-year estimates (millions),0.0613
+268,60,Bermuda,2017,Surface area (thousand km2),0.053
+269,60,Bermuda,2019,Population mid-year estimates (millions),0.0625
+270,64,Bhutan,2005,Population mid-year estimates (millions),0.6487
+271,64,Bhutan,2010,Population mid-year estimates (millions),0.6855
+272,64,Bhutan,2017,Population mid-year estimates (millions),0.7456
+273,64,Bhutan,2017,Surface area (thousand km2),38.394
+274,64,Bhutan,2019,Population mid-year estimates (millions),0.7631
+275,68,Bolivia (Plurin. State of),2005,Population mid-year estimates (millions),9.2323
+276,68,Bolivia (Plurin. State of),2010,Population mid-year estimates (millions),10.0486
+277,68,Bolivia (Plurin. State of),2017,Population mid-year estimates (millions),11.1929
+278,68,Bolivia (Plurin. State of),2017,Surface area (thousand km2),1098.5810000000001
+279,68,Bolivia (Plurin. State of),2019,Population mid-year estimates (millions),11.5131
+280,535,"Bonaire, St. Eustatius & Saba",2005,Population mid-year estimates (millions),0.0144
+281,535,"Bonaire, St. Eustatius & Saba",2010,Population mid-year estimates (millions),0.0209
+282,535,"Bonaire, St. Eustatius & Saba",2019,Population mid-year estimates (millions),0.026000000000000002
+283,70,Bosnia and Herzegovina,2005,Population mid-year estimates (millions),3.7653
+284,70,Bosnia and Herzegovina,2010,Population mid-year estimates (millions),3.7055
+285,70,Bosnia and Herzegovina,2017,Population mid-year estimates (millions),3.3515
+286,70,Bosnia and Herzegovina,2017,Surface area (thousand km2),51.208999999999996
+287,70,Bosnia and Herzegovina,2019,Population mid-year estimates (millions),3.301
+288,72,Botswana,2005,Population mid-year estimates (millions),1.7991
+289,72,Botswana,2010,Population mid-year estimates (millions),1.9871
+290,72,Botswana,2017,Population mid-year estimates (millions),2.2051
+291,72,Botswana,2017,Surface area (thousand km2),582.0
+292,72,Botswana,2019,Population mid-year estimates (millions),2.3037
+293,76,Brazil,2005,Population mid-year estimates (millions),186.1271
+294,76,Brazil,2010,Population mid-year estimates (millions),195.7136
+295,76,Brazil,2017,Population mid-year estimates (millions),207.8338
+296,76,Brazil,2017,Surface area (thousand km2),8515.767
+297,76,Brazil,2019,Population mid-year estimates (millions),211.0495
+298,92,British Virgin Islands,2001,Population mid-year estimates (millions),0.0211
+299,92,British Virgin Islands,2005,Population mid-year estimates (millions),0.0232
+300,92,British Virgin Islands,2010,Population mid-year estimates (millions),0.0272
+301,92,British Virgin Islands,2017,Population mid-year estimates (millions),0.0312
+302,92,British Virgin Islands,2017,Surface area (thousand km2),0.151
+303,92,British Virgin Islands,2019,Population mid-year estimates (millions),0.03
+304,96,Brunei Darussalam,2005,Population mid-year estimates (millions),0.3651
+305,96,Brunei Darussalam,2010,Population mid-year estimates (millions),0.3886
+306,96,Brunei Darussalam,2017,Population mid-year estimates (millions),0.4245
+307,96,Brunei Darussalam,2017,Surface area (thousand km2),5.765
+308,96,Brunei Darussalam,2019,Population mid-year estimates (millions),0.4333
+309,100,Bulgaria,2005,Population mid-year estimates (millions),7.687
+310,100,Bulgaria,2010,Population mid-year estimates (millions),7.425
+311,100,Bulgaria,2017,Population mid-year estimates (millions),7.1024
+312,100,Bulgaria,2017,Surface area (thousand km2),111.00200000000001
+313,100,Bulgaria,2019,Population mid-year estimates (millions),7.0001
+314,854,Burkina Faso,2005,Population mid-year estimates (millions),13.4219
+315,854,Burkina Faso,2010,Population mid-year estimates (millions),15.6052
+316,854,Burkina Faso,2017,Population mid-year estimates (millions),19.1932
+317,854,Burkina Faso,2017,Surface area (thousand km2),272.967
+318,854,Burkina Faso,2019,Population mid-year estimates (millions),20.3214
+319,108,Burundi,2005,Population mid-year estimates (millions),7.3649
+320,108,Burundi,2010,Population mid-year estimates (millions),8.6756
+321,108,Burundi,2017,Population mid-year estimates (millions),10.827
+322,108,Burundi,2017,Surface area (thousand km2),27.83
+323,108,Burundi,2019,Population mid-year estimates (millions),11.5306
+324,132,Cabo Verde,2005,Population mid-year estimates (millions),0.46299999999999997
+325,132,Cabo Verde,2010,Population mid-year estimates (millions),0.4927
+326,132,Cabo Verde,2017,Population mid-year estimates (millions),0.5375
+327,132,Cabo Verde,2017,Surface area (thousand km2),4.033
+328,132,Cabo Verde,2019,Population mid-year estimates (millions),0.5499
+329,116,Cambodia,2005,Population mid-year estimates (millions),13.2734
+330,116,Cambodia,2010,Population mid-year estimates (millions),14.3122
+331,116,Cambodia,2017,Population mid-year estimates (millions),16.0094
+332,116,Cambodia,2017,Surface area (thousand km2),181.035
+333,116,Cambodia,2019,Population mid-year estimates (millions),16.4865
+334,120,Cameroon,2005,Population mid-year estimates (millions),17.7334
+335,120,Cameroon,2010,Population mid-year estimates (millions),20.3412
+336,120,Cameroon,2017,Population mid-year estimates (millions),24.5661
+337,120,Cameroon,2017,Surface area (thousand km2),475.65
+338,120,Cameroon,2019,Population mid-year estimates (millions),25.8764
+339,124,Canada,2005,Population mid-year estimates (millions),32.1643
+340,124,Canada,2010,Population mid-year estimates (millions),34.1476
+341,124,Canada,2017,Population mid-year estimates (millions),36.7321
+342,124,Canada,2017,Surface area (thousand km2),9984.67
+343,124,Canada,2019,Population mid-year estimates (millions),37.411
+344,136,Cayman Islands,2005,Population mid-year estimates (millions),0.0486
+345,136,Cayman Islands,2010,Population mid-year estimates (millions),0.0555
+346,136,Cayman Islands,2015,Population mid-year estimates (millions),0.06
+347,136,Cayman Islands,2015,Surface area (thousand km2),0.264
+348,136,Cayman Islands,2017,Population mid-year estimates (millions),0.0616
+349,136,Cayman Islands,2017,Surface area (thousand km2),0.264
+350,136,Cayman Islands,2019,Population mid-year estimates (millions),0.0649
+351,140,Central African Republic,2005,Population mid-year estimates (millions),4.0384
+352,140,Central African Republic,2010,Population mid-year estimates (millions),4.3868
+353,140,Central African Republic,2017,Population mid-year estimates (millions),4.596
+354,140,Central African Republic,2017,Surface area (thousand km2),622.984
+355,140,Central African Republic,2019,Population mid-year estimates (millions),4.7452
+356,148,Chad,2005,Population mid-year estimates (millions),10.0966
+357,148,Chad,2010,Population mid-year estimates (millions),11.9521
+358,148,Chad,2017,Population mid-year estimates (millions),15.0168
+359,148,Chad,2017,Surface area (thousand km2),1284.0
+360,148,Chad,2019,Population mid-year estimates (millions),15.9469
+361,830,Channel Islands,2005,Population mid-year estimates (millions),0.1517
+362,830,Channel Islands,2010,Population mid-year estimates (millions),0.1597
+363,830,Channel Islands,2017,Population mid-year estimates (millions),0.1687
+364,830,Channel Islands,2017,Surface area (thousand km2),0.18
+365,830,Channel Islands,2019,Population mid-year estimates (millions),0.1723
+366,152,Chile,2005,Population mid-year estimates (millions),16.1827
+367,152,Chile,2010,Population mid-year estimates (millions),17.0625
+368,152,Chile,2017,Population mid-year estimates (millions),18.4704
+369,152,Chile,2017,Surface area (thousand km2),756.102
+370,152,Chile,2019,Population mid-year estimates (millions),18.952
+371,156,China,2005,Population mid-year estimates (millions),1330.7764
+372,156,China,2010,Population mid-year estimates (millions),1368.8106
+373,156,China,2017,Population mid-year estimates (millions),1421.0218
+374,156,China,2017,Surface area (thousand km2),9600.0
+375,156,China,2019,Population mid-year estimates (millions),1433.7837
+376,344,"China, Hong Kong SAR",2005,Population mid-year estimates (millions),6.7696
+377,344,"China, Hong Kong SAR",2010,Population mid-year estimates (millions),6.9663
+378,344,"China, Hong Kong SAR",2017,Population mid-year estimates (millions),7.3063
+379,344,"China, Hong Kong SAR",2017,Surface area (thousand km2),1.1057
+380,344,"China, Hong Kong SAR",2019,Population mid-year estimates (millions),7.4362
+381,446,"China, Macao SAR",2005,Population mid-year estimates (millions),0.4829
+382,446,"China, Macao SAR",2010,Population mid-year estimates (millions),0.5382
+383,446,"China, Macao SAR",2017,Population mid-year estimates (millions),0.6226
+384,446,"China, Macao SAR",2017,Surface area (thousand km2),0.03
+385,446,"China, Macao SAR",2019,Population mid-year estimates (millions),0.6404
+386,170,Colombia,2005,Population mid-year estimates (millions),42.6477
+387,170,Colombia,2010,Population mid-year estimates (millions),45.2227
+388,170,Colombia,2017,Population mid-year estimates (millions),48.9098
+389,170,Colombia,2017,Surface area (thousand km2),1141.748
+390,170,Colombia,2019,Population mid-year estimates (millions),50.3394
+391,174,Comoros,2005,Population mid-year estimates (millions),0.6116
+392,174,Comoros,2010,Population mid-year estimates (millions),0.6897
+393,174,Comoros,2017,Population mid-year estimates (millions),0.8139
+394,174,Comoros,2017,Surface area (thousand km2),2.235
+395,174,Comoros,2019,Population mid-year estimates (millions),0.8509
+396,178,Congo,2005,Population mid-year estimates (millions),3.6228
+397,178,Congo,2010,Population mid-year estimates (millions),4.2737
+398,178,Congo,2017,Population mid-year estimates (millions),5.1107
+399,178,Congo,2017,Surface area (thousand km2),342.0
+400,178,Congo,2019,Population mid-year estimates (millions),5.3805
+401,184,Cook Islands,2001,Population mid-year estimates (millions),0.0183
+402,184,Cook Islands,2005,Population mid-year estimates (millions),0.0197
+403,184,Cook Islands,2006,Population mid-year estimates (millions),0.0197
+404,184,Cook Islands,2010,Population mid-year estimates (millions),0.0185
+405,184,Cook Islands,2016,Population mid-year estimates (millions),0.0174
+406,184,Cook Islands,2017,Population mid-year estimates (millions),0.0174
+407,184,Cook Islands,2017,Surface area (thousand km2),0.23600000000000002
+408,184,Cook Islands,2019,Population mid-year estimates (millions),0.0175
+409,188,Costa Rica,2005,Population mid-year estimates (millions),4.2855
+410,188,Costa Rica,2010,Population mid-year estimates (millions),4.5774
+411,188,Costa Rica,2017,Population mid-year estimates (millions),4.95
+412,188,Costa Rica,2017,Surface area (thousand km2),51.1
+413,188,Costa Rica,2019,Population mid-year estimates (millions),5.0476
+414,384,Côte d’Ivoire,2005,Population mid-year estimates (millions),18.3545
+415,384,Côte d’Ivoire,2010,Population mid-year estimates (millions),20.533
+416,384,Côte d’Ivoire,2017,Population mid-year estimates (millions),24.4375
+417,384,Côte d’Ivoire,2017,Surface area (thousand km2),322.46299999999997
+418,384,Côte d’Ivoire,2019,Population mid-year estimates (millions),25.7165
+419,191,Croatia,2005,Population mid-year estimates (millions),4.3781
+420,191,Croatia,2010,Population mid-year estimates (millions),4.3282
+421,191,Croatia,2017,Population mid-year estimates (millions),4.1829
+422,191,Croatia,2017,Surface area (thousand km2),56.593999999999994
+423,191,Croatia,2019,Population mid-year estimates (millions),4.1303
+424,192,Cuba,2005,Population mid-year estimates (millions),11.2616
+425,192,Cuba,2010,Population mid-year estimates (millions),11.2258
+426,192,Cuba,2017,Population mid-year estimates (millions),11.3393
+427,192,Cuba,2017,Surface area (thousand km2),109.884
+428,192,Cuba,2019,Population mid-year estimates (millions),11.3335
+429,531,Curaçao,2005,Population mid-year estimates (millions),0.1301
+430,531,Curaçao,2010,Population mid-year estimates (millions),0.1492
+431,531,Curaçao,2017,Population mid-year estimates (millions),0.162
+432,531,Curaçao,2017,Surface area (thousand km2),0.444
+433,531,Curaçao,2019,Population mid-year estimates (millions),0.1634
+434,196,Cyprus,2005,Population mid-year estimates (millions),1.0277
+435,196,Cyprus,2010,Population mid-year estimates (millions),1.1126
+436,196,Cyprus,2017,Population mid-year estimates (millions),1.1797
+437,196,Cyprus,2017,Surface area (thousand km2),9.251
+438,196,Cyprus,2019,Population mid-year estimates (millions),1.1986
+439,203,Czechia,2005,Population mid-year estimates (millions),10.2582
+440,203,Czechia,2010,Population mid-year estimates (millions),10.5365
+441,203,Czechia,2017,Population mid-year estimates (millions),10.640999999999998
+442,203,Czechia,2017,Surface area (thousand km2),78.8678
+443,203,Czechia,2019,Population mid-year estimates (millions),10.6892
+444,408,Dem. People's Rep. Korea,2005,Population mid-year estimates (millions),23.9042
+445,408,Dem. People's Rep. Korea,2010,Population mid-year estimates (millions),24.5488
+446,408,Dem. People's Rep. Korea,2017,Population mid-year estimates (millions),25.4298
+447,408,Dem. People's Rep. Korea,2017,Surface area (thousand km2),120.538
+448,408,Dem. People's Rep. Korea,2019,Population mid-year estimates (millions),25.6662
+449,180,Dem. Rep. of the Congo,2005,Population mid-year estimates (millions),54.7859
+450,180,Dem. Rep. of the Congo,2010,Population mid-year estimates (millions),64.5639
+451,180,Dem. Rep. of the Congo,2017,Population mid-year estimates (millions),81.3988
+452,180,Dem. Rep. of the Congo,2017,Surface area (thousand km2),2344.8579999999997
+453,180,Dem. Rep. of the Congo,2019,Population mid-year estimates (millions),86.7906
+454,208,Denmark,2005,Population mid-year estimates (millions),5.4217
+455,208,Denmark,2010,Population mid-year estimates (millions),5.5548
+456,208,Denmark,2017,Population mid-year estimates (millions),5.7323
+457,208,Denmark,2017,Surface area (thousand km2),42.92100000000001
+458,208,Denmark,2019,Population mid-year estimates (millions),5.7719
+459,262,Djibouti,2005,Population mid-year estimates (millions),0.7833
+460,262,Djibouti,2010,Population mid-year estimates (millions),0.8402
+461,262,Djibouti,2017,Population mid-year estimates (millions),0.9441
+462,262,Djibouti,2017,Surface area (thousand km2),23.2
+463,262,Djibouti,2019,Population mid-year estimates (millions),0.9736
+464,212,Dominica,2001,Population mid-year estimates (millions),0.0697
+465,212,Dominica,2005,Population mid-year estimates (millions),0.0706
+466,212,Dominica,2006,Population mid-year estimates (millions),0.0708
+467,212,Dominica,2010,Population mid-year estimates (millions),0.0714
+468,212,Dominica,2014,Population mid-year estimates (millions),0.0728
+469,212,Dominica,2014,Surface area (thousand km2),0.75
+470,212,Dominica,2017,Population mid-year estimates (millions),0.0739
+471,212,Dominica,2017,Surface area (thousand km2),0.75
+472,212,Dominica,2019,Population mid-year estimates (millions),0.0718
+473,214,Dominican Republic,2005,Population mid-year estimates (millions),9.0973
+474,214,Dominican Republic,2010,Population mid-year estimates (millions),9.6951
+475,214,Dominican Republic,2017,Population mid-year estimates (millions),10.5131
+476,214,Dominican Republic,2017,Surface area (thousand km2),48.67100000000001
+477,214,Dominican Republic,2019,Population mid-year estimates (millions),10.739
+478,218,Ecuador,2005,Population mid-year estimates (millions),13.8258
+479,218,Ecuador,2010,Population mid-year estimates (millions),15.0111
+480,218,Ecuador,2017,Population mid-year estimates (millions),16.7854
+481,218,Ecuador,2017,Surface area (thousand km2),257.217
+482,218,Ecuador,2019,Population mid-year estimates (millions),17.3737
+483,818,Egypt,2005,Population mid-year estimates (millions),75.5236
+484,818,Egypt,2010,Population mid-year estimates (millions),82.7612
+485,818,Egypt,2017,Population mid-year estimates (millions),96.4426
+486,818,Egypt,2017,Surface area (thousand km2),1002.0
+487,818,Egypt,2019,Population mid-year estimates (millions),100.3881
+488,222,El Salvador,2005,Population mid-year estimates (millions),6.0521
+489,222,El Salvador,2010,Population mid-year estimates (millions),6.1839
+490,222,El Salvador,2017,Population mid-year estimates (millions),6.3881
+491,222,El Salvador,2017,Surface area (thousand km2),21.0408
+492,222,El Salvador,2019,Population mid-year estimates (millions),6.4536
+493,226,Equatorial Guinea,2005,Population mid-year estimates (millions),0.7495
+494,226,Equatorial Guinea,2010,Population mid-year estimates (millions),0.9436
+495,226,Equatorial Guinea,2017,Population mid-year estimates (millions),1.262
+496,226,Equatorial Guinea,2017,Surface area (thousand km2),28.0515
+497,226,Equatorial Guinea,2019,Population mid-year estimates (millions),1.3559999999999999
+498,232,Eritrea,2005,Population mid-year estimates (millions),2.8267
+499,232,Eritrea,2010,Population mid-year estimates (millions),3.1704
+500,232,Eritrea,2017,Population mid-year estimates (millions),3.4129
+501,232,Eritrea,2017,Surface area (thousand km2),117.6
+502,232,Eritrea,2019,Population mid-year estimates (millions),3.4971
+503,233,Estonia,2005,Population mid-year estimates (millions),1.3556
+504,233,Estonia,2010,Population mid-year estimates (millions),1.3321
+505,233,Estonia,2017,Population mid-year estimates (millions),1.3194
+506,233,Estonia,2017,Surface area (thousand km2),45.227
+507,233,Estonia,2019,Population mid-year estimates (millions),1.3256
+508,748,Eswatini,2005,Population mid-year estimates (millions),1.0306
+509,748,Eswatini,2010,Population mid-year estimates (millions),1.0648
+510,748,Eswatini,2017,Population mid-year estimates (millions),1.1248
+511,748,Eswatini,2017,Surface area (thousand km2),17.363
+512,748,Eswatini,2019,Population mid-year estimates (millions),1.1481
+513,231,Ethiopia,2005,Population mid-year estimates (millions),76.3463
+514,231,Ethiopia,2010,Population mid-year estimates (millions),87.64
+515,231,Ethiopia,2017,Population mid-year estimates (millions),106.3999
+516,231,Ethiopia,2017,Surface area (thousand km2),1104.3
+517,231,Ethiopia,2019,Population mid-year estimates (millions),112.0787
+518,238,Falkland Islands (Malvinas),2001,Population mid-year estimates (millions),0.0029
+519,238,Falkland Islands (Malvinas),2005,Population mid-year estimates (millions),0.0029
+520,238,Falkland Islands (Malvinas),2006,Population mid-year estimates (millions),0.0029
+521,238,Falkland Islands (Malvinas),2010,Population mid-year estimates (millions),0.0029
+522,238,Falkland Islands (Malvinas),2012,Population mid-year estimates (millions),0.0029
+523,238,Falkland Islands (Malvinas),2017,Population mid-year estimates (millions),0.0029
+524,238,Falkland Islands (Malvinas),2017,Surface area (thousand km2),12.173
+525,238,Falkland Islands (Malvinas),2019,Population mid-year estimates (millions),0.0034
+526,234,Faroe Islands,2005,Population mid-year estimates (millions),0.0483
+527,234,Faroe Islands,2008,Population mid-year estimates (millions),0.0485
+528,234,Faroe Islands,2010,Population mid-year estimates (millions),0.0486
+529,234,Faroe Islands,2015,Population mid-year estimates (millions),0.049
+530,234,Faroe Islands,2015,Surface area (thousand km2),1.393
+531,234,Faroe Islands,2017,Population mid-year estimates (millions),0.0493
+532,234,Faroe Islands,2017,Surface area (thousand km2),1.393
+533,234,Faroe Islands,2019,Population mid-year estimates (millions),0.0487
+534,242,Fiji,2005,Population mid-year estimates (millions),0.8216
+535,242,Fiji,2010,Population mid-year estimates (millions),0.8598
+536,242,Fiji,2017,Population mid-year estimates (millions),0.8775
+537,242,Fiji,2017,Surface area (thousand km2),18.272000000000002
+538,242,Fiji,2019,Population mid-year estimates (millions),0.89
+539,246,Finland,2005,Population mid-year estimates (millions),5.2589
+540,246,Finland,2010,Population mid-year estimates (millions),5.3658
+541,246,Finland,2017,Population mid-year estimates (millions),5.5114
+542,246,Finland,2017,Surface area (thousand km2),338.44
+543,246,Finland,2019,Population mid-year estimates (millions),5.5322
+544,250,France,2005,Population mid-year estimates (millions),61.1201
+545,250,France,2010,Population mid-year estimates (millions),62.8795
+546,250,France,2017,Population mid-year estimates (millions),64.8425
+547,250,France,2017,Surface area (thousand km2),551.5
+548,250,France,2019,Population mid-year estimates (millions),65.1297
+549,254,French Guiana,2005,Population mid-year estimates (millions),0.203
+550,254,French Guiana,2010,Population mid-year estimates (millions),0.233
+551,254,French Guiana,2017,Population mid-year estimates (millions),0.2752
+552,254,French Guiana,2017,Surface area (thousand km2),83.53399999999999
+553,254,French Guiana,2019,Population mid-year estimates (millions),0.2908
+554,258,French Polynesia,2005,Population mid-year estimates (millions),0.2588
+555,258,French Polynesia,2010,Population mid-year estimates (millions),0.2665
+556,258,French Polynesia,2017,Population mid-year estimates (millions),0.2761
+557,258,French Polynesia,2017,Surface area (thousand km2),4.0
+558,258,French Polynesia,2019,Population mid-year estimates (millions),0.2793
+559,266,Gabon,2005,Population mid-year estimates (millions),1.3905
+560,266,Gabon,2010,Population mid-year estimates (millions),1.6241
+561,266,Gabon,2017,Population mid-year estimates (millions),2.0648
+562,266,Gabon,2017,Surface area (thousand km2),267.668
+563,266,Gabon,2019,Population mid-year estimates (millions),2.1726
+564,270,Gambia,2005,Population mid-year estimates (millions),1.5437
+565,270,Gambia,2010,Population mid-year estimates (millions),1.7932
+566,270,Gambia,2017,Population mid-year estimates (millions),2.2139
+567,270,Gambia,2017,Surface area (thousand km2),11.295
+568,270,Gambia,2019,Population mid-year estimates (millions),2.3477
+569,268,Georgia,2005,Population mid-year estimates (millions),4.2102
+570,268,Georgia,2010,Population mid-year estimates (millions),4.0991
+571,268,Georgia,2017,Population mid-year estimates (millions),4.0087
+572,268,Georgia,2017,Surface area (thousand km2),69.7
+573,268,Georgia,2019,Population mid-year estimates (millions),3.9968
+574,276,Germany,2005,Population mid-year estimates (millions),81.6027
+575,276,Germany,2010,Population mid-year estimates (millions),80.827
+576,276,Germany,2017,Population mid-year estimates (millions),82.6584
+577,276,Germany,2017,Surface area (thousand km2),357.376
+578,276,Germany,2019,Population mid-year estimates (millions),83.51700000000001
+579,288,Ghana,2005,Population mid-year estimates (millions),21.8146
+580,288,Ghana,2010,Population mid-year estimates (millions),24.7796
+581,288,Ghana,2017,Population mid-year estimates (millions),29.1215
+582,288,Ghana,2017,Surface area (thousand km2),238.537
+583,288,Ghana,2019,Population mid-year estimates (millions),30.4179
+584,292,Gibraltar,2001,Population mid-year estimates (millions),0.0314
+585,292,Gibraltar,2005,Population mid-year estimates (millions),0.0321
+586,292,Gibraltar,2010,Population mid-year estimates (millions),0.0332
+587,292,Gibraltar,2012,Population mid-year estimates (millions),0.0336
+588,292,Gibraltar,2015,Population mid-year estimates (millions),0.0342
+589,292,Gibraltar,2015,Surface area (thousand km2),0.006
+590,292,Gibraltar,2017,Population mid-year estimates (millions),0.0346
+591,292,Gibraltar,2017,Surface area (thousand km2),0.006
+592,292,Gibraltar,2019,Population mid-year estimates (millions),0.0337
+593,300,Greece,2005,Population mid-year estimates (millions),11.2248
+594,300,Greece,2010,Population mid-year estimates (millions),10.8876
+595,300,Greece,2017,Population mid-year estimates (millions),10.5695
+596,300,Greece,2017,Surface area (thousand km2),131.957
+597,300,Greece,2019,Population mid-year estimates (millions),10.4735
+598,304,Greenland,2005,Population mid-year estimates (millions),0.057
+599,304,Greenland,2010,Population mid-year estimates (millions),0.0566
+600,304,Greenland,2016,Population mid-year estimates (millions),0.0564
+601,304,Greenland,2017,Population mid-year estimates (millions),0.0565
+602,304,Greenland,2017,Surface area (thousand km2),2166.0860000000002
+603,304,Greenland,2019,Population mid-year estimates (millions),0.0567
+604,308,Grenada,2005,Population mid-year estimates (millions),0.1047
+605,308,Grenada,2010,Population mid-year estimates (millions),0.1062
+606,308,Grenada,2017,Population mid-year estimates (millions),0.1109
+607,308,Grenada,2017,Surface area (thousand km2),0.345
+608,308,Grenada,2019,Population mid-year estimates (millions),0.11199999999999999
+609,312,Guadeloupe,2005,Population mid-year estimates (millions),0.4029
+610,312,Guadeloupe,2010,Population mid-year estimates (millions),0.4061
+611,312,Guadeloupe,2017,Population mid-year estimates (millions),0.3997
+612,312,Guadeloupe,2017,Surface area (thousand km2),1.705
+613,312,Guadeloupe,2019,Population mid-year estimates (millions),0.4001
+614,316,Guam,2005,Population mid-year estimates (millions),0.1584
+615,316,Guam,2010,Population mid-year estimates (millions),0.1594
+616,316,Guam,2017,Population mid-year estimates (millions),0.1643
+617,316,Guam,2017,Surface area (thousand km2),0.5489999999999999
+618,316,Guam,2019,Population mid-year estimates (millions),0.1673
+619,320,Guatemala,2005,Population mid-year estimates (millions),13.095999999999998
+620,320,Guatemala,2010,Population mid-year estimates (millions),14.6304
+621,320,Guatemala,2017,Population mid-year estimates (millions),16.915
+622,320,Guatemala,2017,Surface area (thousand km2),108.889
+623,320,Guatemala,2019,Population mid-year estimates (millions),17.5815
+624,324,Guinea,2005,Population mid-year estimates (millions),9.1096
+625,324,Guinea,2010,Population mid-year estimates (millions),10.1922
+626,324,Guinea,2017,Population mid-year estimates (millions),12.0675
+627,324,Guinea,2017,Surface area (thousand km2),245.857
+628,324,Guinea,2019,Population mid-year estimates (millions),12.7712
+629,624,Guinea-Bissau,2005,Population mid-year estimates (millions),1.3449
+630,624,Guinea-Bissau,2010,Population mid-year estimates (millions),1.5226
+631,624,Guinea-Bissau,2017,Population mid-year estimates (millions),1.8281
+632,624,Guinea-Bissau,2017,Surface area (thousand km2),36.125
+633,624,Guinea-Bissau,2019,Population mid-year estimates (millions),1.9209
+634,328,Guyana,2005,Population mid-year estimates (millions),0.7462
+635,328,Guyana,2010,Population mid-year estimates (millions),0.7494
+636,328,Guyana,2017,Population mid-year estimates (millions),0.7752
+637,328,Guyana,2017,Surface area (thousand km2),214.96900000000002
+638,328,Guyana,2019,Population mid-year estimates (millions),0.7828
+639,332,Haiti,2005,Population mid-year estimates (millions),9.1953
+640,332,Haiti,2010,Population mid-year estimates (millions),9.9493
+641,332,Haiti,2017,Population mid-year estimates (millions),10.9824
+642,332,Haiti,2017,Surface area (thousand km2),27.75
+643,332,Haiti,2019,Population mid-year estimates (millions),11.2631
+644,336,Holy See,2000,Population mid-year estimates (millions),0.0008
+645,336,Holy See,2005,Population mid-year estimates (millions),0.0008
+646,336,Holy See,2009,Population mid-year estimates (millions),0.0008
+647,336,Holy See,2010,Population mid-year estimates (millions),0.0008
+648,336,Holy See,2017,Population mid-year estimates (millions),0.0008
+649,336,Holy See,2017,Surface area (thousand km2),0.0004
+650,336,Holy See,2019,Population mid-year estimates (millions),0.0008
+651,340,Honduras,2005,Population mid-year estimates (millions),7.459
+652,340,Honduras,2010,Population mid-year estimates (millions),8.3175
+653,340,Honduras,2017,Population mid-year estimates (millions),9.429
+654,340,Honduras,2017,Surface area (thousand km2),112.492
+655,340,Honduras,2019,Population mid-year estimates (millions),9.7461
+656,348,Hungary,2005,Population mid-year estimates (millions),10.0859
+657,348,Hungary,2010,Population mid-year estimates (millions),9.9274
+658,348,Hungary,2017,Population mid-year estimates (millions),9.7298
+659,348,Hungary,2017,Surface area (thousand km2),93.024
+660,348,Hungary,2019,Population mid-year estimates (millions),9.6847
+661,352,Iceland,2005,Population mid-year estimates (millions),0.295
+662,352,Iceland,2010,Population mid-year estimates (millions),0.3203
+663,352,Iceland,2017,Population mid-year estimates (millions),0.3344
+664,352,Iceland,2017,Surface area (thousand km2),103.0
+665,352,Iceland,2019,Population mid-year estimates (millions),0.33899999999999997
+666,356,India,2005,Population mid-year estimates (millions),1147.6099
+667,356,India,2010,Population mid-year estimates (millions),1234.2812
+668,356,India,2017,Population mid-year estimates (millions),1338.6768
+669,356,India,2017,Surface area (thousand km2),3287.263
+670,356,India,2019,Population mid-year estimates (millions),1366.4178
+671,360,Indonesia,2005,Population mid-year estimates (millions),226.2895
+672,360,Indonesia,2010,Population mid-year estimates (millions),241.8342
+673,360,Indonesia,2017,Population mid-year estimates (millions),264.651
+674,360,Indonesia,2017,Surface area (thousand km2),1910.931
+675,360,Indonesia,2019,Population mid-year estimates (millions),270.6256
+676,364,Iran (Islamic Republic of),2005,Population mid-year estimates (millions),69.7623
+677,364,Iran (Islamic Republic of),2010,Population mid-year estimates (millions),73.7625
+678,364,Iran (Islamic Republic of),2017,Population mid-year estimates (millions),80.6739
+679,364,Iran (Islamic Republic of),2017,Surface area (thousand km2),1628.75
+680,364,Iran (Islamic Republic of),2019,Population mid-year estimates (millions),82.9139
+681,368,Iraq,2005,Population mid-year estimates (millions),26.9223
+682,368,Iraq,2010,Population mid-year estimates (millions),29.741999999999997
+683,368,Iraq,2017,Population mid-year estimates (millions),37.5528
+684,368,Iraq,2017,Surface area (thousand km2),435.05199999999996
+685,368,Iraq,2019,Population mid-year estimates (millions),39.3098
+686,372,Ireland,2005,Population mid-year estimates (millions),4.1412
+687,372,Ireland,2010,Population mid-year estimates (millions),4.5543
+688,372,Ireland,2017,Population mid-year estimates (millions),4.7533
+689,372,Ireland,2017,Surface area (thousand km2),69.797
+690,372,Ireland,2019,Population mid-year estimates (millions),4.8825
+691,833,Isle of Man,2005,Population mid-year estimates (millions),0.0761
+692,833,Isle of Man,2009,Population mid-year estimates (millions),0.0793
+693,833,Isle of Man,2010,Population mid-year estimates (millions),0.0801
+694,833,Isle of Man,2016,Population mid-year estimates (millions),0.0837
+695,833,Isle of Man,2017,Population mid-year estimates (millions),0.0843
+696,833,Isle of Man,2017,Surface area (thousand km2),0.5720000000000001
+697,833,Isle of Man,2019,Population mid-year estimates (millions),0.0846
+698,376,Israel,2005,Population mid-year estimates (millions),6.5295
+699,376,Israel,2010,Population mid-year estimates (millions),7.3464
+700,376,Israel,2017,Population mid-year estimates (millions),8.2438
+701,376,Israel,2017,Surface area (thousand km2),22.072
+702,376,Israel,2019,Population mid-year estimates (millions),8.5194
+703,380,Italy,2005,Population mid-year estimates (millions),58.2812
+704,380,Italy,2010,Population mid-year estimates (millions),59.3252
+705,380,Italy,2017,Population mid-year estimates (millions),60.6737
+706,380,Italy,2017,Surface area (thousand km2),302.073
+707,380,Italy,2019,Population mid-year estimates (millions),60.5501
+708,388,Jamaica,2005,Population mid-year estimates (millions),2.74
+709,388,Jamaica,2010,Population mid-year estimates (millions),2.8105
+710,388,Jamaica,2017,Population mid-year estimates (millions),2.9208
+711,388,Jamaica,2017,Surface area (thousand km2),10.9905
+712,388,Jamaica,2019,Population mid-year estimates (millions),2.9483
+713,392,Japan,2005,Population mid-year estimates (millions),128.3261
+714,392,Japan,2007,Population mid-year estimates (millions),128.4941
+715,392,Japan,2007,Surface area (thousand km2),377.93
+716,392,Japan,2010,Population mid-year estimates (millions),128.5424
+717,392,Japan,2019,Population mid-year estimates (millions),126.8603
+718,400,Jordan,2005,Population mid-year estimates (millions),5.7656
+719,400,Jordan,2010,Population mid-year estimates (millions),7.2615
+720,400,Jordan,2017,Population mid-year estimates (millions),9.7858
+721,400,Jordan,2017,Surface area (thousand km2),89.318
+722,400,Jordan,2019,Population mid-year estimates (millions),10.1017
+723,398,Kazakhstan,2005,Population mid-year estimates (millions),15.4028
+724,398,Kazakhstan,2010,Population mid-year estimates (millions),16.2523
+725,398,Kazakhstan,2017,Population mid-year estimates (millions),18.08
+726,398,Kazakhstan,2017,Surface area (thousand km2),2724.902
+727,398,Kazakhstan,2019,Population mid-year estimates (millions),18.5514
+728,404,Kenya,2005,Population mid-year estimates (millions),36.6249
+729,404,Kenya,2010,Population mid-year estimates (millions),42.0307
+730,404,Kenya,2017,Population mid-year estimates (millions),50.2211
+731,404,Kenya,2017,Surface area (thousand km2),591.9580000000001
+732,404,Kenya,2019,Population mid-year estimates (millions),52.574
+733,296,Kiribati,2005,Population mid-year estimates (millions),0.0923
+734,296,Kiribati,2010,Population mid-year estimates (millions),0.1029
+735,296,Kiribati,2017,Population mid-year estimates (millions),0.1142
+736,296,Kiribati,2017,Surface area (thousand km2),0.7263
+737,296,Kiribati,2019,Population mid-year estimates (millions),0.1176
+738,414,Kuwait,2005,Population mid-year estimates (millions),2.2702
+739,414,Kuwait,2010,Population mid-year estimates (millions),2.9919
+740,414,Kuwait,2017,Population mid-year estimates (millions),4.0561
+741,414,Kuwait,2017,Surface area (thousand km2),17.817999999999998
+742,414,Kuwait,2019,Population mid-year estimates (millions),4.2071
+743,417,Kyrgyzstan,2005,Population mid-year estimates (millions),5.0753
+744,417,Kyrgyzstan,2010,Population mid-year estimates (millions),5.4223
+745,417,Kyrgyzstan,2017,Population mid-year estimates (millions),6.1897
+746,417,Kyrgyzstan,2017,Surface area (thousand km2),199.949
+747,417,Kyrgyzstan,2019,Population mid-year estimates (millions),6.4159
+748,418,Lao People's Dem. Rep.,2005,Population mid-year estimates (millions),5.7517
+749,418,Lao People's Dem. Rep.,2010,Population mid-year estimates (millions),6.2492
+750,418,Lao People's Dem. Rep.,2017,Population mid-year estimates (millions),6.952999999999999
+751,418,Lao People's Dem. Rep.,2017,Surface area (thousand km2),236.8
+752,418,Lao People's Dem. Rep.,2019,Population mid-year estimates (millions),7.1695
+753,428,Latvia,2005,Population mid-year estimates (millions),2.252
+754,428,Latvia,2010,Population mid-year estimates (millions),2.1189
+755,428,Latvia,2017,Population mid-year estimates (millions),1.9511
+756,428,Latvia,2017,Surface area (thousand km2),64.57300000000001
+757,428,Latvia,2019,Population mid-year estimates (millions),1.9067
+758,422,Lebanon,2005,Population mid-year estimates (millions),4.6988
+759,422,Lebanon,2010,Population mid-year estimates (millions),4.9531
+760,422,Lebanon,2017,Population mid-year estimates (millions),6.8194
+761,422,Lebanon,2017,Surface area (thousand km2),10.452
+762,422,Lebanon,2019,Population mid-year estimates (millions),6.8557
+763,426,Lesotho,2005,Population mid-year estimates (millions),1.9961
+764,426,Lesotho,2010,Population mid-year estimates (millions),1.9956
+765,426,Lesotho,2017,Population mid-year estimates (millions),2.0915
+766,426,Lesotho,2017,Surface area (thousand km2),30.355
+767,426,Lesotho,2019,Population mid-year estimates (millions),2.1253
+768,430,Liberia,2005,Population mid-year estimates (millions),3.2181
+769,430,Liberia,2010,Population mid-year estimates (millions),3.8914
+770,430,Liberia,2017,Population mid-year estimates (millions),4.7022
+771,430,Liberia,2017,Surface area (thousand km2),111.369
+772,430,Liberia,2019,Population mid-year estimates (millions),4.9374
+773,434,Libya,2005,Population mid-year estimates (millions),5.7986
+774,434,Libya,2010,Population mid-year estimates (millions),6.1977
+775,434,Libya,2017,Population mid-year estimates (millions),6.5807
+776,434,Libya,2017,Surface area (thousand km2),1676.1979999999999
+777,434,Libya,2019,Population mid-year estimates (millions),6.7775
+778,438,Liechtenstein,2005,Population mid-year estimates (millions),0.0349
+779,438,Liechtenstein,2010,Population mid-year estimates (millions),0.036000000000000004
+780,438,Liechtenstein,2016,Population mid-year estimates (millions),0.0377
+781,438,Liechtenstein,2017,Population mid-year estimates (millions),0.0379
+782,438,Liechtenstein,2017,Surface area (thousand km2),0.16
+783,438,Liechtenstein,2019,Population mid-year estimates (millions),0.038
+784,440,Lithuania,2005,Population mid-year estimates (millions),3.3443
+785,440,Lithuania,2010,Population mid-year estimates (millions),3.1238
+786,440,Lithuania,2017,Population mid-year estimates (millions),2.8454
+787,440,Lithuania,2017,Surface area (thousand km2),65.286
+788,440,Lithuania,2019,Population mid-year estimates (millions),2.7596
+789,442,Luxembourg,2005,Population mid-year estimates (millions),0.4578
+790,442,Luxembourg,2010,Population mid-year estimates (millions),0.5079
+791,442,Luxembourg,2017,Population mid-year estimates (millions),0.5919
+792,442,Luxembourg,2017,Surface area (thousand km2),2.5860000000000003
+793,442,Luxembourg,2019,Population mid-year estimates (millions),0.6157
+794,450,Madagascar,2005,Population mid-year estimates (millions),18.3367
+795,450,Madagascar,2010,Population mid-year estimates (millions),21.1516
+796,450,Madagascar,2017,Population mid-year estimates (millions),25.5705
+797,450,Madagascar,2017,Surface area (thousand km2),587.295
+798,450,Madagascar,2019,Population mid-year estimates (millions),26.9693
+799,454,Malawi,2005,Population mid-year estimates (millions),12.626
+800,454,Malawi,2010,Population mid-year estimates (millions),14.5396
+801,454,Malawi,2017,Population mid-year estimates (millions),17.6702
+802,454,Malawi,2017,Surface area (thousand km2),118.484
+803,454,Malawi,2019,Population mid-year estimates (millions),18.6287
+804,458,Malaysia,2005,Population mid-year estimates (millions),25.6906
+805,458,Malaysia,2010,Population mid-year estimates (millions),28.208000000000002
+806,458,Malaysia,2017,Population mid-year estimates (millions),31.1046
+807,458,Malaysia,2017,Surface area (thousand km2),330.32300000000004
+808,458,Malaysia,2019,Population mid-year estimates (millions),31.9498
+809,462,Maldives,2005,Population mid-year estimates (millions),0.3196
+810,462,Maldives,2010,Population mid-year estimates (millions),0.3657
+811,462,Maldives,2017,Population mid-year estimates (millions),0.4964
+812,462,Maldives,2017,Surface area (thousand km2),0.3
+813,462,Maldives,2019,Population mid-year estimates (millions),0.531
+814,466,Mali,2005,Population mid-year estimates (millions),12.7755
+815,466,Mali,2010,Population mid-year estimates (millions),15.0494
+816,466,Mali,2017,Population mid-year estimates (millions),18.5124
+817,466,Mali,2017,Surface area (thousand km2),1240.192
+818,466,Mali,2019,Population mid-year estimates (millions),19.658
+819,470,Malta,2005,Population mid-year estimates (millions),0.4047
+820,470,Malta,2010,Population mid-year estimates (millions),0.4143
+821,470,Malta,2017,Population mid-year estimates (millions),0.4379
+822,470,Malta,2017,Surface area (thousand km2),0.3154
+823,470,Malta,2019,Population mid-year estimates (millions),0.4404
+824,584,Marshall Islands,2004,Population mid-year estimates (millions),0.0521
+825,584,Marshall Islands,2005,Population mid-year estimates (millions),0.0521
+826,584,Marshall Islands,2010,Population mid-year estimates (millions),0.0524
+827,584,Marshall Islands,2016,Population mid-year estimates (millions),0.0531
+828,584,Marshall Islands,2017,Population mid-year estimates (millions),0.0531
+829,584,Marshall Islands,2017,Surface area (thousand km2),0.18100000000000002
+830,584,Marshall Islands,2019,Population mid-year estimates (millions),0.0588
+831,474,Martinique,2005,Population mid-year estimates (millions),0.3972
+832,474,Martinique,2010,Population mid-year estimates (millions),0.3947
+833,474,Martinique,2017,Population mid-year estimates (millions),0.3759
+834,474,Martinique,2017,Surface area (thousand km2),1.128
+835,474,Martinique,2019,Population mid-year estimates (millions),0.3756
+836,478,Mauritania,2005,Population mid-year estimates (millions),3.0242
+837,478,Mauritania,2010,Population mid-year estimates (millions),3.4942
+838,478,Mauritania,2017,Population mid-year estimates (millions),4.2826
+839,478,Mauritania,2017,Surface area (thousand km2),1030.7
+840,478,Mauritania,2019,Population mid-year estimates (millions),4.5257
+841,480,Mauritius,2005,Population mid-year estimates (millions),1.222
+842,480,Mauritius,2010,Population mid-year estimates (millions),1.248
+843,480,Mauritius,2017,Population mid-year estimates (millions),1.2645
+844,480,Mauritius,2017,Surface area (thousand km2),1.969
+845,480,Mauritius,2019,Population mid-year estimates (millions),1.2697
+846,175,Mayotte,2005,Population mid-year estimates (millions),0.1781
+847,175,Mayotte,2010,Population mid-year estimates (millions),0.2087
+848,175,Mayotte,2019,Population mid-year estimates (millions),0.2662
+849,484,Mexico,2005,Population mid-year estimates (millions),106.0052
+850,484,Mexico,2010,Population mid-year estimates (millions),114.09299999999999
+851,484,Mexico,2017,Population mid-year estimates (millions),124.7773
+852,484,Mexico,2017,Surface area (thousand km2),1964.375
+853,484,Mexico,2019,Population mid-year estimates (millions),127.5755
+854,583,Micronesia (Fed. States of),2005,Population mid-year estimates (millions),0.1061
+855,583,Micronesia (Fed. States of),2010,Population mid-year estimates (millions),0.1029
+856,583,Micronesia (Fed. States of),2017,Population mid-year estimates (millions),0.1115
+857,583,Micronesia (Fed. States of),2017,Surface area (thousand km2),0.7020000000000001
+858,583,Micronesia (Fed. States of),2019,Population mid-year estimates (millions),0.1138
+859,492,Monaco,2000,Population mid-year estimates (millions),0.0321
+860,492,Monaco,2005,Population mid-year estimates (millions),0.0338
+861,492,Monaco,2008,Population mid-year estimates (millions),0.0359
+862,492,Monaco,2010,Population mid-year estimates (millions),0.0371
+863,492,Monaco,2017,Population mid-year estimates (millions),0.0387
+864,492,Monaco,2017,Surface area (thousand km2),0.002
+865,492,Monaco,2019,Population mid-year estimates (millions),0.039
+866,496,Mongolia,2005,Population mid-year estimates (millions),2.5264
+867,496,Mongolia,2010,Population mid-year estimates (millions),2.7199
+868,496,Mongolia,2017,Population mid-year estimates (millions),3.1138
+869,496,Mongolia,2017,Surface area (thousand km2),1564.116
+870,496,Mongolia,2019,Population mid-year estimates (millions),3.2252
+871,499,Montenegro,2005,Population mid-year estimates (millions),0.6164
+872,499,Montenegro,2010,Population mid-year estimates (millions),0.6243
+873,499,Montenegro,2017,Population mid-year estimates (millions),0.6276
+874,499,Montenegro,2017,Surface area (thousand km2),13.812000000000001
+875,499,Montenegro,2019,Population mid-year estimates (millions),0.628
+876,500,Montserrat,2001,Population mid-year estimates (millions),0.0045
+877,500,Montserrat,2004,Population mid-year estimates (millions),0.0046
+878,500,Montserrat,2005,Population mid-year estimates (millions),0.0048
+879,500,Montserrat,2006,Population mid-year estimates (millions),0.0048
+880,500,Montserrat,2010,Population mid-year estimates (millions),0.0049
+881,500,Montserrat,2011,Population mid-year estimates (millions),0.005
+882,500,Montserrat,2016,Population mid-year estimates (millions),0.0052
+883,500,Montserrat,2017,Population mid-year estimates (millions),0.0052
+884,500,Montserrat,2017,Surface area (thousand km2),0.10300000000000001
+885,500,Montserrat,2019,Population mid-year estimates (millions),0.005
+886,504,Morocco,2005,Population mid-year estimates (millions),30.4556
+887,504,Morocco,2010,Population mid-year estimates (millions),32.3434
+888,504,Morocco,2017,Population mid-year estimates (millions),35.5813
+889,504,Morocco,2017,Surface area (thousand km2),446.55
+890,504,Morocco,2019,Population mid-year estimates (millions),36.4718
+891,508,Mozambique,2005,Population mid-year estimates (millions),20.4939
+892,508,Mozambique,2010,Population mid-year estimates (millions),23.5316
+893,508,Mozambique,2017,Population mid-year estimates (millions),28.649
+894,508,Mozambique,2017,Surface area (thousand km2),799.38
+895,508,Mozambique,2019,Population mid-year estimates (millions),30.366
+896,104,Myanmar,2005,Population mid-year estimates (millions),48.9499
+897,104,Myanmar,2010,Population mid-year estimates (millions),50.6008
+898,104,Myanmar,2017,Population mid-year estimates (millions),53.3825
+899,104,Myanmar,2017,Surface area (thousand km2),676.577
+900,104,Myanmar,2019,Population mid-year estimates (millions),54.0454
+901,516,Namibia,2005,Population mid-year estimates (millions),1.9383
+902,516,Namibia,2010,Population mid-year estimates (millions),2.1189
+903,516,Namibia,2017,Population mid-year estimates (millions),2.4026
+904,516,Namibia,2017,Surface area (thousand km2),824.1160000000001
+905,516,Namibia,2019,Population mid-year estimates (millions),2.4945
+906,520,Nauru,2002,Population mid-year estimates (millions),0.0101
+907,520,Nauru,2005,Population mid-year estimates (millions),0.0101
+908,520,Nauru,2010,Population mid-year estimates (millions),0.01
+909,520,Nauru,2016,Population mid-year estimates (millions),0.0113
+910,520,Nauru,2017,Population mid-year estimates (millions),0.0114
+911,520,Nauru,2017,Surface area (thousand km2),0.021
+912,520,Nauru,2019,Population mid-year estimates (millions),0.0108
+913,524,Nepal,2005,Population mid-year estimates (millions),25.7445
+914,524,Nepal,2010,Population mid-year estimates (millions),27.0132
+915,524,Nepal,2017,Population mid-year estimates (millions),27.6327
+916,524,Nepal,2017,Surface area (thousand km2),147.181
+917,524,Nepal,2019,Population mid-year estimates (millions),28.6087
+918,528,Netherlands,2005,Population mid-year estimates (millions),16.3672
+919,528,Netherlands,2010,Population mid-year estimates (millions),16.6829
+920,528,Netherlands,2017,Population mid-year estimates (millions),17.0213
+921,528,Netherlands,2017,Surface area (thousand km2),41.542
+922,528,Netherlands,2019,Population mid-year estimates (millions),17.0971
+923,540,New Caledonia,2005,Population mid-year estimates (millions),0.2364
+924,540,New Caledonia,2010,Population mid-year estimates (millions),0.2535
+925,540,New Caledonia,2017,Population mid-year estimates (millions),0.2772
+926,540,New Caledonia,2017,Surface area (thousand km2),18.575
+927,540,New Caledonia,2019,Population mid-year estimates (millions),0.2828
+928,554,New Zealand,2005,Population mid-year estimates (millions),4.1354
+929,554,New Zealand,2010,Population mid-year estimates (millions),4.3701
+930,554,New Zealand,2017,Population mid-year estimates (millions),4.702
+931,554,New Zealand,2017,Surface area (thousand km2),268.107
+932,554,New Zealand,2019,Population mid-year estimates (millions),4.7831
+933,558,Nicaragua,2005,Population mid-year estimates (millions),5.4387
+934,558,Nicaragua,2010,Population mid-year estimates (millions),5.8241
+935,558,Nicaragua,2017,Population mid-year estimates (millions),6.3848
+936,558,Nicaragua,2017,Surface area (thousand km2),130.373
+937,558,Nicaragua,2019,Population mid-year estimates (millions),6.5455
+938,562,Niger,2005,Population mid-year estimates (millions),13.6245
+939,562,Niger,2010,Population mid-year estimates (millions),16.464000000000002
+940,562,Niger,2017,Population mid-year estimates (millions),21.6024
+941,562,Niger,2017,Surface area (thousand km2),1267.0
+942,562,Niger,2019,Population mid-year estimates (millions),23.3107
+943,566,Nigeria,2005,Population mid-year estimates (millions),138.865
+944,566,Nigeria,2010,Population mid-year estimates (millions),158.5032
+945,566,Nigeria,2017,Population mid-year estimates (millions),190.8732
+946,566,Nigeria,2017,Surface area (thousand km2),923.768
+947,566,Nigeria,2019,Population mid-year estimates (millions),200.9636
+948,570,Niue,2005,Population mid-year estimates (millions),0.0017
+949,570,Niue,2010,Population mid-year estimates (millions),0.0016
+950,570,Niue,2016,Population mid-year estimates (millions),0.0016
+951,570,Niue,2017,Population mid-year estimates (millions),0.0016
+952,570,Niue,2017,Surface area (thousand km2),0.26
+953,570,Niue,2019,Population mid-year estimates (millions),0.0016
+954,807,North Macedonia,2005,Population mid-year estimates (millions),2.0603
+955,807,North Macedonia,2010,Population mid-year estimates (millions),2.0707
+956,807,North Macedonia,2017,Population mid-year estimates (millions),2.082
+957,807,North Macedonia,2017,Surface area (thousand km2),25.713
+958,807,North Macedonia,2019,Population mid-year estimates (millions),2.0835
+959,580,Northern Mariana Islands,2005,Population mid-year estimates (millions),0.0637
+960,580,Northern Mariana Islands,2010,Population mid-year estimates (millions),0.0544
+961,580,Northern Mariana Islands,2016,Population mid-year estimates (millions),0.055
+962,580,Northern Mariana Islands,2017,Population mid-year estimates (millions),0.0551
+963,580,Northern Mariana Islands,2017,Surface area (thousand km2),0.457
+964,580,Northern Mariana Islands,2019,Population mid-year estimates (millions),0.0572
+965,578,Norway,2005,Population mid-year estimates (millions),4.6324
+966,578,Norway,2010,Population mid-year estimates (millions),4.8859
+967,578,Norway,2017,Population mid-year estimates (millions),5.2963
+968,578,Norway,2017,Surface area (thousand km2),386.194
+969,578,Norway,2019,Population mid-year estimates (millions),5.3789
+970,512,Oman,2005,Population mid-year estimates (millions),2.5113
+971,512,Oman,2010,Population mid-year estimates (millions),3.0414
+972,512,Oman,2017,Population mid-year estimates (millions),4.6659
+973,512,Oman,2017,Surface area (thousand km2),309.5
+974,512,Oman,2019,Population mid-year estimates (millions),4.975
+975,158,Other non-specified areas,2005,Population mid-year estimates (millions),22.7057
+976,158,Other non-specified areas,2010,Population mid-year estimates (millions),23.1876
+977,158,Other non-specified areas,2019,Population mid-year estimates (millions),23.7739
+978,586,Pakistan,2005,Population mid-year estimates (millions),160.304
+979,586,Pakistan,2010,Population mid-year estimates (millions),179.4246
+980,586,Pakistan,2017,Population mid-year estimates (millions),207.9062
+981,586,Pakistan,2017,Surface area (thousand km2),796.095
+982,586,Pakistan,2019,Population mid-year estimates (millions),216.5653
+983,585,Palau,2005,Population mid-year estimates (millions),0.0199
+984,585,Palau,2010,Population mid-year estimates (millions),0.0205
+985,585,Palau,2016,Population mid-year estimates (millions),0.0215
+986,585,Palau,2017,Population mid-year estimates (millions),0.0217
+987,585,Palau,2017,Surface area (thousand km2),0.45899999999999996
+988,585,Palau,2019,Population mid-year estimates (millions),0.018000000000000002
+989,591,Panama,2005,Population mid-year estimates (millions),3.3302
+990,591,Panama,2010,Population mid-year estimates (millions),3.6427
+991,591,Panama,2017,Population mid-year estimates (millions),4.1068
+992,591,Panama,2017,Surface area (thousand km2),75.32
+993,591,Panama,2019,Population mid-year estimates (millions),4.2464
+994,598,Papua New Guinea,2005,Population mid-year estimates (millions),6.4949
+995,598,Papua New Guinea,2010,Population mid-year estimates (millions),7.3105
+996,598,Papua New Guinea,2017,Population mid-year estimates (millions),8.437999999999999
+997,598,Papua New Guinea,2017,Surface area (thousand km2),462.84
+998,598,Papua New Guinea,2019,Population mid-year estimates (millions),8.7761
+999,600,Paraguay,2005,Population mid-year estimates (millions),5.8241
+1000,600,Paraguay,2010,Population mid-year estimates (millions),6.247999999999999
+1001,600,Paraguay,2017,Population mid-year estimates (millions),6.8671
+1002,600,Paraguay,2017,Surface area (thousand km2),406.75199999999995
+1003,600,Paraguay,2019,Population mid-year estimates (millions),7.0446
+1004,604,Peru,2005,Population mid-year estimates (millions),27.8661
+1005,604,Peru,2010,Population mid-year estimates (millions),29.0277
+1006,604,Peru,2017,Population mid-year estimates (millions),31.4443
+1007,604,Peru,2017,Surface area (thousand km2),1285.2160000000001
+1008,604,Peru,2019,Population mid-year estimates (millions),32.5105
+1009,608,Philippines,2005,Population mid-year estimates (millions),86.3263
+1010,608,Philippines,2010,Population mid-year estimates (millions),93.9668
+1011,608,Philippines,2017,Population mid-year estimates (millions),105.1729
+1012,608,Philippines,2017,Surface area (thousand km2),300.0
+1013,608,Philippines,2019,Population mid-year estimates (millions),108.1166
+1014,616,Poland,2005,Population mid-year estimates (millions),38.3689
+1015,616,Poland,2010,Population mid-year estimates (millions),38.3298
+1016,616,Poland,2017,Population mid-year estimates (millions),37.9532
+1017,616,Poland,2017,Surface area (thousand km2),312.67900000000003
+1018,616,Poland,2019,Population mid-year estimates (millions),37.8878
+1019,620,Portugal,2005,Population mid-year estimates (millions),10.5085
+1020,620,Portugal,2010,Population mid-year estimates (millions),10.5961
+1021,620,Portugal,2017,Population mid-year estimates (millions),10.2885
+1022,620,Portugal,2017,Surface area (thousand km2),92.226
+1023,620,Portugal,2019,Population mid-year estimates (millions),10.2262
+1024,630,Puerto Rico,2005,Population mid-year estimates (millions),3.6319
+1025,630,Puerto Rico,2010,Population mid-year estimates (millions),3.5798
+1026,630,Puerto Rico,2017,Population mid-year estimates (millions),3.1637
+1027,630,Puerto Rico,2017,Surface area (thousand km2),8.868
+1028,630,Puerto Rico,2019,Population mid-year estimates (millions),2.9334
+1029,634,Qatar,2005,Population mid-year estimates (millions),0.8654
+1030,634,Qatar,2010,Population mid-year estimates (millions),1.8563
+1031,634,Qatar,2017,Population mid-year estimates (millions),2.7247
+1032,634,Qatar,2017,Surface area (thousand km2),11.607000000000001
+1033,634,Qatar,2019,Population mid-year estimates (millions),2.8321
+1034,410,Republic of Korea,2005,Population mid-year estimates (millions),48.7011
+1035,410,Republic of Korea,2010,Population mid-year estimates (millions),49.5456
+1036,410,Republic of Korea,2017,Population mid-year estimates (millions),51.0964
+1037,410,Republic of Korea,2017,Surface area (thousand km2),100.2839
+1038,410,Republic of Korea,2019,Population mid-year estimates (millions),51.2253
+1039,498,Republic of Moldova,2005,Population mid-year estimates (millions),4.1593
+1040,498,Republic of Moldova,2010,Population mid-year estimates (millions),4.0861
+1041,498,Republic of Moldova,2017,Population mid-year estimates (millions),4.0597
+1042,498,Republic of Moldova,2017,Surface area (thousand km2),33.846
+1043,498,Republic of Moldova,2019,Population mid-year estimates (millions),4.0433
+1044,638,Réunion,2005,Population mid-year estimates (millions),0.7916
+1045,638,Réunion,2010,Population mid-year estimates (millions),0.8305
+1046,638,Réunion,2017,Population mid-year estimates (millions),0.8761
+1047,638,Réunion,2017,Surface area (thousand km2),2.513
+1048,638,Réunion,2019,Population mid-year estimates (millions),0.8889
+1049,642,Romania,2005,Population mid-year estimates (millions),21.4173
+1050,642,Romania,2010,Population mid-year estimates (millions),20.4719
+1051,642,Romania,2017,Population mid-year estimates (millions),19.654
+1052,642,Romania,2017,Surface area (thousand km2),238.3907
+1053,642,Romania,2019,Population mid-year estimates (millions),19.3646
+1054,643,Russian Federation,2005,Population mid-year estimates (millions),143.6721
+1055,643,Russian Federation,2010,Population mid-year estimates (millions),143.4793
+1056,643,Russian Federation,2017,Population mid-year estimates (millions),145.5301
+1057,643,Russian Federation,2017,Surface area (thousand km2),17098.246
+1058,643,Russian Federation,2019,Population mid-year estimates (millions),145.8723
+1059,646,Rwanda,2005,Population mid-year estimates (millions),8.8402
+1060,646,Rwanda,2010,Population mid-year estimates (millions),10.0393
+1061,646,Rwanda,2017,Population mid-year estimates (millions),11.981
+1062,646,Rwanda,2017,Surface area (thousand km2),26.338
+1063,646,Rwanda,2019,Population mid-year estimates (millions),12.627
+1064,652,Saint Barthélemy,2005,Population mid-year estimates (millions),0.0086
+1065,652,Saint Barthélemy,2010,Population mid-year estimates (millions),0.0092
+1066,652,Saint Barthélemy,2019,Population mid-year estimates (millions),0.0098
+1067,654,Saint Helena,2005,Population mid-year estimates (millions),0.0043
+1068,654,Saint Helena,2010,Population mid-year estimates (millions),0.0042
+1069,654,Saint Helena,2017,Population mid-year estimates (millions),0.004
+1070,654,Saint Helena,2017,Surface area (thousand km2),0.308
+1071,654,Saint Helena,2019,Population mid-year estimates (millions),0.0061
+1072,659,Saint Kitts and Nevis,2000,Population mid-year estimates (millions),0.0454
+1073,659,Saint Kitts and Nevis,2005,Population mid-year estimates (millions),0.0486
+1074,659,Saint Kitts and Nevis,2010,Population mid-year estimates (millions),0.0514
+1075,659,Saint Kitts and Nevis,2011,Population mid-year estimates (millions),0.052000000000000005
+1076,659,Saint Kitts and Nevis,2017,Population mid-year estimates (millions),0.0553
+1077,659,Saint Kitts and Nevis,2017,Surface area (thousand km2),0.261
+1078,659,Saint Kitts and Nevis,2019,Population mid-year estimates (millions),0.0528
+1079,662,Saint Lucia,2005,Population mid-year estimates (millions),0.1634
+1080,662,Saint Lucia,2010,Population mid-year estimates (millions),0.1741
+1081,662,Saint Lucia,2017,Population mid-year estimates (millions),0.18100000000000002
+1082,662,Saint Lucia,2017,Surface area (thousand km2),0.539
+1083,662,Saint Lucia,2019,Population mid-year estimates (millions),0.1828
+1084,663,Saint Martin (French part),2005,Population mid-year estimates (millions),0.0342
+1085,663,Saint Martin (French part),2010,Population mid-year estimates (millions),0.0376
+1086,663,Saint Martin (French part),2019,Population mid-year estimates (millions),0.038
+1087,666,Saint Pierre and Miquelon,2005,Population mid-year estimates (millions),0.0063
+1088,666,Saint Pierre and Miquelon,2006,Population mid-year estimates (millions),0.0063
+1089,666,Saint Pierre and Miquelon,2010,Population mid-year estimates (millions),0.0063
+1090,666,Saint Pierre and Miquelon,2017,Population mid-year estimates (millions),0.0063
+1091,666,Saint Pierre and Miquelon,2017,Surface area (thousand km2),0.242
+1092,666,Saint Pierre and Miquelon,2019,Population mid-year estimates (millions),0.0058
+1093,670,Saint Vincent & Grenadines,2005,Population mid-year estimates (millions),0.1086
+1094,670,Saint Vincent & Grenadines,2010,Population mid-year estimates (millions),0.1083
+1095,670,Saint Vincent & Grenadines,2017,Population mid-year estimates (millions),0.1098
+1096,670,Saint Vincent & Grenadines,2017,Surface area (thousand km2),0.389
+1097,670,Saint Vincent & Grenadines,2019,Population mid-year estimates (millions),0.1106
+1098,882,Samoa,2005,Population mid-year estimates (millions),0.1797
+1099,882,Samoa,2010,Population mid-year estimates (millions),0.1859
+1100,882,Samoa,2017,Population mid-year estimates (millions),0.1954
+1101,882,Samoa,2017,Surface area (thousand km2),2.8418
+1102,882,Samoa,2019,Population mid-year estimates (millions),0.1971
+1103,674,San Marino,2004,Population mid-year estimates (millions),0.0289
+1104,674,San Marino,2005,Population mid-year estimates (millions),0.0292
+1105,674,San Marino,2010,Population mid-year estimates (millions),0.0311
+1106,674,San Marino,2015,Population mid-year estimates (millions),0.033
+1107,674,San Marino,2015,Surface area (thousand km2),0.061
+1108,674,San Marino,2017,Population mid-year estimates (millions),0.0334
+1109,674,San Marino,2017,Surface area (thousand km2),0.061
+1110,674,San Marino,2019,Population mid-year estimates (millions),0.0339
+1111,678,Sao Tome and Principe,2005,Population mid-year estimates (millions),0.1575
+1112,678,Sao Tome and Principe,2010,Population mid-year estimates (millions),0.1804
+1113,678,Sao Tome and Principe,2017,Population mid-year estimates (millions),0.2071
+1114,678,Sao Tome and Principe,2017,Surface area (thousand km2),0.9640000000000001
+1115,678,Sao Tome and Principe,2019,Population mid-year estimates (millions),0.2151
+1116,682,Saudi Arabia,2005,Population mid-year estimates (millions),23.8162
+1117,682,Saudi Arabia,2010,Population mid-year estimates (millions),27.4215
+1118,682,Saudi Arabia,2017,Population mid-year estimates (millions),33.1012
+1119,682,Saudi Arabia,2017,Surface area (thousand km2),2206.714
+1120,682,Saudi Arabia,2019,Population mid-year estimates (millions),34.2685
+1121,686,Senegal,2005,Population mid-year estimates (millions),11.0901
+1122,686,Senegal,2010,Population mid-year estimates (millions),12.6781
+1123,686,Senegal,2017,Population mid-year estimates (millions),15.4194
+1124,686,Senegal,2017,Surface area (thousand km2),196.71200000000002
+1125,686,Senegal,2019,Population mid-year estimates (millions),16.2964
+1126,688,Serbia,2005,Population mid-year estimates (millions),9.1938
+1127,688,Serbia,2010,Population mid-year estimates (millions),8.9913
+1128,688,Serbia,2017,Population mid-year estimates (millions),8.8296
+1129,688,Serbia,2017,Surface area (thousand km2),88.499
+1130,688,Serbia,2019,Population mid-year estimates (millions),8.7722
+1131,690,Seychelles,2005,Population mid-year estimates (millions),0.0886
+1132,690,Seychelles,2010,Population mid-year estimates (millions),0.0913
+1133,690,Seychelles,2017,Population mid-year estimates (millions),0.0964
+1134,690,Seychelles,2017,Surface area (thousand km2),0.457
+1135,690,Seychelles,2019,Population mid-year estimates (millions),0.0977
+1136,694,Sierra Leone,2005,Population mid-year estimates (millions),5.6456
+1137,694,Sierra Leone,2010,Population mid-year estimates (millions),6.4156
+1138,694,Sierra Leone,2017,Population mid-year estimates (millions),7.4884
+1139,694,Sierra Leone,2017,Surface area (thousand km2),72.3
+1140,694,Sierra Leone,2019,Population mid-year estimates (millions),7.8132
+1141,702,Singapore,2005,Population mid-year estimates (millions),4.2657
+1142,702,Singapore,2010,Population mid-year estimates (millions),5.1312
+1143,702,Singapore,2017,Population mid-year estimates (millions),5.707999999999999
+1144,702,Singapore,2017,Surface area (thousand km2),0.7190000000000001
+1145,702,Singapore,2019,Population mid-year estimates (millions),5.8043
+1146,534,Sint Maarten (Dutch part),2005,Population mid-year estimates (millions),0.0325
+1147,534,Sint Maarten (Dutch part),2010,Population mid-year estimates (millions),0.0331
+1148,534,Sint Maarten (Dutch part),2013,Population mid-year estimates (millions),0.0364
+1149,534,Sint Maarten (Dutch part),2013,Surface area (thousand km2),0.034
+1150,534,Sint Maarten (Dutch part),2014,Population mid-year estimates (millions),0.0377
+1151,534,Sint Maarten (Dutch part),2014,Surface area (thousand km2),0.034
+1152,534,Sint Maarten (Dutch part),2017,Population mid-year estimates (millions),0.0401
+1153,534,Sint Maarten (Dutch part),2017,Surface area (thousand km2),0.034
+1154,534,Sint Maarten (Dutch part),2019,Population mid-year estimates (millions),0.0424
+1155,703,Slovakia,2005,Population mid-year estimates (millions),5.399
+1156,703,Slovakia,2010,Population mid-year estimates (millions),5.4043
+1157,703,Slovakia,2017,Population mid-year estimates (millions),5.4479
+1158,703,Slovakia,2017,Surface area (thousand km2),49.035
+1159,703,Slovakia,2019,Population mid-year estimates (millions),5.457000000000001
+1160,705,Slovenia,2005,Population mid-year estimates (millions),1.995
+1161,705,Slovenia,2010,Population mid-year estimates (millions),2.0433
+1162,705,Slovenia,2017,Population mid-year estimates (millions),2.0764
+1163,705,Slovenia,2017,Surface area (thousand km2),20.273
+1164,705,Slovenia,2019,Population mid-year estimates (millions),2.0787
+1165,90,Solomon Islands,2005,Population mid-year estimates (millions),0.4699
+1166,90,Solomon Islands,2010,Population mid-year estimates (millions),0.5279
+1167,90,Solomon Islands,2017,Population mid-year estimates (millions),0.636
+1168,90,Solomon Islands,2017,Surface area (thousand km2),28.896
+1169,90,Solomon Islands,2019,Population mid-year estimates (millions),0.6698
+1170,706,Somalia,2005,Population mid-year estimates (millions),10.4469
+1171,706,Somalia,2010,Population mid-year estimates (millions),12.0439
+1172,706,Somalia,2017,Population mid-year estimates (millions),14.5892
+1173,706,Somalia,2017,Surface area (thousand km2),637.6569999999999
+1174,706,Somalia,2019,Population mid-year estimates (millions),15.4429
+1175,710,South Africa,2005,Population mid-year estimates (millions),47.8806
+1176,710,South Africa,2010,Population mid-year estimates (millions),51.217
+1177,710,South Africa,2017,Population mid-year estimates (millions),57.0098
+1178,710,South Africa,2017,Surface area (thousand km2),1221.037
+1179,710,South Africa,2019,Population mid-year estimates (millions),58.5583
+1180,728,South Sudan,2005,Population mid-year estimates (millions),7.5359
+1181,728,South Sudan,2010,Population mid-year estimates (millions),9.5084
+1182,728,South Sudan,2017,Population mid-year estimates (millions),10.9108
+1183,728,South Sudan,2017,Surface area (thousand km2),658.841
+1184,728,South Sudan,2019,Population mid-year estimates (millions),11.0621
+1185,724,Spain,2005,Population mid-year estimates (millions),44.0191
+1186,724,Spain,2010,Population mid-year estimates (millions),46.931000000000004
+1187,724,Spain,2017,Population mid-year estimates (millions),46.6474
+1188,724,Spain,2017,Surface area (thousand km2),505.944
+1189,724,Spain,2019,Population mid-year estimates (millions),46.7368
+1190,144,Sri Lanka,2005,Population mid-year estimates (millions),19.545
+1191,144,Sri Lanka,2010,Population mid-year estimates (millions),20.2617
+1192,144,Sri Lanka,2017,Population mid-year estimates (millions),21.128
+1193,144,Sri Lanka,2017,Surface area (thousand km2),65.61
+1194,144,Sri Lanka,2019,Population mid-year estimates (millions),21.3237
+1195,275,State of Palestine,2005,Population mid-year estimates (millions),3.5780000000000003
+1196,275,State of Palestine,2010,Population mid-year estimates (millions),4.0556
+1197,275,State of Palestine,2017,Population mid-year estimates (millions),4.7472
+1198,275,State of Palestine,2017,Surface area (thousand km2),6.02
+1199,275,State of Palestine,2019,Population mid-year estimates (millions),4.9814
+1200,729,Sudan,2005,Population mid-year estimates (millions),30.9495
+1201,729,Sudan,2010,Population mid-year estimates (millions),34.545
+1202,729,Sudan,2019,Population mid-year estimates (millions),42.8132
+1203,740,Suriname,2005,Population mid-year estimates (millions),0.4995
+1204,740,Suriname,2010,Population mid-year estimates (millions),0.5291
+1205,740,Suriname,2017,Population mid-year estimates (millions),0.5705
+1206,740,Suriname,2017,Surface area (thousand km2),163.82
+1207,740,Suriname,2019,Population mid-year estimates (millions),0.5814
+1208,752,Sweden,2005,Population mid-year estimates (millions),9.0386
+1209,752,Sweden,2010,Population mid-year estimates (millions),9.3902
+1210,752,Sweden,2017,Population mid-year estimates (millions),9.9049
+1211,752,Sweden,2017,Surface area (thousand km2),438.574
+1212,752,Sweden,2019,Population mid-year estimates (millions),10.0364
+1213,756,Switzerland,2005,Population mid-year estimates (millions),7.3868
+1214,756,Switzerland,2010,Population mid-year estimates (millions),7.8087
+1215,756,Switzerland,2017,Population mid-year estimates (millions),8.4558
+1216,756,Switzerland,2017,Surface area (thousand km2),41.291000000000004
+1217,756,Switzerland,2019,Population mid-year estimates (millions),8.5914
+1218,760,Syrian Arab Republic,2005,Population mid-year estimates (millions),18.3612
+1219,760,Syrian Arab Republic,2010,Population mid-year estimates (millions),21.3625
+1220,760,Syrian Arab Republic,2017,Population mid-year estimates (millions),17.0957
+1221,760,Syrian Arab Republic,2017,Surface area (thousand km2),185.18
+1222,760,Syrian Arab Republic,2019,Population mid-year estimates (millions),17.0701
+1223,762,Tajikistan,2005,Population mid-year estimates (millions),6.7893
+1224,762,Tajikistan,2010,Population mid-year estimates (millions),7.5274
+1225,762,Tajikistan,2017,Population mid-year estimates (millions),8.8803
+1226,762,Tajikistan,2017,Surface area (thousand km2),142.6
+1227,762,Tajikistan,2019,Population mid-year estimates (millions),9.321
+1228,764,Thailand,2005,Population mid-year estimates (millions),65.4162
+1229,764,Thailand,2010,Population mid-year estimates (millions),67.195
+1230,764,Thailand,2017,Population mid-year estimates (millions),69.2098
+1231,764,Thailand,2017,Surface area (thousand km2),513.12
+1232,764,Thailand,2019,Population mid-year estimates (millions),69.6256
+1233,626,Timor-Leste,2005,Population mid-year estimates (millions),0.9951
+1234,626,Timor-Leste,2010,Population mid-year estimates (millions),1.0935
+1235,626,Timor-Leste,2017,Population mid-year estimates (millions),1.2433
+1236,626,Timor-Leste,2017,Surface area (thousand km2),14.919
+1237,626,Timor-Leste,2019,Population mid-year estimates (millions),1.2931
+1238,768,Togo,2005,Population mid-year estimates (millions),5.6116
+1239,768,Togo,2010,Population mid-year estimates (millions),6.4217
+1240,768,Togo,2017,Population mid-year estimates (millions),7.6985
+1241,768,Togo,2017,Surface area (thousand km2),56.785
+1242,768,Togo,2019,Population mid-year estimates (millions),8.0824
+1243,772,Tokelau,2001,Population mid-year estimates (millions),0.0015
+1244,772,Tokelau,2005,Population mid-year estimates (millions),0.0012
+1245,772,Tokelau,2006,Population mid-year estimates (millions),0.0012
+1246,772,Tokelau,2010,Population mid-year estimates (millions),0.0011
+1247,772,Tokelau,2016,Population mid-year estimates (millions),0.0013
+1248,772,Tokelau,2017,Population mid-year estimates (millions),0.0013
+1249,772,Tokelau,2017,Surface area (thousand km2),0.012
+1250,772,Tokelau,2019,Population mid-year estimates (millions),0.0013
+1251,776,Tonga,2005,Population mid-year estimates (millions),0.1009
+1252,776,Tonga,2010,Population mid-year estimates (millions),0.10400000000000001
+1253,776,Tonga,2017,Population mid-year estimates (millions),0.102
+1254,776,Tonga,2017,Surface area (thousand km2),0.747
+1255,776,Tonga,2019,Population mid-year estimates (millions),0.1045
+1256,780,Trinidad and Tobago,2005,Population mid-year estimates (millions),1.2965
+1257,780,Trinidad and Tobago,2010,Population mid-year estimates (millions),1.3281
+1258,780,Trinidad and Tobago,2017,Population mid-year estimates (millions),1.3841
+1259,780,Trinidad and Tobago,2017,Surface area (thousand km2),5.127000000000001
+1260,780,Trinidad and Tobago,2019,Population mid-year estimates (millions),1.395
+1261,788,Tunisia,2005,Population mid-year estimates (millions),10.1068
+1262,788,Tunisia,2010,Population mid-year estimates (millions),10.6352
+1263,788,Tunisia,2017,Population mid-year estimates (millions),11.4334
+1264,788,Tunisia,2017,Surface area (thousand km2),163.61
+1265,788,Tunisia,2019,Population mid-year estimates (millions),11.6947
+1266,792,Turkey,2005,Population mid-year estimates (millions),67.9035
+1267,792,Turkey,2010,Population mid-year estimates (millions),72.327
+1268,792,Turkey,2017,Population mid-year estimates (millions),81.1165
+1269,792,Turkey,2017,Surface area (thousand km2),783.562
+1270,792,Turkey,2019,Population mid-year estimates (millions),83.4296
+1271,795,Turkmenistan,2005,Population mid-year estimates (millions),4.7546
+1272,795,Turkmenistan,2010,Population mid-year estimates (millions),5.0872
+1273,795,Turkmenistan,2017,Population mid-year estimates (millions),5.7577
+1274,795,Turkmenistan,2017,Surface area (thousand km2),488.1
+1275,795,Turkmenistan,2019,Population mid-year estimates (millions),5.9421
+1276,796,Turks and Caicos Islands,2001,Population mid-year estimates (millions),0.0202
+1277,796,Turks and Caicos Islands,2005,Population mid-year estimates (millions),0.0264
+1278,796,Turks and Caicos Islands,2010,Population mid-year estimates (millions),0.031
+1279,796,Turks and Caicos Islands,2017,Population mid-year estimates (millions),0.0354
+1280,796,Turks and Caicos Islands,2017,Surface area (thousand km2),0.9482
+1281,796,Turks and Caicos Islands,2019,Population mid-year estimates (millions),0.0382
+1282,798,Tuvalu,2002,Population mid-year estimates (millions),0.0096
+1283,798,Tuvalu,2005,Population mid-year estimates (millions),0.01
+1284,798,Tuvalu,2010,Population mid-year estimates (millions),0.0105
+1285,798,Tuvalu,2016,Population mid-year estimates (millions),0.0111
+1286,798,Tuvalu,2017,Population mid-year estimates (millions),0.0112
+1287,798,Tuvalu,2017,Surface area (thousand km2),0.026000000000000002
+1288,798,Tuvalu,2019,Population mid-year estimates (millions),0.0116
+1289,800,Uganda,2005,Population mid-year estimates (millions),27.6846
+1290,800,Uganda,2010,Population mid-year estimates (millions),32.4282
+1291,800,Uganda,2017,Population mid-year estimates (millions),41.1666
+1292,800,Uganda,2017,Surface area (thousand km2),241.55
+1293,800,Uganda,2019,Population mid-year estimates (millions),44.2696
+1294,804,Ukraine,2005,Population mid-year estimates (millions),46.8908
+1295,804,Ukraine,2010,Population mid-year estimates (millions),45.7921
+1296,804,Ukraine,2017,Population mid-year estimates (millions),44.4877
+1297,804,Ukraine,2017,Surface area (thousand km2),603.5
+1298,804,Ukraine,2019,Population mid-year estimates (millions),43.9936
+1299,784,United Arab Emirates,2005,Population mid-year estimates (millions),4.5882
+1300,784,United Arab Emirates,2010,Population mid-year estimates (millions),8.55
+1301,784,United Arab Emirates,2017,Population mid-year estimates (millions),9.4872
+1302,784,United Arab Emirates,2017,Surface area (thousand km2),83.6
+1303,784,United Arab Emirates,2019,Population mid-year estimates (millions),9.7705
+1304,826,United Kingdom,2005,Population mid-year estimates (millions),60.288000000000004
+1305,826,United Kingdom,2010,Population mid-year estimates (millions),63.4598
+1306,826,United Kingdom,2017,Population mid-year estimates (millions),66.7275
+1307,826,United Kingdom,2017,Surface area (thousand km2),242.495
+1308,826,United Kingdom,2019,Population mid-year estimates (millions),67.5302
+1309,834,United Rep. of Tanzania,2005,Population mid-year estimates (millions),38.4503
+1310,834,United Rep. of Tanzania,2010,Population mid-year estimates (millions),44.3465
+1311,834,United Rep. of Tanzania,2017,Population mid-year estimates (millions),54.6603
+1312,834,United Rep. of Tanzania,2017,Surface area (thousand km2),947.303
+1313,834,United Rep. of Tanzania,2019,Population mid-year estimates (millions),58.0055
+1314,840,United States of America,2005,Population mid-year estimates (millions),294.9935
+1315,840,United States of America,2010,Population mid-year estimates (millions),309.0115
+1316,840,United States of America,2017,Population mid-year estimates (millions),325.0848
+1317,840,United States of America,2017,Surface area (thousand km2),9833.5168
+1318,840,United States of America,2019,Population mid-year estimates (millions),329.0649
+1319,850,United States Virgin Islands,2005,Population mid-year estimates (millions),0.1078
+1320,850,United States Virgin Islands,2010,Population mid-year estimates (millions),0.1061
+1321,850,United States Virgin Islands,2017,Population mid-year estimates (millions),0.1048
+1322,850,United States Virgin Islands,2017,Surface area (thousand km2),0.34700000000000003
+1323,850,United States Virgin Islands,2019,Population mid-year estimates (millions),0.1046
+1324,858,Uruguay,2005,Population mid-year estimates (millions),3.3218
+1325,858,Uruguay,2010,Population mid-year estimates (millions),3.3593
+1326,858,Uruguay,2017,Population mid-year estimates (millions),3.4366
+1327,858,Uruguay,2017,Surface area (thousand km2),173.62599999999998
+1328,858,Uruguay,2019,Population mid-year estimates (millions),3.4617
+1329,860,Uzbekistan,2005,Population mid-year estimates (millions),26.4278
+1330,860,Uzbekistan,2010,Population mid-year estimates (millions),28.5159
+1331,860,Uzbekistan,2017,Population mid-year estimates (millions),31.9598
+1332,860,Uzbekistan,2017,Surface area (thousand km2),448.969
+1333,860,Uzbekistan,2019,Population mid-year estimates (millions),32.9817
+1334,548,Vanuatu,2005,Population mid-year estimates (millions),0.2093
+1335,548,Vanuatu,2010,Population mid-year estimates (millions),0.2362
+1336,548,Vanuatu,2017,Population mid-year estimates (millions),0.2855
+1337,548,Vanuatu,2017,Surface area (thousand km2),12.189
+1338,548,Vanuatu,2019,Population mid-year estimates (millions),0.2999
+1339,862,Venezuela (Boliv. Rep. of),2005,Population mid-year estimates (millions),26.4324
+1340,862,Venezuela (Boliv. Rep. of),2010,Population mid-year estimates (millions),28.4399
+1341,862,Venezuela (Boliv. Rep. of),2017,Population mid-year estimates (millions),29.4025
+1342,862,Venezuela (Boliv. Rep. of),2017,Surface area (thousand km2),912.05
+1343,862,Venezuela (Boliv. Rep. of),2019,Population mid-year estimates (millions),28.5158
+1344,704,Viet Nam,2005,Population mid-year estimates (millions),83.8327
+1345,704,Viet Nam,2010,Population mid-year estimates (millions),87.9677
+1346,704,Viet Nam,2017,Population mid-year estimates (millions),94.6006
+1347,704,Viet Nam,2017,Surface area (thousand km2),330.967
+1348,704,Viet Nam,2019,Population mid-year estimates (millions),96.4621
+1349,876,Wallis and Futuna Islands,2003,Population mid-year estimates (millions),0.0147
+1350,876,Wallis and Futuna Islands,2005,Population mid-year estimates (millions),0.0146
+1351,876,Wallis and Futuna Islands,2008,Population mid-year estimates (millions),0.013999999999999999
+1352,876,Wallis and Futuna Islands,2010,Population mid-year estimates (millions),0.0134
+1353,876,Wallis and Futuna Islands,2016,Population mid-year estimates (millions),0.0119
+1354,876,Wallis and Futuna Islands,2017,Population mid-year estimates (millions),0.0118
+1355,876,Wallis and Futuna Islands,2017,Surface area (thousand km2),0.142
+1356,876,Wallis and Futuna Islands,2019,Population mid-year estimates (millions),0.0114
+1357,732,Western Sahara,2005,Population mid-year estimates (millions),0.4375
+1358,732,Western Sahara,2010,Population mid-year estimates (millions),0.4803
+1359,732,Western Sahara,2017,Population mid-year estimates (millions),0.5526
+1360,732,Western Sahara,2017,Surface area (thousand km2),266.0
+1361,732,Western Sahara,2019,Population mid-year estimates (millions),0.5825
+1362,887,Yemen,2005,Population mid-year estimates (millions),20.1074
+1363,887,Yemen,2010,Population mid-year estimates (millions),23.1549
+1364,887,Yemen,2017,Population mid-year estimates (millions),27.8348
+1365,887,Yemen,2017,Surface area (thousand km2),527.9680000000001
+1366,887,Yemen,2019,Population mid-year estimates (millions),29.1619
+1367,894,Zambia,2005,Population mid-year estimates (millions),11.8562
+1368,894,Zambia,2010,Population mid-year estimates (millions),13.606
+1369,894,Zambia,2017,Population mid-year estimates (millions),16.8536
+1370,894,Zambia,2017,Surface area (thousand km2),752.612
+1371,894,Zambia,2019,Population mid-year estimates (millions),17.861
+1372,716,Zimbabwe,2005,Population mid-year estimates (millions),12.0767
+1373,716,Zimbabwe,2010,Population mid-year estimates (millions),12.6977
+1374,716,Zimbabwe,2017,Population mid-year estimates (millions),14.2366
+1375,716,Zimbabwe,2017,Surface area (thousand km2),390.75699999999995
+1376,716,Zimbabwe,2019,Population mid-year estimates (millions),14.6455
