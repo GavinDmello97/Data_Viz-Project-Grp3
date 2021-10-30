@@ -49,7 +49,7 @@
   <body>
     <div id="container">
       <div id="headerContainer">
-        <h2  id="header-h1-text" class="font ">Contributers of CO2 emission </h1>
+        <h2  id="header-h1-text" class="font ">Contributers of CO₂ emission </h1>
       </div>
       <div class="containers">
         <div class="worldContainer containerPadder">
@@ -83,6 +83,7 @@
         </div>
         <div style="display: flex; flex-direction: column; justify-content: space-between;  flex: 2; margin-right: 10px" class = ''>
         <div id= "graphContainer1" class="graphContainer ">
+          <!-- <text>Population</text> -->
         </div>
         <div id= "graphContainer2" class="graphContainer ">
         </div>
@@ -95,25 +96,26 @@
     <script>
 
       var dataCollection;
-      var margin = { top: 30, right: 30, bottom: 30, left: 50 },
-            width = 460 - margin.left - margin.right,
-            height = 220 - margin.top - margin.bottom;
+      var margin = { top: 30, right: 30, bottom: 30, left: 60 },
+            width = 480 - margin.left - margin.right,
+            height = 210 - margin.top - margin.bottom;
 
           
             
           //SVG 1 Initializer set - Start
           // append the svg object to the body of the page
+         
           var svg1 = d3
             .select("#graphContainer1")
             .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
+            .attr("width", width  + margin.left + margin.right)
+            .attr("height", height +15 + margin.top + margin.bottom)
             .append("g")
             .attr(
               "transform",
-              "translate(" + margin.left + "," + margin.top + ")"
+              "translate(" + (margin.left) + "," + margin.top + ")"
             );
-
+            
           // Initialise a X axis:
           var x1 = d3.scaleTime().range([0, width]);
           var xAxis1 = d3.axisBottom().scale(x1);
@@ -121,11 +123,24 @@
             .append("g")
             .attr("transform", "translate(0," + height + ")")
             .attr("class", "myXaxis1");
+          svg1.append("text")             
+            .attr("transform", "translate(" + (width/2 -20) + " ," +  (height + margin.top +5 ) + ")")
+            .style("font-size", "12px")
+            .text("Years");
+          
 
           // Initialize an Y axis
           var y1 = d3.scaleLinear().range([height, 0]);
           var yAxis1 = d3.axisLeft().scale(y1);
           svg1.append("g").attr("class", "myYaxis1");
+          svg1.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 0 - margin.left +8)
+            .attr("x",0 - (height / 2))
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .style("font-size", "12px")
+            .text("Population(in millions)"); 
 
           //SVG 1 Initializer set - End
 
@@ -137,7 +152,7 @@
             .select("#graphContainer2")
             .append("svg")
             .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
+            .attr("height", height + 20+ margin.top + margin.bottom)
             .append("g")
             .attr(
               "transform",
@@ -151,11 +166,24 @@
             .append("g")
             .attr("transform", "translate(0," + height + ")")
             .attr("class", "myXaxis2");
+          svg2.append("text")             
+            .attr("transform", "translate(" + (width/2 -20) + " ," +  (height + margin.top +5 ) + ")")
+            .style("font-size", "12px")
+            .text("Years");
 
           // Initialize an Y axis
           var y2 = d3.scaleLinear().range([height, 0]);
           var yAxis2 = d3.axisLeft().scale(y2);
           svg2.append("g").attr("class", "myYaxis2");
+          svg2.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 0 - margin.left +8)
+            .attr("x",0 - (height / 2))
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .style("font-size", "12px")
+            .text("GPD(in 10 billions)")
+            
 
           //SVG 2 Initializer set - End
 
@@ -166,7 +194,7 @@
             .select("#graphContainer3")
             .append("svg")
             .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
+            .attr("height", height+15 + margin.top + margin.bottom)
             .append("g")
             .attr(
               "transform",
@@ -180,11 +208,28 @@
             .append("g")
             .attr("transform", "translate(0," + height + ")")
             .attr("class", "myXaxis3");
+          svg3.append("text")             
+            .attr("transform", "translate(" + (width/2 -20) + " ," +  (height + margin.top +5 ) + ")")
+            .style("font-size", "12px")
+            .text("Years");
 
           // Initialize an Y axis
           var y3 = d3.scaleLinear().range([height, 0]);
           var yAxis3 = d3.axisLeft().scale(y3);
-          svg3.append("g").attr("class", "myYaxis3");      
+          svg3.append("g").attr("class", "myYaxis3"); 
+          svg3.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 0 - margin.left +8)
+            .attr("x",0 - (height / 2))
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .style("font-size", "12px")
+            .text("Coal produce(per million tons)"); 
+          
+
+
+
+
       let svg0 = d3.select("#canvas");
       // load the data sources:
       // Source 1: NY times COVID-19 Data (live)
@@ -205,7 +250,7 @@
               data.push(countryList)
               await main(data)
 
-              await update(response[1].data["Africa"].data,response[1].data["Africa"].data,response[1].data["Africa"].data)
+              await update(response[1].data["Australia"].data,response[1].data["Australia"].data,response[1].data["Australia"].data)
               // update(dataCollection["Africa"].data, dataCollection["Afghanistan"].data, dataCollection["Afghanistan"].data);
 
             }).catch(error => {console.log(error, topoJson)});
@@ -266,7 +311,6 @@
               );
           })
           .on("mousedown",(mouseData, d) => {
-            console.log("Datra",d, dataCollection[d.properties.name.toString()].data)
                         update(dataCollection[d.properties.name.toString()].data, dataCollection[d.properties.name.toString()].data, dataCollection[d.properties.name.toString()].data)
 
           })
@@ -290,16 +334,16 @@
             }
           });
 
-        svg0.call(
-          d3
-            .zoom()
-            .extent([
-              [0, 0],
-              [1000, 1000],
-            ])
-            .scaleExtent([1, 8])
-            .on("zoom", zoomed)
-        );
+        // svg0.call(
+        //   d3
+        //     .zoom()
+        //     .extent([
+        //       [0, 0],
+        //       [1000, 1000],
+        //     ])
+        //     .scaleExtent([1, 8])
+        //     .on("zoom", zoomed)
+        // );
 
          
         function zoomed({ transform }) {
@@ -413,7 +457,7 @@
                   })
               )
               .attr("fill", "none")
-              .attr("stroke", "steelblue")
+              .attr("stroke", "magenta")
               .attr("stroke-width", 2.5);
           };
       updateContributer2 = (data) => {
@@ -428,7 +472,7 @@
             // create the Y axis
             y2.domain(
               [0, d3.extent(data, function (d) {
-                return Number(d.co2_per_capita);
+                return Number(d.gdp)/10000000000;
               })[1]]
               
             );
@@ -454,11 +498,11 @@
                     return x2(new Date(d.year));
                   })
                   .y(function (d) {
-                    return y2(d.co2_per_capita);
+                    return y2(d.gdp/10000000000);
                   })
               )
               .attr("fill", "none")
-              .attr("stroke", "steelblue")
+              .attr("stroke", "lime")
               .attr("stroke-width", 2.5);
           };
       updateContributer3 = (data) => {
@@ -503,7 +547,7 @@
                   })
               )
               .attr("fill", "none")
-              .attr("stroke", "steelblue")
+              .attr("stroke", "aqua")
               .attr("stroke-width", 2.5);
           };
           
