@@ -49,20 +49,23 @@
   <body>
     <div id="container">
       <div id="headerContainer">
-        <h2  id="header-h1-text" class="font ">Contributers of CO₂ emission </h1>
+        <h2  id="header-h1-text" class="font-Trirongs">Contributers of CO₂ emission </h1>
       </div>
       <div class="containers">
         <div class="worldContainer containerPadder">
+          
           <div style="background-color: azure; width: 100%; height: 100%">
-          <svg id="canvas"  style=" width: 100%; height: 90%" viewBox="0 0 1000 500"></svg>
-           <div class="colorScaleContainer">
+            <div class="worldTextContainer font-Trirongs"><text style="font-size:24px; margin-top: 10px;">World map demonstrating CO₂ emission </text>
+            </div>
+          <svg id="canvas"  style=" width: 100%; height: 75%" viewBox="0 0 1000 500"></svg>
+          <div class="colorScaleContainer">
             <div class="colorScale"></div>
             <div class="colorScaleRangeContainer">
               <text id='minRange'></text>
               <text id='maxRange'></text>
             </div>
 
-           </div>
+          </div>
           </div>
             <!-- <div class=slider-container>
                   <input
@@ -96,6 +99,7 @@
     <script>
 
       var dataCollection;
+      
       var margin = { top: 30, right: 30, bottom: 30, left: 60 },
             width = 480 - margin.left - margin.right,
             height = 210 - margin.top - margin.bottom;
@@ -182,7 +186,7 @@
             .attr("dy", "1em")
             .style("text-anchor", "middle")
             .style("font-size", "12px")
-            .text("GPD(in 10 billions)")
+            .text("GDP(in 10 billions)")
             
 
           //SVG 2 Initializer set - End
@@ -239,6 +243,7 @@
 
          Promise.all([axios.get('http://localhost:3000/co2-emission'), axios.get("https://raw.githubusercontent.com/owid/co2-data/master/owid-co2-data.json")])
         .then(async response => {
+          console.log(response[0])
 
           countryList = response[0].data[7].countryList
         
@@ -419,7 +424,7 @@
             // Create the X axis:
             x1.domain(
               d3.extent(data, function (d) {
-                return new Date(d.year);
+                return new Date(d.year.toString());
               })
             );
             svg1.selectAll(".myXaxis1").transition().duration(3000).call(xAxis1);
@@ -435,7 +440,7 @@
 
             // Create a update selection: bind to the new data
             var u = svg1.selectAll(".lineTest1").data([data], function (d) {
-              return new Date(d.year);
+              // return new Date(d.year.toString());
             });
 
             // Updata the line
@@ -450,7 +455,7 @@
                 d3
                   .line()
                   .x(function (d) {
-                    return x1(new Date(d.year));
+                    return x1(new Date(d.year.toString()));
                   })
                   .y(function (d) {
                     return y1(d.population/1000000);
@@ -464,9 +469,10 @@
             // Create the X axis:
             x2.domain(
               d3.extent(data, function (d) {
-                return new Date(d.year);
+                return new Date(d.year.toString());
               })
             );
+        
             svg2.selectAll(".myXaxis2").transition().duration(3000).call(xAxis2);
 
             // create the Y axis
@@ -480,7 +486,7 @@
 
             // Create a update selection: bind to the new data
             var u = svg2.selectAll(".lineTest2").data([data], function (d) {
-              return new Date(d.year);
+              // return new Date(d.year.toString());
             });
 
             // Updata the line
@@ -495,7 +501,7 @@
                 d3
                   .line()
                   .x(function (d) {
-                    return x2(new Date(d.year));
+                    return x2(new Date(d.year.toString()));
                   })
                   .y(function (d) {
                     return y2(d.gdp/10000000000);
@@ -509,7 +515,7 @@
             // Create the X axis:
             x3.domain(
               d3.extent(data, function (d) {
-                return new Date(d.year);
+                return new Date(d.year.toString());
               })
             );
             svg3.selectAll(".myXaxis3").transition().duration(3000).call(xAxis3);
@@ -525,7 +531,7 @@
 
             // Create a update selection: bind to the new data
             var u = svg3.selectAll(".lineTest3").data([data], function (d) {
-              return new Date(d.year);
+              // return new Date(d.year.toString());
             });
 
             // Updata the line
@@ -540,7 +546,7 @@
                 d3
                   .line()
                   .x(function (d) {
-                    return x3(new Date(d.year));
+                    return x3(new Date(d.year.toString()));
                   })
                   .y(function (d) {
                     return y3(d.coal_co2);
