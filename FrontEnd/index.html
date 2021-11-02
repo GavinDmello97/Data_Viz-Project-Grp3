@@ -241,11 +241,11 @@
 
 
 
-         Promise.all([axios.get('http://localhost:3000/co2-emission'), axios.get("https://raw.githubusercontent.com/owid/co2-data/master/owid-co2-data.json")])
+         Promise.all([d3.json('./data/co2-emission_Final.json'), axios.get("https://raw.githubusercontent.com/owid/co2-data/master/owid-co2-data.json")])
         .then(async response => {
-          console.log(response[0])
-
-          countryList = response[0].data[7].countryList
+          console.log(response)
+var dataset = response[0]
+          countryList = dataset[7].countryList
         
           // let covid19 = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/live/us-counties.csv";
           let topoJson = "data/countries-110m.json";
