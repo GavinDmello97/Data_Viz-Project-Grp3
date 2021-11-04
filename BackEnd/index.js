@@ -10,16 +10,18 @@ const fs = require('fs')
 
 
 url = "https://raw.githubusercontent.com/owid/co2-data/master/owid-co2-data.json"
-let file = axios.get(url).then((response)=>{
-
-    console.log(response.data)
+const getAll = ()=> { axios.get(url).then((response)=>{
+   // return response.data
+   const allValues= response.data;
+   return (response.data)
+    //console.log(response.data)
 })
+}
 
-//console.log(file.data)
-.catch(error=>{console.log( )})
+console.log(getAll)
+//.catch(error=>{console.log( )})
 
 
-//const d3 = require("d3");
 
 app.get('/',(req,res)=>{
     res.send('<h2 style="margin:2rem"> Welcome to Homepage</h2>');
