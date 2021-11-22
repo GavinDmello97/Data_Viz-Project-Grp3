@@ -241,10 +241,11 @@
 
 
 
-         Promise.all([d3.json('./data/co2-emission_Final.json'), axios.get("https://raw.githubusercontent.com/owid/co2-data/master/owid-co2-data.json")])
+        Promise.all([d3.json('http://localhost:5000/co2-emission'), axios.get("http://localhost:5000/contributors")])
         .then(async response => {
+          
           console.log(response)
-var dataset = response[0]
+          var dataset = response[0]
           countryList = dataset[7].countryList
         
           // let covid19 = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/live/us-counties.csv";
@@ -254,9 +255,7 @@ var dataset = response[0]
               dataCollection = response[1].data
               data.push(countryList)
               await main(data)
-
               await update(response[1].data["Australia"].data,response[1].data["Australia"].data,response[1].data["Australia"].data)
-              // update(dataCollection["Africa"].data, dataCollection["Afghanistan"].data, dataCollection["Afghanistan"].data);
 
             }).catch(error => {console.log(error, topoJson)});
         })
