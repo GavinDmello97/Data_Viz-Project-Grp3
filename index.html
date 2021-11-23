@@ -97,18 +97,14 @@
     </div>
     <div id="tooltip"></div>
     <script>
-
-      var dataCollection;
-      
+      const ENV_STAGING =  "https://dv-proj.herokuapp.com"
+      var contributorData;
       var margin = { top: 30, right: 30, bottom: 30, left: 60 },
             width = 480 - margin.left - margin.right,
             height = 210 - margin.top - margin.bottom;
 
-          
-            
           //SVG 1 Initializer set - Start
           // append the svg object to the body of the page
-         
           var svg1 = d3
             .select("#graphContainer1")
             .append("svg")
@@ -240,26 +236,28 @@
       // let emissionData = "data/CO2_EmissionClean.json";
 
 
-
-        Promise.all([d3.json('http://localhost:5000/co2-emission'), axios.get("http://localhost:5000/contributors")])
+  
+        Promise.all([axios.get(ENV_STAGING+'/co2-emission'), axios.get(ENV_STAGING+"/contributors")])
         .then(async response => {
+           const  {data: CO2Data} = response[0];
+           const  {data: ContributorData} = response[1];
+
           
           console.log(response)
-          var dataset = response[0]
-          countryList = dataset[7].countryList
+          
+          var countryList = CO2Data[7].countryList
         
-          // let covid19 = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/live/us-counties.csv";
           let topoJson = "data/countries-110m.json";
           await Promise.all([d3.json(topoJson)], d3.autoType()).then(
             async(data) => {
-              dataCollection = response[1].data
+              contributorData = ContributorData
               data.push(countryList)
               await main(data)
-              await update(response[1].data["Australia"].data,response[1].data["Australia"].data,response[1].data["Australia"].data)
+              await update(ContributorData["Australia"].data,ContributorData["Australia"].data,ContributorData["Australia"].data)
 
             }).catch(error => {console.log(error, topoJson)});
         })
-        .catch(error => console.error(error));
+        .catch(error => console.log(error));
       
 
       main = (data) => {
@@ -300,7 +298,7 @@
           
           .attr("fill", "white")
           .on("mousemove", (mouseData, d) => {
-            // console.log("dataCollection",dataCollection, d.properties.name.toString(), dataCollection[d.properties.name.toString()])
+            // console.log("contributorData",contributorData, d.properties.name.toString(), contributorData[d.properties.name.toString()])
             d3.select("#tooltip")
               .style("opacity", 0.8)
               .style("left", (mouseData.clientX + 10).toString() + "px")
@@ -315,7 +313,7 @@
               );
           })
           .on("mousedown",(mouseData, d) => {
-                        update(dataCollection[d.properties.name.toString()].data, dataCollection[d.properties.name.toString()].data, dataCollection[d.properties.name.toString()].data)
+                        update(contributorData[d.properties.name.toString()].data, contributorData[d.properties.name.toString()].data, contributorData[d.properties.name.toString()].data)
 
           })
           .on("mouseout", () => d3.select("#tooltip").style("opacity", 0))
