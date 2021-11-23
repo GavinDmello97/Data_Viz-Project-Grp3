@@ -30,6 +30,9 @@
     <script src="https://unpkg.com/topojson-client@2"></script>
     <script src="js/mobiscroll.javascript.min.js"></script>
     <link href="css/mobiscroll.javascript.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/libs/gifsee.min.css">
+<script src="libs//gifsee.js"></script>
+
     <style>
       h2.font {
         font-family: 'PT Serif', serif;
@@ -52,9 +55,11 @@
       <div id="headerContainer">
         <h2  id="header-h1-text" class="font-Trirongs">Contributers of CO₂ emission </h1>
       </div>
-      <div class="containers">
+      <div id="rootLoader">
+        <img src="/data/loader.gif" data-gifsee="gif.png" id="super-cool-gif" style="width: 80px; height: 80px;">
+      </div>
+      <div class="containers" id="rootOutput">
         <div class="worldContainer containerPadder">
-          
           <div style="background-color: #fcf3f2; width: 100%; height: 100%">
             <div class="worldTextContainer font-Trirongs"><text style="font-size:24px; margin-top: 10px;">World map demonstrating CO₂ emission </text>
             </div>
@@ -104,7 +109,8 @@
       var contributorData;
       var margin = { top: 30, right: 30, bottom: 30, left: 60 },
             width = 480 - margin.left - margin.right,
-            height = 190 - margin.top - margin.bottom;
+            height = 190 - margin.top - margin.bottom,
+            selectedCountry="Australia";
 
           //SVG 1 Initializer set - Start
           // append the svg object to the body of the page
@@ -259,7 +265,8 @@
               d3.select("#selectedCountryText").text("Showing contributors for Australia")
 
               await update(ContributorData["Australia"].data,ContributorData["Australia"].data,ContributorData["Australia"].data)
-
+              d3.select("#rootLoader").style("display","none");
+              d3.select("#rootOutput").style("display","flex");
             }).catch(error => {console.log(error, topoJson)});
         })
         .catch(error => console.log(error));
@@ -298,10 +305,13 @@
           .data(geoJsonData)
           .enter()
           .append("path")
+          
           .attr("class", "path_geo")
           .attr("d", geoGenerator)
-          
           .attr("fill", "white")
+          .attr("stroke", "lime")
+          .attr("stroke-width", "5px")
+          .attr("stroke-linejoin", "round")
           .on("mousemove", (mouseData, d) => {
             // console.log("contributorData",contributorData, d.properties.name.toString(), contributorData[d.properties.name.toString()])
             d3.select("#tooltip")
@@ -318,12 +328,29 @@
               );
           })
           .on("mousedown",(mouseData, d) => {
-            d3.select("#selectedCountryText").text("Showing contributors for "+ d.properties.name.toString())
-                        update(contributorData[d.properties.name.toString()].data, contributorData[d.properties.name.toString()].data, contributorData[d.properties.name.toString()].data)
+        console.log(d.properties.name.toString())
+            mapCanvas.selectAll("path").style("fill", (mydata) => {
+              if((mydata.properties.name ===  d.properties.name)) {
+                 return "#FFD700"
+              }
+              else {
+                console.log(mydata.properties.name, co2Emission.get(mydata.properties.name))
+                try {
+                    return colorScale(
+                      parseInt(co2Emission.get(mydata.properties.name)[0].Value)
+                    );  
+                  // }
+                  
+                } catch (error) {
 
+                  return "white";
+                }
+              }
+                          })
+            d3.select("#selectedCountryText").text("Showing contributors for "+ d.properties.name.toString())
+            update(contributorData[d.properties.name.toString()].data, contributorData[d.properties.name.toString()].data, contributorData[d.properties.name.toString()].data)
           })
           .on("mouseout", () => d3.select("#tooltip").style("opacity", 0))
-
           .transition()
           .delay((d, i) => {
             return i * 5;
@@ -332,15 +359,16 @@
           .style("fill", (d) => {
 
             try {
-              return colorScale(
-                parseInt(co2Emission.get(d.properties.name)[0].Value)
-              );
-              
+       
+                return colorScale(
+                  parseInt(co2Emission.get(d.properties.name)[0].Value)
+                );                
             } catch (error) {
 
               return "white";
             }
-          });
+          })
+        
 
         // svg0.call(
         //   d3
