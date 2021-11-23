@@ -25,6 +25,14 @@ body {
     width: fit-content;
 }
 
+
+#rootLoader {
+  flex: 1 ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .noMargin 
 {
     margin: 0px;
@@ -57,7 +65,7 @@ body {
   #container {
     width: 100vw;
     height: 100vh;
-    background: blueviolet;
+    background:white;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -75,7 +83,7 @@ body {
   }
   .containers {
     flex: 1;
-    display: flex;
+    display: none;
     background-color: white;
   }
 
@@ -234,3 +242,5 @@ body {
     background: #1a9fe0;
     color: #000;
 }
+
+
