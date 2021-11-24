@@ -65,7 +65,7 @@ body {
   #container {
     width: 100vw;
     height: 100vh;
-    background:white;
+    background:#edf0f1;
     display: flex;
     flex-direction: column;
     position: relative;
