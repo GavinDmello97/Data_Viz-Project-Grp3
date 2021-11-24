@@ -249,8 +249,9 @@
         Promise.all([axios.get(ENV_STAGING+'/co2-emission'), axios.get(ENV_STAGING+"/contributors")])
         .then(async response => {
 
-           const  {data: CO2Data} = response[0];
-           const  {data: ContributorData} = response[1];
+          const  {data: CO2Data} = response[0];
+          const  {data: ContributorData} = response[1];
+          console.log("Data", CO2Data)
 
           
           var countryList = CO2Data[7].countryList
@@ -273,7 +274,6 @@
       
 
       main = (topoData, countryData) => {
-        console.log("Data", topoData)
         let projection = d3.geoEquirectangular().scale(150).translate([500,250]);
         //converting topojson to geosjon
         let geoJsonData = topojson.feature(
@@ -296,7 +296,7 @@
         let colorScale = d3
           .scaleLog()
           .domain(emissionExtent)
-          .range(["#ffafab", "#630500"])
+          .range([ "#ff9d99", "#630500"])
           .interpolate(d3.interpolateCubehelix.gamma(1));
 
         let mapCanvas = svg0.append("g");
@@ -313,29 +313,31 @@
           .attr("stroke-width", "5px")
           .attr("stroke-linejoin", "round")
           .on("mousemove", (mouseData, d) => {
-            // console.log("contributorData",contributorData, d.properties.name.toString(), contributorData[d.properties.name.toString()])
+            console.log("contributorData",d.properties.name)
+            var printVal = co2Emission.get(d.properties.name)[0].Value === "200" ? "NA" : parseInt(co2Emission.get(d.properties.name)[0].Value).toString()
             d3.select("#tooltip")
               .style("opacity", 0.8)
               .style("left", (mouseData.clientX + 10).toString() + "px")
               .style("top", (mouseData.clientY + 10).toString() + "px")
               .html(
                 "<div class='tooltipData'>Country: " +
-                  d.properties.name +
+                  co2Emission.get(d.properties.name)[0].CountryName+
                   "</div>" +
                   "<div class='tooltipData'>Emission: " +
-                    parseInt(co2Emission.get(d.properties.name)[0].Value) +
+                    printVal +
                   "</div>" 
               );
           })
           .on("mousedown",(mouseData, d) => {
-        console.log(d.properties.name.toString())
             mapCanvas.selectAll("path").style("fill", (mydata) => {
               if((mydata.properties.name ===  d.properties.name)) {
                  return "#FFD700"
               }
               else {
-                console.log(mydata.properties.name, co2Emission.get(mydata.properties.name))
                 try {
+                  if(co2Emission.get(mydata.properties.name)[0].Value ==="200") {
+                    return "white"
+                  }
                     return colorScale(
                       parseInt(co2Emission.get(mydata.properties.name)[0].Value)
                     );  
@@ -359,12 +361,13 @@
           .style("fill", (d) => {
 
             try {
-       
-                return colorScale(
-                  parseInt(co2Emission.get(d.properties.name)[0].Value)
-                );                
+              if(co2Emission.get(d.properties.name)[0].Value ==="200") {
+                return "white"
+              }
+              return colorScale(
+                parseInt(co2Emission.get(d.properties.name)[0].Value)
+              );                
             } catch (error) {
-
               return "white";
             }
           })
