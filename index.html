@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content= "width=device-width, user-scalable=no">
-
     <link
       href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
       rel="stylesheet"
@@ -19,584 +18,111 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Roboto+Slab&display=swap" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet" />
     <script src="js/mobiscroll.javascript.min.js"></script>
-<link href="css/mobiscroll.javascript.min.css" rel="stylesheet" type="text/css">
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+    <link href="css/mobiscroll.javascript.min.css" rel="stylesheet" type="text/css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./libs/d3.js"></script>
     <script src="https://d3js.org/topojson.v1.min.js"></script>
-    <title>CO2 Emission</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="https://d3js.org/topojson.v2.min.js"></script>
     <script src="https://unpkg.com/topojson-client@2"></script>
     <script src="js/mobiscroll.javascript.min.js"></script>
     <link href="css/mobiscroll.javascript.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/libs/gifsee.min.css">
-<script src="libs//gifsee.js"></script>
-
-    <style>
-      h2.font {
-        font-family: 'PT Serif', serif;
-      }
-
-      .slider-container {
-        background-color: #a90000;
-        height: 50%,
-        
-      }
-      
-
-    </style>
-     <script type="text/javascript" src="js/index.js">
-
-     </script>
+    <script src="libs//gifsee.js"></script>
+    </script>
+    <title>CO2 Emission</title>
   </head>
   <body>
     <div id="container">
+
+      <!-- Header Container -->
       <div id="headerContainer">
+        
+        
+        <!-- Header -->
         <h2  id="header-h1-text" class="font-Trirongs">Contributers of CO₂ emission </h1>
       </div>
+
+      
+      <!-- Loader Container -->
       <div id="rootLoader">
-        <iframe src="https://giphy.com/embed/jAYUbVXgESSti" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/google-icon-loading-jAYUbVXgESSti"></a></p>      </div>
+        <!-- Loader -->
+        <image src="./data/Rotating_globe.gif" width="80" height="80" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/google-icon-loading-jAYUbVXgESSti"></a></p>      </div>
       <div class="containers" id="rootOutput">
+
+        
+        <!-- Left Graph Container -->
         <div class="worldContainer containerPadder">
+
+          
+          <!-- Left Graph Header/Title Container -->
           <div style="background-color: #fcf3f2; width: 100%; height: 100%">
             <div class="worldTextContainer font-Trirongs"><text style="font-size:24px; margin-top: 10px;">World map demonstrating CO₂ emission </text>
-            </div>
+          </div>
+
+          
+          <!-- Geospacial SVG  -->
           <svg id="canvas"  style=" width: 100%; height: 75%" viewBox="0 0 1000 500"></svg>
+          
+          
+          <!-- Color scale palette -->
           <div class="colorScaleContainer">
             <div class="colorScale"></div>
-            <div class="colorScaleRangeContainer">
-              <text id='minRange'></text>
-              <text id='maxRange'></text>
+              <div class="colorScaleRangeContainer">
+                <text id='minRange'></text>
+                <text id='maxRange'></text>
+              </div>
             </div>
-
+            
+            
+            <!-- Year slider -->
+            <div class=slider-container>
+              <input
+                  id="slider"
+                  type="range"
+                  value="7"
+                  min= "0"
+                  max="7"
+                  mobiscroll-slider="sliderSettings"
+                  data-step-labels="[0,1,2,3,4,5,6,7]"
+                  data-highlight="false"
+              />                  
+            </div> 
           </div>
-          <div class=slider-container>
-            <input
-                id="slider"
-                type="range"
-                value="7"
-                min= "0"
-                max="7"
-                mobiscroll-slider="sliderSettings"
-                data-step-labels="[0,1,2,3,4,5,6,7]"
-                data-highlight="false"
-            />                
-             
-        </div> 
-          </div>
-         
-        
-
         </div>
+        
+        
+        <!-- Right Graph Root Container -->
         <div style="display: flex; flex-direction: column; justify-content: space-between;  flex: 2; margin-right: 10px" class = ''>
+        
+        
+          <!-- Selected Country Container -->
         <div class="graphContainer" id= "selectedCountryTextContainer">
           <text style="font-size:18px;padding: 10px" id= "selectedCountryText" > </text>
         </div>
+        
+        
+        <!-- Population vs years -->
         <div id= "graphContainer1" class="graphContainer ">
         </div>
+        
+        
+        <!-- GDP vs years -->
         <div id= "graphContainer2" class="graphContainer ">
         </div>
+        
+        
+        <!-- Coal Production vs years -->
         <div id= "graphContainer3" class="graphContainer ">
         </div>
       </div>
       </div>
     </div>
+
+    
+    <!-- Tooltip -->
     <div id="tooltip"></div>
-    <script>
-      const ENV_STAGING =  "https://dv-proj.herokuapp.com"
-      var contributorData;
-      var margin = { top: 30, right: 30, bottom: 30, left: 60 },
-            width = 480 - margin.left - margin.right,
-            height = 190 - margin.top - margin.bottom,
-            selectedCountry="Australia";
+    <script type="text/javascript" src="./js/index.js" ></script>
 
-          //SVG 1 Initializer set - Start
-          // append the svg object to the body of the page
-          var svg1 = d3
-            .select("#graphContainer1")
-            .append("svg")
-            .attr("width", width  + margin.left + margin.right)
-            .attr("height", height +15 + margin.top + margin.bottom)
-            .append("g")
-            .attr(
-              "transform",
-              "translate(" + (margin.left) + "," + margin.top + ")"
-            );
-            
-          // Initialise a X axis:
-          var x1 = d3.scaleTime().range([0, width]);
-          var xAxis1 = d3.axisBottom().scale(x1);
-          svg1
-            .append("g")
-            .attr("transform", "translate(0," + height + ")")
-            .attr("class", "myXaxis1");
-          svg1.append("text")             
-            .attr("transform", "translate(" + (width/2 -20) + " ," +  (height + margin.top +5 ) + ")")
-            .style("font-size", "12px")
-            .text("Years");
-          
-
-          // Initialize an Y axis
-          var y1 = d3.scaleLinear().range([height, 0]);
-          var yAxis1 = d3.axisLeft().scale(y1);
-          svg1.append("g").attr("class", "myYaxis1");
-          svg1.append("text")
-            .attr("transform", "rotate(-90)")
-            .attr("y", 0 - margin.left +8)
-            .attr("x",0 - (height / 2))
-            .attr("dy", "1em")
-            .style("text-anchor", "middle")
-            .style("font-size", "12px")
-            .text("Population(in millions)"); 
-
-          //SVG 1 Initializer set - End
-
-
-
-          //SVG 2 Initializer set - Start
-
-          var svg2 = d3
-            .select("#graphContainer2")
-            .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + 20+ margin.top + margin.bottom)
-            .append("g")
-            .attr(
-              "transform",
-              "translate(" + margin.left + "," + margin.top + ")"
-            );
-
-          // Initialise a X axis:
-          var x2 = d3.scaleTime().range([0, width]);
-          var xAxis2 = d3.axisBottom().scale(x2);
-          svg2
-            .append("g")
-            .attr("transform", "translate(0," + height + ")")
-            .attr("class", "myXaxis2");
-          svg2.append("text")             
-            .attr("transform", "translate(" + (width/2 -20) + " ," +  (height + margin.top +5 ) + ")")
-            .style("font-size", "12px")
-            .text("Years");
-
-          // Initialize an Y axis
-          var y2 = d3.scaleLinear().range([height, 0]);
-          var yAxis2 = d3.axisLeft().scale(y2);
-          svg2.append("g").attr("class", "myYaxis2");
-          svg2.append("text")
-            .attr("transform", "rotate(-90)")
-            .attr("y", 0 - margin.left +8)
-            .attr("x",0 - (height / 2))
-            .attr("dy", "1em")
-            .style("text-anchor", "middle")
-            .style("font-size", "12px")
-            .text("GDP(in 10 billions)")
-            
-
-          //SVG 2 Initializer set - End
-
-
-
-           //SVG 3 Initializer set - Start
-           var svg3 = d3
-            .select("#graphContainer3")
-            .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height+15 + margin.top + margin.bottom)
-            .append("g")
-            .attr(
-              "transform",
-              "translate(" + margin.left + "," + margin.top + ")"
-            );
-
-          // Initialise a X axis:
-          var x3 = d3.scaleTime().range([0, width]);
-          var xAxis3 = d3.axisBottom().scale(x3);
-          svg3
-            .append("g")
-            .attr("transform", "translate(0," + height + ")")
-            .attr("class", "myXaxis3");
-          svg3.append("text")             
-            .attr("transform", "translate(" + (width/2 -20) + " ," +  (height + margin.top +5 ) + ")")
-            .style("font-size", "12px")
-            .text("Years");
-
-          // Initialize an Y axis
-          var y3 = d3.scaleLinear().range([height, 0]);
-          var yAxis3 = d3.axisLeft().scale(y3);
-          svg3.append("g").attr("class", "myYaxis3"); 
-          svg3.append("text")
-            .attr("transform", "rotate(-90)")
-            .attr("y", 0 - margin.left +8)
-            .attr("x",0 - (height / 2))
-            .attr("dy", "1em")
-            .style("text-anchor", "middle")
-            .style("font-size", "12px")
-            .text("Coal produce(per million tons)"); 
-          
-
-
-
-
-      let svg0 = d3.select("#canvas");
-      // load the data sources:
-      // Source 1: NY times COVID-19 Data (live)
-      // let emissionData = "data/CO2_EmissionClean.json";
-
-
-  
-        Promise.all([axios.get(ENV_STAGING+'/co2-emission'), axios.get(ENV_STAGING+"/contributors")])
-        .then(async response => {
-
-          const  {data: CO2Data} = response[0];
-          const  {data: ContributorData} = response[1];
-          console.log("Data", CO2Data)
-
-          
-          var countryList = CO2Data[7].countryList
-        
-          let topoJson = "data/countries-110m.json";
-          await Promise.all([d3.json(topoJson)], d3.autoType()).then(
-            async(data) => {
-              contributorData = ContributorData
-              scrollInit(data[0], CO2Data)
-
-              await main(data[0], countryList)
-              d3.select("#selectedCountryText").text("Showing contributors for Australia")
-
-              await update(ContributorData["Australia"].data,ContributorData["Australia"].data,ContributorData["Australia"].data)
-              d3.select("#rootLoader").style("display","none");
-              d3.select("#rootOutput").style("display","flex");
-            }).catch(error => {console.log(error, topoJson)});
-        })
-        .catch(error => console.log(error));
-      
-
-      main = (topoData, countryData) => {
-        let projection = d3.geoEquirectangular().scale(150).translate([500,250]);
-        //converting topojson to geosjon
-        let geoJsonData = topojson.feature(
-          topoData,
-          topoData.objects.countries
-        ).features;
-
-        let geoGenerator = d3.geoPath().projection(projection);
-        let co2Emission = d3.group(countryData, (d) => d.CountryName);
-        let emissionExtent = d3.extent(countryData, (d) => {
-          return parseInt(+d.Value);
-        });
-
-        emissionExtent[0] = 1;
-
-        d3.select("#minRange").html("Min: " + emissionExtent[0])
-        d3.select("#maxRange").html("Max: " + emissionExtent[1])
-
-
-        let colorScale = d3
-          .scaleLog()
-          .domain(emissionExtent)
-          .range([ "#ff9d99", "#630500"])
-          .interpolate(d3.interpolateCubehelix.gamma(1));
-
-        let mapCanvas = svg0.append("g");
-        mapCanvas
-          .selectAll("path")
-          .data(geoJsonData)
-          .enter()
-          .append("path")
-          
-          .attr("class", "path_geo")
-          .attr("d", geoGenerator)
-          .attr("fill", "white")
-          .attr("stroke", "lime")
-          .attr("stroke-width", "5px")
-          .attr("stroke-linejoin", "round")
-          .on("mousemove", (mouseData, d) => {
-            console.log("contributorData",d.properties.name)
-            var printVal = co2Emission.get(d.properties.name)[0].Value === "200" ? "NA" : parseInt(co2Emission.get(d.properties.name)[0].Value).toString()
-            d3.select("#tooltip")
-              .style("opacity", 0.8)
-              .style("left", (mouseData.clientX + 10).toString() + "px")
-              .style("top", (mouseData.clientY + 10).toString() + "px")
-              .html(
-                "<div class='tooltipData'>Country: " +
-                  co2Emission.get(d.properties.name)[0].CountryName+
-                  "</div>" +
-                  "<div class='tooltipData'>Emission: " +
-                    printVal +
-                  "</div>" 
-              );
-          })
-          .on("mousedown",(mouseData, d) => {
-            mapCanvas.selectAll("path").style("fill", (mydata) => {
-              if((mydata.properties.name ===  d.properties.name)) {
-                 return "#FFD700"
-              }
-              else {
-                try {
-                  if(co2Emission.get(mydata.properties.name)[0].Value ==="200") {
-                    return "white"
-                  }
-                    return colorScale(
-                      parseInt(co2Emission.get(mydata.properties.name)[0].Value)
-                    );  
-                  // }
-                  
-                } catch (error) {
-
-                  return "white";
-                }
-              }
-                          })
-            d3.select("#selectedCountryText").text("Showing contributors for "+ d.properties.name.toString())
-            update(contributorData[d.properties.name.toString()].data, contributorData[d.properties.name.toString()].data, contributorData[d.properties.name.toString()].data)
-          })
-          .on("mouseout", () => d3.select("#tooltip").style("opacity", 0))
-          .transition()
-          .delay((d, i) => {
-            return i * 5;
-          })
-          .duration(700)
-          .style("fill", (d) => {
-
-            try {
-              if(co2Emission.get(d.properties.name)[0].Value ==="200") {
-                return "white"
-              }
-              return colorScale(
-                parseInt(co2Emission.get(d.properties.name)[0].Value)
-              );                
-            } catch (error) {
-              return "white";
-            }
-          })
-        
-
-        // svg0.call(
-        //   d3
-        //     .zoom()
-        //     .extent([
-        //       [0, 0],
-        //       [1000, 1000],
-        //     ])
-        //     .scaleExtent([1, 8])
-        //     .on("zoom", zoomed)
-        // );
-
-         
-        function zoomed({ transform }) {
-          mapCanvas
-          .attr("transform", transform)          
-        }
-
-
-      };
-      
-      
-          //SVG 3 Initializer set - End
-
-      
-      scrollInit = (topoData, CO2Data) => {
-        mobiscroll.settings = {
-          theme: 'ios',
-          themeVariant: 'light',
-          lang: 'en'
-        };
-
-        var dayNames = [
-          '1975', '1985',
-          '1995', '2005',
-          '2010', '2015',
-          '2016', '2017'
-        ]
-        
-        slider = document.getElementById('slider'),
-        slider.step = 1
-    
-        slider
-        .addEventListener('change', function (ev) {
-          console.log(Math.round(this.value))
-          main(topoData, CO2Data[Math.round(this.value)].countryList)
-        });
-        
-
-        mobiscroll.form('#demo', {
-            lang: 'en',                       // Specify language like: lang: 'pl' or omit setting to use default
-            theme: 'ios',                     // Specify theme like: theme: 'ios' or omit setting to use default
-            themeVariant: 'light'             // More info about themeVariant: https://docs.mobiscroll.com/4-10-9/javascript/forms#opt-themeVariant
-        });
-    
-        mobiscroll.slider('#slider', {
-          theme: 'ios',                     // Specify theme like: theme: 'ios' or omit setting to use default
-          themeVariant: 'light',            // More info about themeVariant: https://docs.mobiscroll.com/4-10-9/javascript/forms#opt-themeVariant
-          lang: 'en',                       // Specify language like: lang: 'pl' or omit setting to use default
-          onInit: function (event, inst) {  // More info about onInit: https://docs.mobiscroll.com/4-10-9/javascript/forms#event-onInit
-              var labels = slider.parentNode.querySelectorAll('.mbsc-progress-step-label');
-              for (var i = 0; i < dayNames.length; ++i) {
-                  labels[i].innerHTML = dayNames[i];
-              }
-          }, 
-        });
-       
-      }
-
-
-
-      update = (data1, data2, data3) =>{
-            updateContributer1(data1)
-            updateContributer2(data2)
-            updateContributer3(data3)
-
-          }
-
-          // Create a function that takes a dataset as input and update the plot:
-      updateContributer1 = (data ) => {
-
-            // Create the X axis:
-            x1.domain(
-              d3.extent(data, function (d) {
-                return new Date(d.year.toString());
-              })
-            );
-            svg1.selectAll(".myXaxis1").transition().duration(3000).call(xAxis1);
-
-            // create the Y axis
-            y1.domain(
-              [0, d3.extent(data, function (d) {
-                return Number(d.population)/1000000;
-              })[1]]
-              
-            );
-            svg1.selectAll(".myYaxis1").transition().duration(3000).call(yAxis1);
-
-            // Create a update selection: bind to the new data
-            var u = svg1.selectAll(".lineTest1").data([data], function (d) {
-              // return new Date(d.year.toString());
-            });
-
-            // Updata the line
-            u.enter()
-              .append("path")
-              .attr("class", "lineTest1")
-              .merge(u)
-              .transition()
-              .duration(3000)
-              .attr(
-                "d",
-                d3
-                  .line()
-                  .x(function (d) {
-                    return x1(new Date(d.year.toString()));
-                  })
-                  .y(function (d) {
-                    return y1(d.population/1000000);
-                  })
-              )
-              .attr("fill", "none")
-              .attr("stroke", "#0b84a5")
-              .attr("stroke-width", 2.5);
-          };
-      updateContributer2 = (data) => {
-            // Create the X axis:
-            x2.domain(
-              d3.extent(data, function (d) {
-                return new Date(d.year.toString());
-              })
-            );
-        
-            svg2.selectAll(".myXaxis2").transition().duration(3000).call(xAxis2);
-
-            // create the Y axis
-            y2.domain(
-              [0, d3.extent(data, function (d) {
-                return Number(d.gdp)/10000000000;
-              })[1]]
-              
-            );
-            svg2.selectAll(".myYaxis2").transition().duration(3000).call(yAxis2);
-
-            // Create a update selection: bind to the new data
-            var u = svg2.selectAll(".lineTest2").data([data], function (d) {
-              // return new Date(d.year.toString());
-            });
-
-            // Updata the line
-            u.enter()
-              .append("path")
-              .attr("class", "lineTest2")
-              .merge(u)
-              .transition()
-              .duration(3000)
-              .attr(
-                "d",
-                d3
-                  .line()
-                  .x(function (d) {
-                    return x2(new Date(d.year.toString()));
-                  })
-                  .y(function (d) {
-                    return y2(d.gdp/10000000000);
-                  })
-              )
-              .attr("fill", "none")
-              .attr("stroke", "#f6c85f")
-              .attr("stroke-width", 2.5);
-          };
-      updateContributer3 = (data) => {
-            // Create the X axis:
-            x3.domain(
-              d3.extent(data, function (d) {
-                return new Date(d.year.toString());
-              })
-            );
-            svg3.selectAll(".myXaxis3").transition().duration(3000).call(xAxis3);
-
-            // create the Y axis
-            y3.domain(
-              [0, d3.extent(data, function (d) {
-                return d.coal_co2;
-              })[1]]
-              
-            );
-            svg3.selectAll(".myYaxis3").transition().duration(3000).call(yAxis3);
-
-            // Create a update selection: bind to the new data
-            var u = svg3.selectAll(".lineTest3").data([data], function (d) {
-              // return new Date(d.year.toString());
-            });
-
-            // Updata the line
-            u.enter()
-              .append("path")
-              .attr("class", "lineTest3")
-              .merge(u)
-              .transition()
-              .duration(3000)
-              .attr(
-                "d",
-                d3
-                  .line()
-                  .x(function (d) {
-                    return x3(new Date(d.year.toString()));
-                  })
-                  .y(function (d) {
-                    return y3(d.coal_co2);
-                  })
-              )
-              .attr("fill", "none")
-              .attr("stroke", "#d0620d")
-              .attr("stroke-width", 2.5);
-          };
-          
-          
-          
-          // At the beginning, I run the update function on the first dataset:
-      
-        function getRandomInt(max) {
-          return Math.floor(Math.random() * max);
-        }
-   
-   
-   </script>
   </body>
 </html>
