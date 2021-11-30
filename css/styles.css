@@ -1,7 +1,7 @@
 @import "mobiscroll.javascript.min";
 
 body {
-    background-color: #eeebf8;
+    background-color: #fff;
 }
 #headerContainer {
     margin: 0px;
@@ -25,12 +25,17 @@ body {
     width: fit-content;
 }
 
+h2.font {
+  font-family: 'PT Serif', serif;
+}
+
 
 #rootLoader {
   flex: 1 ;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fff;
 }
 
 .noMargin 
@@ -130,6 +135,11 @@ body {
 
   }
 
+  .slider-container {
+    background-color: #a90000;
+    height: 50%,
+    
+  }
 
   .colorScaleContainer {
     width: 100%;
