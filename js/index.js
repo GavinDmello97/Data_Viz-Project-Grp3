@@ -135,13 +135,13 @@ svg3.append("text")
 
 
 
-let geospacialSvg = d3.select("#canvas");
+let geospatialSvg = d3.select("#canvas");
 
 
 
 
 /*------Fetch data from backend from heroku staging server ---------*/
-/*------1. Api for CO2 emission geospacial data---------*/
+/*------1. Api for CO2 emission geospatial data---------*/
 /*------2. Api for contributors of CO2 emission---------*/
 
 Promise.all([axios.get(ENV_STAGING + '/co2-emission'), axios.get(ENV_STAGING + "/contributors")])
@@ -165,9 +165,9 @@ Promise.all([axios.get(ENV_STAGING + '/co2-emission'), axios.get(ENV_STAGING + "
                 contributorData = ContributorData
 
                 // initialize the year slider and pass year data
-                yearSliderForGeospacialGraph(data[0], CO2Data)
+                yearSliderForGeospatialGraph(data[0], CO2Data)
 
-                // load GeoSpacial graph 
+                // load Geospatial graph 
                 await main(data[0], countryList)
 
                 // init setter for selected country label
@@ -182,7 +182,7 @@ Promise.all([axios.get(ENV_STAGING + '/co2-emission'), axios.get(ENV_STAGING + "
     .catch(error => console.log(error));
 
 
-/*----------GeoSpacial Graph ------------------*/
+/*----------Geospatial Graph ------------------*/
 main = (topoData, countryData) => {
     let projection = d3.geoEquirectangular().scale(150).translate([500, 250]);
     // converting topojson to geosjon
@@ -213,8 +213,7 @@ main = (topoData, countryData) => {
         .interpolate(d3.interpolateCubehelix.gamma(1));
 
 
-    let mapCanvas = geospacialSvg.append("g");
-
+    let mapCanvas = geospatialSvg.append("g");
     mapCanvas
         .selectAll("path")
         .data(geoJsonData)
@@ -245,7 +244,7 @@ main = (topoData, countryData) => {
         // Update line charts and color of selected country when a particular country is clicked
         .on("mousedown", (mouseData, d) => {
 
-            // Update color of countries in geospacial graph
+            // Update color of countries in geospatial graph
             mapCanvas.selectAll("path").style("fill", (mydata) => {
                 if ((mydata.properties.name === d.properties.name)) return "#FFD700"
                 else {
@@ -287,7 +286,7 @@ main = (topoData, countryData) => {
 
 
 /* Year slider init and updation function */
-yearSliderForGeospacialGraph = (topoData, CO2Data) => {
+yearSliderForGeospatialGraph = (topoData, CO2Data) => {
     mobiscroll.settings = {
         theme: 'ios',
         themeVariant: 'light',
