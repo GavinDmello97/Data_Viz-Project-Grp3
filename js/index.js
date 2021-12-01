@@ -132,7 +132,7 @@ svg3.append("text")
     .attr("dy", "1em")
     .style("text-anchor", "middle")
     .style("font-size", "12px")
-    .text("Coal produce(per million tons)");
+    .text("Energy produce(per million tons)");
 
 
 
@@ -206,8 +206,8 @@ main = (topoData, countryData) => {
     emissionExtent[0] = 1;
 
     // setting min and max range for the color palette  labels
-    d3.select("#minRange").html("Min: " + emissionExtent[0] + " kilotons")
-    d3.select("#maxRange").html("Max: " + emissionExtent[1] + " kilotons")
+    d3.select("#minRange").html("Min: " + emissionExtent[0] + "K metric tons")
+    d3.select("#maxRange").html("Max: " + emissionExtent[1] + "K metric tons")
 
     // color code setter
     let colorScale = d3
@@ -233,7 +233,7 @@ main = (topoData, countryData) => {
         .on("mousemove", (mouseData, d) => {
             var co2ValueForSelectedCountry = co2Emission.get(d.properties.name)[0].Value === "200"
                 ? "Not available" :
-                parseInt(co2Emission.get(d.properties.name)[0].Value).toString() + " kt (kiloton)";
+                parseInt(co2Emission.get(d.properties.name)[0].Value).toString() + "K metric tons";
             d3.select("#tooltip")
                 .style("opacity", 0.8)
                 .style("left", (mouseData.clientX + 10).toString() + "px")
