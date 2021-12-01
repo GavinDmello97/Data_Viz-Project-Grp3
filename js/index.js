@@ -316,7 +316,11 @@ yearSliderForGeospatialGraph = (topoData, CO2Data) => {
     // Event listener for slider on value changed
     slider
         .addEventListener('change', function (ev) {
-            if (ev.bubbles === true) clearInterval(timer)
+            if (ev.bubbles === true) {
+                clearInterval(timer);
+                isPlaying = false;
+                d3.select("#play-pause").attr("src", "../data/play-button-1.png")
+            }
             main(topoData, CO2Data[Math.round(this.value)].countryList)
         });
 
@@ -499,7 +503,6 @@ updateContributer3 = (data) => {
 
 
 playPress = () => {
-    console.log("hello", isPlaying)
     d3.select("#play-pause").attr("src", isPlaying === true ? "../data/play-button-1.png" : "../data/pause-button-1.png")
 
     if (isPlaying === true) {
@@ -513,6 +516,8 @@ playPress = () => {
             slider = document.getElementById('slider')
             if (parseInt(slider.value) >= 7) {
                 clearInterval(timer)
+                isPlaying = false;
+                d3.select("#play-pause").attr("src", "../data/play-button-1.png")
             }
             else {
                 slider.value = (parseInt(slider.value) + 1).toString()
@@ -527,7 +532,6 @@ playPress = () => {
 }
 
 stop = () => {
-    console.log("hello", isPlaying)
     isPlaying = false
     d3.select("#play-pause").attr("src", "../data/play-button-1.png")
     clearInterval(timer)
