@@ -16,7 +16,7 @@
     http://localhost:3000/{{API_ENDPOINT_NAME}}
     
    
-### For Backend:
+### For Frontend:
   1. Run the following command in terminal -
   
     a)  cd FrontEnd && npm install &$ code .
