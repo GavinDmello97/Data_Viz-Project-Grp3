@@ -1,5 +1,8 @@
 const ENV_STAGING = "https://dv-proj.herokuapp.com"
 var contributorData;
+var timer;
+var isPlaying = false;
+
 var margin = { top: 30, right: 30, bottom: 30, left: 60 },
     width = 480 - margin.left - margin.right,
     height = 190 - margin.top - margin.bottom,
@@ -177,6 +180,7 @@ Promise.all([axios.get(ENV_STAGING + '/co2-emission'), axios.get(ENV_STAGING + "
                 await update(ContributorData["Australia"].data, ContributorData["Australia"].data, ContributorData["Australia"].data)
                 d3.select("#rootLoader").style("display", "none");
                 d3.select("#rootOutput").style("display", "flex");
+
             }).catch(error => { console.log(error, topoJson) });
     })
     .catch(error => console.log(error));
@@ -202,8 +206,8 @@ main = (topoData, countryData) => {
     emissionExtent[0] = 1;
 
     // setting min and max range for the color palette  labels
-    d3.select("#minRange").html("Min: " + emissionExtent[0])
-    d3.select("#maxRange").html("Max: " + emissionExtent[1])
+    d3.select("#minRange").html("Min: " + emissionExtent[0] + " kilotons")
+    d3.select("#maxRange").html("Max: " + emissionExtent[1] + " kilotons")
 
     // color code setter
     let colorScale = d3
@@ -312,9 +316,11 @@ yearSliderForGeospatialGraph = (topoData, CO2Data) => {
     // Event listener for slider on value changed
     slider
         .addEventListener('change', function (ev) {
-            console.log(Math.round(this.value))
+            if (ev.bubbles === true) clearInterval(timer)
             main(topoData, CO2Data[Math.round(this.value)].countryList)
         });
+
+
 
     mobiscroll.slider('#slider', {
         theme: 'ios',                     // Specify theme like: theme: 'ios' or omit setting to use default
@@ -340,6 +346,7 @@ yearSliderForGeospatialGraph = (topoData, CO2Data) => {
 
 // main update fuction for all 3 line graphs
 update = (data1, data2, data3) => {
+
 
     updateContributer1(data1)
     updateContributer2(data2)
@@ -489,6 +496,47 @@ updateContributer3 = (data) => {
         .attr("stroke", "#d0620d")
         .attr("stroke-width", 2.5);
 };
+
+
+playPress = () => {
+    console.log("hello", isPlaying)
+    d3.select("#play-pause").attr("src", isPlaying === true ? "../data/play-button-1.png" : "../data/pause-button-1.png")
+
+    if (isPlaying === true) {
+        clearInterval(timer)
+    } else {
+        var slider = document.getElementById('slider')
+
+        slider.value = (parseInt(slider.value) + 1).toString()
+        slider.dispatchEvent(new Event('change'));
+        timer = setInterval(() => {
+            slider = document.getElementById('slider')
+            if (parseInt(slider.value) >= 7) {
+                clearInterval(timer)
+            }
+            else {
+                slider.value = (parseInt(slider.value) + 1).toString()
+                slider.dispatchEvent(new Event('change'));
+            }
+
+        }, 2000);
+    }
+
+
+    isPlaying = !isPlaying
+}
+
+stop = () => {
+    console.log("hello", isPlaying)
+    isPlaying = false
+    d3.select("#play-pause").attr("src", "../data/play-button-1.png")
+    clearInterval(timer)
+    var slider = document.getElementById('slider')
+    slider.value = "0"
+    slider.dispatchEvent(new Event('change'));
+
+
+}
 
 
 
