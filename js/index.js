@@ -227,7 +227,9 @@ main = (topoData, countryData) => {
         .attr("stroke-linejoin", "round")
         // Display tooltip on mouse hover on a country
         .on("mousemove", (mouseData, d) => {
-            var co2ValueForSelectedCountry = co2Emission.get(d.properties.name)[0].Value === "200" ? "NA" : parseInt(co2Emission.get(d.properties.name)[0].Value).toString()
+            var co2ValueForSelectedCountry = co2Emission.get(d.properties.name)[0].Value === "200"
+                ? "Not available" :
+                parseInt(co2Emission.get(d.properties.name)[0].Value).toString() + " kt (kiloton)";
             d3.select("#tooltip")
                 .style("opacity", 0.8)
                 .style("left", (mouseData.clientX + 10).toString() + "px")
@@ -240,6 +242,9 @@ main = (topoData, countryData) => {
                     co2ValueForSelectedCountry +
                     "</div>"
                 );
+
+            mapCanvas.selectAll("path").style("cursor", "pointer");
+
         })
         // Update line charts and color of selected country when a particular country is clicked
         .on("mousedown", (mouseData, d) => {
@@ -251,19 +256,18 @@ main = (topoData, countryData) => {
                     try {
                         // fill white for countries with no data
                         if (co2Emission.get(mydata.properties.name)[0].Value === "200") return "white"
-                        return colorScale(
-                            parseInt(co2Emission.get(mydata.properties.name)[0].Value)
-                        );
-
+                        return colorScale(parseInt(co2Emission.get(mydata.properties.name)[0].Value));
                     } catch (error) { return "white"; }
-
                 }
             })
             // update selected country label
             d3.select("#selectedCountryText").text("Showing contributors for " + d.properties.name.toString())
-
             // update all line graphs
-            update(contributorData[d.properties.name.toString()].data, contributorData[d.properties.name.toString()].data, contributorData[d.properties.name.toString()].data)
+            update(
+                contributorData[d.properties.name.toString()].data,
+                contributorData[d.properties.name.toString()].data,
+                contributorData[d.properties.name.toString()].data
+            )
         })
         .on("mouseout", () => d3.select("#tooltip").style("opacity", 0))
         .transition()
@@ -312,13 +316,6 @@ yearSliderForGeospatialGraph = (topoData, CO2Data) => {
             main(topoData, CO2Data[Math.round(this.value)].countryList)
         });
 
-    // style config for year slider
-    mobiscroll.form('#demo', {
-        lang: 'en',                       // Specify language like: lang: 'pl' or omit setting to use default
-        theme: 'ios',                     // Specify theme like: theme: 'ios' or omit setting to use default
-        themeVariant: 'light'             // More info about themeVariant: https://docs.mobiscroll.com/4-10-9/javascript/forms#opt-themeVariant
-    });
-
     mobiscroll.slider('#slider', {
         theme: 'ios',                     // Specify theme like: theme: 'ios' or omit setting to use default
         themeVariant: 'light',            // More info about themeVariant: https://docs.mobiscroll.com/4-10-9/javascript/forms#opt-themeVariant
@@ -331,11 +328,19 @@ yearSliderForGeospatialGraph = (topoData, CO2Data) => {
         },
     });
 
+    // style config for year slider
+    mobiscroll.form('#demo', {
+        lang: 'en',                       // Specify language like: lang: 'pl' or omit setting to use default
+        theme: 'ios',                     // Specify theme like: theme: 'ios' or omit setting to use default
+        themeVariant: 'light'             // More info about themeVariant: https://docs.mobiscroll.com/4-10-9/javascript/forms#opt-themeVariant
+    });
+
 }
 
 
 // main update fuction for all 3 line graphs
 update = (data1, data2, data3) => {
+
     updateContributer1(data1)
     updateContributer2(data2)
     updateContributer3(data3)
@@ -358,7 +363,6 @@ updateContributer1 = (data) => {
         [0, d3.extent(data, function (d) {
             return Number(d.population) / 1000000;
         })[1]]
-
     );
     svg1.selectAll(".myYaxis1").transition().duration(3000).call(yAxis1);
 
