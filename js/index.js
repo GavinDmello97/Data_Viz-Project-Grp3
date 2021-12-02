@@ -225,7 +225,7 @@ main = (topoData, countryData) => {
         .append("path")
         .attr("class", "path_geo")
         .attr("d", geoGenerator)
-        .attr("fill", "white")
+        // .attr("fill", "white")
         .attr("stroke", "lime")
         .attr("stroke-width", "5px")
         .attr("stroke-linejoin", "round")
@@ -275,10 +275,10 @@ main = (topoData, countryData) => {
         })
         .on("mouseout", () => d3.select("#tooltip").style("opacity", 0))
         .transition()
-        .delay((d, i) => {
-            return i * 5;
-        })
-        .duration(700)
+        // .delay((d, i) => {
+        //     return i * 5;
+        // })
+        // .duration(700)
         .style("fill", (d) => {
             try {
                 if (co2Emission.get(d.properties.name)[0].Value === "200") return "white"
@@ -504,6 +504,9 @@ updateContributer3 = (data) => {
 
 playPress = () => {
     d3.select("#play-pause").attr("src", isPlaying === true ? "../data/play-button-1.png" : "../data/pause-button-1.png")
+    // if (parseInt(slider.value) >= 7 && isPlaying) {
+
+    // }
 
     if (isPlaying === true) {
         clearInterval(timer)
