@@ -319,7 +319,7 @@ yearSliderForGeospatialGraph = (topoData, CO2Data) => {
             if (ev.bubbles === true) {
                 clearInterval(timer);
                 isPlaying = false;
-                d3.select("#play-pause").attr("src", "../data/play-button-1.png")
+                d3.select("#play-pause").open().attr("src", "../data/play-button-1.png")
             }
             main(topoData, CO2Data[Math.round(this.value)].countryList)
         });
