@@ -156,7 +156,7 @@ Promise.all([axios.get(ENV_STAGING + '/co2-emission'), axios.get(ENV_STAGING + "
         const { data: ContributorData } = response[1];
 
         // Initial load of dataset for year 2017
-        var countryList = CO2Data[7].countryList
+        var countryList = CO2Data[0].countryList
 
         // Getting topojson from local
         let topoJson = "data/countries-110m.json";
@@ -181,7 +181,7 @@ Promise.all([axios.get(ENV_STAGING + '/co2-emission'), axios.get(ENV_STAGING + "
                 d3.select("#rootLoader").style("display", "none");
                 d3.select("#rootOutput").style("display", "flex");
 
-            }).catch(error => { console.log(error, topoJson) });
+            }).catch(error => { console.log(error) });
     })
     .catch(error => console.log(error));
 
@@ -316,10 +316,11 @@ yearSliderForGeospatialGraph = (topoData, CO2Data) => {
     // Event listener for slider on value changed
     slider
         .addEventListener('change', function (ev) {
+            // console.log("Called", ev, this.value)
             if (ev.bubbles === true) {
                 clearInterval(timer);
                 isPlaying = false;
-                d3.select("#play-pause").open().attr("src", "../data/play-button-1.png")
+                d3.select("#play-pause").attr("src", "../data/play-button-1.png")
             }
             main(topoData, CO2Data[Math.round(this.value)].countryList)
         });
