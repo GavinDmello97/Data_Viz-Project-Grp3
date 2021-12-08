@@ -320,7 +320,7 @@ yearSliderForGeospatialGraph = (topoData, CO2Data) => {
             if (ev.bubbles === true) {
                 clearInterval(timer);
                 isPlaying = false;
-                d3.select("#play-pause").attr("xlink:href", "../data/play-button-1.png")
+                d3.select("#play-pause").attr("xlink:href", "./Data_Viz-Project-Grp3-Frontend/data/play-button-1.png")
             }
             main(topoData, CO2Data[Math.round(this.value)].countryList)
         });
@@ -504,7 +504,7 @@ updateContributer3 = (data) => {
 
 
 playPress = () => {
-    d3.select("#play-pause").attr("xlink:href", isPlaying === true ? "../data/play-button-1.png" : "../data/pause-button-1.png")
+    d3.select("#play-pause").attr("xlink:href", isPlaying === true ? "./Data_Viz-Project-Grp3-Frontend/data/play-button-1.png" : "../data/pause-button-1.png")
     // if (parseInt(slider.value) >= 7 && isPlaying) {
 
     // }
@@ -521,7 +521,7 @@ playPress = () => {
             if (parseInt(slider.value) >= 7) {
                 clearInterval(timer)
                 isPlaying = false;
-                d3.select("#play-pause").attr("xlink:href", "../data/play-button-1.png")
+                d3.select("#play-pause").attr("xlink:href", "./Data_Viz-Project-Grp3-Frontend/data/play-button-1.png")
             }
             else {
                 slider.value = (parseInt(slider.value) + 1).toString()
@@ -537,7 +537,7 @@ playPress = () => {
 
 stop = () => {
     isPlaying = false
-    d3.select("#play-pause").attr("xlink:href", "../data/play-button-1.png")
+    d3.select("#play-pause").attr("xlink:href", "./Data_Viz-Project-Grp3-Frontend/data/play-button-1.png")
     clearInterval(timer)
     var slider = document.getElementById('slider')
     slider.value = "0"
