@@ -9,6 +9,7 @@ var margin = { top: 30, right: 30, bottom: 30, left: 60 },
     selectedCountry = "Australia";
 
 /*----------SVG 1: Initializer setter for population line chart--------------*/
+d3.select("#pause").style("display", "none");
 
 // append the svg object to the body of the page
 var svg1 = d3
@@ -320,7 +321,8 @@ yearSliderForGeospatialGraph = (topoData, CO2Data) => {
             if (ev.bubbles === true) {
                 clearInterval(timer);
                 isPlaying = false;
-                d3.select("#play-pause").attr("xlink:href", "./Data_Viz-Project-Grp3-Frontend/data/play-button-1.png")
+                d3.select("#pause").style("display", "none");
+                d3.select("#play").style("display", "block");
             }
             main(topoData, CO2Data[Math.round(this.value)].countryList)
         });
@@ -504,7 +506,13 @@ updateContributer3 = (data) => {
 
 
 playPress = () => {
-    d3.select("#play-pause").attr("xlink:href", isPlaying === true ? "./Data_Viz-Project-Grp3-Frontend/data/play-button-1.png" : "../data/pause-button-1.png")
+    if (isPlaying === true) {
+        d3.select("#pause").style("display", "none");
+        d3.select("#play").style("display", "block");
+    } else {
+        d3.select("#pause").style("display", "block");
+        d3.select("#play").style("display", "none");
+    }
     // if (parseInt(slider.value) >= 7 && isPlaying) {
 
     // }
@@ -521,7 +529,8 @@ playPress = () => {
             if (parseInt(slider.value) >= 7) {
                 clearInterval(timer)
                 isPlaying = false;
-                d3.select("#play-pause").attr("xlink:href", "./Data_Viz-Project-Grp3-Frontend/data/play-button-1.png")
+                d3.select("#pause").style("display", "none");
+                d3.select("#play").style("display", "block");
             }
             else {
                 slider.value = (parseInt(slider.value) + 1).toString()
@@ -537,7 +546,8 @@ playPress = () => {
 
 stop = () => {
     isPlaying = false
-    d3.select("#play-pause").attr("xlink:href", "./Data_Viz-Project-Grp3-Frontend/data/play-button-1.png")
+    d3.select("#pause").style("display", "none");
+    d3.select("#play").style("display", "flex");
     clearInterval(timer)
     var slider = document.getElementById('slider')
     slider.value = "0"
