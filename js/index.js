@@ -521,7 +521,7 @@ playPress = () => {
             if (parseInt(slider.value) >= 7) {
                 clearInterval(timer)
                 isPlaying = false;
-                d3.select("#play-pause").attr("src", "../data/play-button-1.png")
+                d3.select("#play-pause").attr("src", "./data/play-button-1.png")
             }
             else {
                 slider.value = (parseInt(slider.value) + 1).toString()
